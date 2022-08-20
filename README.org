@@ -4,20 +4,6 @@
 #+LAST-MODIFIED: [2022-08-28 Sun]
 #+DESCRIPTION: A detailed explanation for creation and usage of my dotfiles.
 
-* Table of Content
-** [[*Bash Config][Bash Config]]
-** [[*Zsh Config][Zsh Config]]
-** [[*Vim Config][Vim Config]]
-** [[*LunarVim config][LunarVim config]]
-** [[*AstroNvim config][AstroNvim config]]
-** Doom Emacs config
-** Gesture config
-** Pacman packages list
-** Pip global packages list
-** Npm global packages list
-** Exported config files
-** Other things
-
 * Bash Config
 Click below to take a look:
 [[file:.bashrc][.bashrc file]]
