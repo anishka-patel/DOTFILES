@@ -1,0 +1,32 @@
+#+TITLE: Org file for dotfiles
+#+AUTHOR: Anishka Patel
+#+CREATED-ON: [2022-08-17 Wed]
+#+LAST-MODIFIED: [2022-08-17 Wed]
+#+DESCRIPTION: A detailed explanation for creation and usage of my dotfiles.
+
+* Table of Content
+** Bash config
+** Zsh config
+** Vim config
+** LunarVim config
+** AstroVim config
+** Doom Emacs config
+** Gesture config
+** Pacman packages list
+** Pip global packages list
+** Npm global packages list
+** Exported config files
+** Other things
+
+
+
+
+* Bash Config
+:PROPERTIES:
+:ID:       afff31ba-511d-49a1-b7cb-10b24b5ae550
+:END:
+* Zsh Config
+:PROPERTIES:
+:ID:       85c3c43d-088f-47b4-8362-7565d7a08d39
+:END:
+* Vim Config

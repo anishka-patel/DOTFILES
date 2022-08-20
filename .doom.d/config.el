@@ -57,3 +57,10 @@
 (add-hook 'vue-mode-hook #'lsp!) ;; Configuration for vue mode plugin in plugins.el
 (add-to-list 'initial-frame-alist '(fullscreen . maximized)) ;; Enabled maximized window on emacs initial startup
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) ;; Enabled maximized window on emacs every startup
+
+(after! org
+  (setq org-log-into-drawer t)
+  (setq org-todo-keywords
+        '((sequence "TODO(t!)" "PROJ(p!)" "LOOP(r!)" "STRT(s!)" "WAIT(w@/!)" "HOLD(h@/!)" "IDEA(i!)" "|" "DONE(d@/!)" "KILL(k@/!)")
+          (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)")
+          (sequence "|" "OKAY(o)" "YES(y)" "NO(n)"))))

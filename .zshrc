@@ -18,3 +18,5 @@ export VISUAR=nvim
 
 alias vi=nvim
 
+neofetch
+

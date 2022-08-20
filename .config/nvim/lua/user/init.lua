@@ -93,8 +93,9 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
-    { "nvim-orgmode/orgmode", config = function() require("orgmode").setup() end },
-    { "Mofiqul/dracula.nvim"}
+      { "nvim-orgmode/orgmode", config = function() require("orgmode").setup() end },
+      { "Mofiqul/dracula.nvim" },
+      { "ellisonleao/glow.nvim" },
     },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
