@@ -67,7 +67,7 @@ nvim +PackerSync
 #+END_SRC
 ** Docs Link - [[https://astronvim.github.io/][Getting Started | AstroNvim]]
 ** Notes
-- AstroNvim(nvim) does remove pervious nvim configurations.
+- AstroNvim(nvim) does remove previous nvim configurations.
 - nvim binary located at ~"/usr/bin/nvim"~
 - Plugins are added to ~plugin~ section in ~"~/.config/nvim/lua/user/init.lua"~
 - Some plugins require modifying ~init.lua~ file at ~"~/.config/nvim/init.lua"~
@@ -83,7 +83,7 @@ nvim +PackerSync
 ** Notes
 * Gesture config
 Configuration for ~Gestures~ Application.
-~Gestures~ application binds various keyboard shortcuts to touchpad genstures.
+~Gestures~ application binds various keyboard shortcuts to touchpad gestures.
 ** Install ~Gestures~ application
 #+BEGIN_SRC bash
 sudo pacman -Syu community/gestures
@@ -95,7 +95,7 @@ Link to file: [[file:.config/libinput-gestures.conf][Gestures config file.]]
 * Pacman packages
 Pacman: Package installer for Arch Linux
 ** List generated
-1. Explcitly installed packages
+1. Explicitly installed packages
    Link to file: [[file:pacman-packages-list.txt][Pacman-Packages-List]]
    Created with command:
    #+BEGIN_SRC bash
@@ -137,7 +137,7 @@ Link to file: [[file:npm-packages-list.txt][npm-packages-list]]
 * Exported config files
 ** Global Shortcut file for KDE
 [[file:exports/ani-kde-scheme.kksrc][kde-shortcuts]]
-** Shourtcut file for Kate text editor
+** Shortcut file for Kate text editor
 [[file:exports/kate-scheme.shortcuts][kate-shortcuts]]
-** Shortuct file for Kwrite text editor
+** Shortcut file for Kwrite text editor
 [[file:exports/kwrite-scheme.shortcuts][kwrite-shortcuts]]
