@@ -61,6 +61,24 @@
 (after! org
   (setq org-log-into-drawer t)
   (setq org-todo-keywords
-        '((sequence "TODO(t!)" "PROJ(p!)" "LOOP(r!)" "STRT(s!)" "WAIT(w@/!)" "HOLD(h@/!)" "IDEA(i!)" "|" "DONE(d@/!)" "KILL(k@/!)")
+        '((sequence "TODO(t!)" "PROJ(p!)" "LOOP(r!)" "STRT(s!)" "WAIT(w@)" "HOLD(h@)" "IDEA(i!)" "|" "DONE(d@)" "KILL(k@)")
           (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)")
-          (sequence "|" "OKAY(o)" "YES(y)" "NO(n)"))))
+          (sequence "|" "OKAY(o)" "YES(y)" "NO(n)")))
+  (setq org-capture-templates '(("t" "Personal todo" entry
+                                (file+headline +org-capture-todo-file "Inbox")
+                                "* %?
+                                %i
+                                %a" :prepend t)
+                                ("n" "Personal notes" entry
+                                (file+headline +org-capture-notes-file "Inbox")
+                                "* %u %?
+                                %i
+                                %a" :prepend t)
+                                ("j" "Journal" entry
+                                (file+olp+datetree +org-capture-journal-file)
+                                "* %U %?
+                                %i
+                                %a" :prepend t))))
+
+
+(beacon-mode 1)
