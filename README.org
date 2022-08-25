@@ -1,8 +1,9 @@
 #+TITLE: Org file for dotfiles
 #+AUTHOR: Anishka Patel
-#+CREATED-ON: [2022-08-17 Wed]
-#+LAST-MODIFIED: [2022-08-28 Sun]
 #+DESCRIPTION: A detailed explanation for creation and usage of my dotfiles.
+#+EMAIL: anishka.vpatel@gmail.com
+#+DATE: [2022-08-25 Thu]
+#+OPTIONS: toc:2
 
 * Bash Config
 Click below to take a look:
