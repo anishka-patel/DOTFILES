@@ -1,7 +1,7 @@
 #+TITLE: Linux Admin Guide
 #+AUTHOR: Anishka Patel
 #+DESCRIPTION: A guide for Linux administration
-#+DATE: [2022-08-21 Sun]
+#+DATE: [2022-08-25 Thu]
 #+EMAIL: anishka.vpatel@gmail.com
 #+OPTIONS: toc:2
 
@@ -97,11 +97,11 @@ Note : Wildcard character
 - ln -s : soft links
 *** File permissions
 **** Types - r: read, w: write, x: execute
-Example: drwxrwxrwx
-"d---------": "first byte" represents [[*File types][File types]]
-"-Rex------": "next 3 bytes" represents permissions for user "u"
-"d---rwx---": "middle 3 bytes" represents permission for group "g"
-"d------rwx": "last 3 bytes" represents permission for others "o"
+Example: ~drwxrwxrwx~
+ * "d---------": "first byte" represents [[*File types][File types]]
+ * "-Rex------": "next 3 bytes" represents permissions for user "u"
+ * "d---rwx---": "middle 3 bytes" represents permission for group "g"
+ * "d------rwx": "last 3 bytes" represents permission for others "o"
 **** ~chmod~ - changing permissions
 Usage does the same thing
     * ~chmod ugo+r file~
@@ -178,7 +178,7 @@ Example:
 | Editor             | Description                              |
 |--------------------+------------------------------------------|
 | Vi/Vim/Nvim        | Modal text editor                        |
-| Emacs              | Advanced text editor with                |
+| Emacs              | Advanced text editor with gui client     |
 | AstroNvim/LunarVim | Nvim based editor with advanced features |
 | nano/micor/pico    | No modal basic text editors              |
 |--------------------+------------------------------------------|
@@ -261,5 +261,56 @@ Example:
 - ~sitckybit~
 *** PATH and ENV
 * Bash and Shell Scripting
+** Types of shells
+ * ~sh~ : Bourne shell
+ * ~bash~: Bourne Again Shell
+ * ~zsh~:
+ * ~fish~:
+ * ~dash~:
+** Shells entry and exit
+ * Enter: Type shell name: ~bash~ in the terminal or command line
+ * Exit: Type ~exit~ in the terminal or command line
+** Shell scripting
+*** Components of shell script
+ * Header/ shebang :
+   * ~#!/bin/bash~: looks at specific location provider for interpreter
+   * ~#!/usr/bin/env bash~: looks at the ~PATH~ variable for the interpreter
+ * Comments: ~# Comment~
+ * Commands: ~echo, cp, mv, rm, etc.~
+ * Statements: ~if, while, for, etc.~
+ * Professional components:
+   1. Author: ~Name~
+   2. Created: ~Date~
+   3. Last Modified: ~Date~
+   4. Description: ~Text~
+   5. Usage: ~Text~
+*** Exit codes:
+ * ~0~: exit without error
+ * More info: [[https://tldp.org/LDP/abs/html/exitcodes.html]]
+*** Requirements:
+ * Execute permissions required: ~-rwxr-xr-x~: will execute for everyone
+   Click [[*File permissions][File permissions]] for more info.
+ * Need to call with correct absolute path or relative path
+ * Availability from everywhere
+   * add to ~$PATH~ in ~.profile~ or ~.bashrc~
+*** Variables and shell expansions:
+*** Bash command processing:
+*** IO:
+ * Requesting user input
+ * ~read~: input from user
+ * ~echo~: output from script
+ * Reading options
+ * Processing files
+*** Branching logic:
+ * ~if-elif-else~:
+ * ~case~:
+ * Test statements
+*** Looping logic;
+ * ~for~:
+ * ~while~:
+*** Arrays
+*** Debugging
+*** Automation
+*** Remoting
 * Linux Networking
 * Disk Management
