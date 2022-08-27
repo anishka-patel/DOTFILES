@@ -1,7 +1,6 @@
 #
 # ~/.bashrc
 #
-lvim="$HOME/.local/bin/lvim"
 
 set -o vi
 export EDITOR=nvim
@@ -9,6 +8,8 @@ export VISUAL=nvim
 
 
 alias vi=nvim
+alias vim=nvim
+alias dmacs="emacsclient -c -a emacs &"
 
 
 [[ $- != *i* ]] && return

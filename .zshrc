@@ -10,7 +10,6 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 # Vim mode
 bindkey -v
-lvim="$HOME/.local/bin/lvim"
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/.GodotMono:$HOME/.emacs.d/bin:$HOME/.local/bin"
 export EDITOR=nvim
 export VISUAR=nvim
