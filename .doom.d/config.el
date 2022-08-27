@@ -80,5 +80,12 @@
                                 %i
                                 %a" :prepend t))))
 
-
+(setq +zen-text-scale 0)
 (beacon-mode 1)
+(use-package! tree-sitter
+  :hook (prog-mode . turn-on-tree-sitter-mode)
+  :hook (tree-sitter-after-on . tree-sitter-hl-mode)
+  :config
+  (require 'tree-sitter-langs)
+  (setq tree-sitter-debug-jump-buttons t
+        tree-sitter-debug-highlight-jump-region t))
