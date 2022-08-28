@@ -8,7 +8,6 @@ export VISUAL=nvim
 
 
 alias vi=nvim
-alias vim=nvim
 alias dmacs="emacsclient -c -a emacs &"
 
 
