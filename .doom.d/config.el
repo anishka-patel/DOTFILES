@@ -58,12 +58,13 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized)) ;; Enabled maximized window on emacs initial startup
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) ;; Enabled maximized window on emacs every startup
 
+;; Config for org-mode
 (after! org
-  (setq org-log-into-drawer t)
+  (setq org-log-into-drawer t) ;; Creates :LOGBOOK: drawer under each org-todo-keyword and logs into it
   (setq org-todo-keywords
         '((sequence "TODO(t!)" "PROJ(p!)" "LOOP(r!)" "STRT(s!)" "WAIT(w@)" "HOLD(h@)" "IDEA(i!)" "|" "DONE(d@)" "KILL(k@)")
           (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)")
-          (sequence "|" "OKAY(o)" "YES(y)" "NO(n)")))
+          (sequence "|" "OKAY(o)" "YES(y)" "NO(n)"))) ;; Setup custom TODO keywords
   (setq org-capture-templates '(("t" "Personal todo" entry
                                 (file+headline +org-capture-todo-file "Inbox")
                                 "* %?
@@ -78,14 +79,18 @@
                                 (file+olp+datetree +org-capture-journal-file)
                                 "* %U %?
                                 %i
-                                %a" :prepend t))))
+                                %a" :prepend t)))) ;; Setup custom org-capture-templates
 
-(setq +zen-text-scale 0)
-(beacon-mode 1)
+(setq +zen-text-scale 0) ;; Does not scale up text in zen modes
+(beacon-mode 1) ;; Activates beacon-mode
 (use-package! tree-sitter
   :hook (prog-mode . turn-on-tree-sitter-mode)
   :hook (tree-sitter-after-on . tree-sitter-hl-mode)
   :config
   (require 'tree-sitter-langs)
   (setq tree-sitter-debug-jump-buttons t
-        tree-sitter-debug-highlight-jump-region t))
+        tree-sitter-debug-highlight-jump-region t)) ;; Activates tree-sitter
+
+(use-package! command-log-mode
+  :ensure t
+  :config (global-command-log-mode))
