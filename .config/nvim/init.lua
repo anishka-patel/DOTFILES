@@ -1,4 +1,4 @@
-vim.g.neovide_transparency = 0.9
+vim.g.neovide_transparency = 0.95
 vim.g.neovide_remember_window_size = true
 vim.g.neovide_refresh_rate = 60
 vim.opt.colorcolumn = "80"
