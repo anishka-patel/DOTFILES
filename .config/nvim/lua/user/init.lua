@@ -107,6 +107,11 @@ local config = {
         -- Set a formatter
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.shellharden,
+        null_ls.builtins.formatting.autopep8,
+        null_ls.builtins.formatting.isort,
+        null_ls.builtins.formatting.csharpier,
+        null_ls.builtins.formatting.markdownlint,
       }
       -- set up null-ls's on_attach function
       config.on_attach = function(client)
