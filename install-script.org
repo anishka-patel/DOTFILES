@@ -1,0 +1,94 @@
+#+TITLE: Install Script
+#+AUTHOR: Anishka Patel
+#+DATE: [2022-08-29 Mon]
+#+DESCRIPTION: Org document to create an install script for various dependencies
+#+EMAIL: anishka.vpatel@gmail.com
+
+* Updating cache and packages
+#+begin_src bash
+    # sudo apt update && sudo apt upgrade -y
+    # sudo dnf update
+    # sudo apk update
+    sudo pacman -Syu --noconfirm
+#+end_src
+* Install system packages
+#+begin_src bash
+    sudo pacman -S htop sysstat git tmux  --noconfirm
+    # sudo pacman -S mlocate ncdu --noconfirm
+#+end_src
+* Install fonts
+#+begin_src bash
+    sudo pacman -S ttf-cascadia-code ttf-dejavu ttf-fira-code ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji terminus-font --noconfirm
+#+end_src
+* Install shells
+#+begin_src bash
+    # sudo pacman -S sh bash --noconfirm
+    sudo pacman -S zsh fish --noconfirm
+#+end_src
+* Install terminals
+#+begin_src bash
+    sudo pacman -S konsole --noconfirm
+    # sudo pacman -S alacrity kitty --noconfirm
+#+end_src
+* Install package managers
+#+begin_src bash
+    sudo pacman -S flatpak appimagelauncher yay --noconfirm
+#+end_src
+* Install text editors
+#+begin_src bash
+    sudo pacman -S neovim emacs --noconfirm
+    # sudo pacman -S kate kwrite --noconfirm
+#+end_src
+* Install web browsers
+#+begin_src bash
+    # sudo pacman -S firefox chromium qutebrowser --noconfirm
+    sudo flatpak install com.google.Chrome -y
+#+end_src
+* Install development programs
+#+begin_src bash
+    sudo pacman -S python nodejs rustup rust-analyzer --noconfirm
+#+end_src
+** Rust
+#+begin_src bash
+    sudo pacman -S rustup rust-analyzer --noconfirm
+#+end_src
+** Python
+#+begin_src bash
+    sudo pacman -S python ipython --noconfirm
+#+end_src
+** Dotnet
+#+begin_src bash
+    sudo pacman -S dotnet-host dotnet-sdk dotnet-runtime --noconfirm
+#+end_src
+** Lua
+#+begin_src bash
+    sudo pacman -S lua luarocks luajit --noconfirm
+#+end_src
+** Node
+#+begin_src bash
+    sudo pacman -S nodejs --noconfirm
+#+end_src
+* Install Game/3d development Apps
+#+begin_src bash
+    sudo pacman -S godot blender freecad --noconfirm
+#+end_src
+* Install Audio/Video
+** Install Photo
+#+begin_src bash
+    sudo pacman -S gimp krita inkscape --noconfirm
+    # sudo pacman -S gwenview --noconfirm
+#+end_src
+** Install Multimedia
+#+begin_src bash
+    sudo pacman -S vlc elias kdenlive --noconfirm
+    # sudo pacman -S audacity lmms handbrake --noconfirm
+#+end_src
+* Install VMs/Containers
+#+begin_src bash
+    sudo pacman -S docker virtualbox vagrant --noconfirm
+    # sudo pacman -S lxc lxd --noconfirm
+#+end_src
+* Install Other Utilities
+#+begin_src bash
+    sudo pacman -S gestures ventoy --noconfirm
+#+end_src
