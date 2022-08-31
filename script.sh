@@ -1,6 +1,10 @@
 #!/bin/bash
+# Author: ANISHKA PATEL
+# Created: 21-08-2022 
+# Last modified: 22-08-2022
+# Description: Script to run in Plasma Command Output Widget
+
 echo "<<-------------->>"
-echo ""
 DATE=$(date +"%a     %d.%m.%y    %H:%M")
 echo "$DATE"
 echo ""
@@ -42,6 +46,7 @@ echo "----------------"
 echo "---System---"
 echo "Launcher               Meta"
 echo "Dolphin              Meta-e"
+echo "Vifm                 Meta-E"
 echo "KRunner          Meta-space"
 echo "---Editor---"
 echo "Emacs                Meta-t"

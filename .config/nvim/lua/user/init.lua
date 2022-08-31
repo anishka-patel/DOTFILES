@@ -37,11 +37,18 @@ local config = {
   options = {
     opt = {
       relativenumber = true, -- sets vim.opt.relativenumber
+      colorcolumn = "80",
+      guifont = { "FiraCode Nerd Font", "16" },
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
+      neovide_transparency = 0.95,
+      neovide_remember_window_size = true,
+      neovide_refresh_rate = 60,
     },
   },
+
+  header = {},
 
   -- Default theme configuration
   default_theme = {
@@ -93,7 +100,6 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
-      { "nvim-orgmode/orgmode", config = function() require("orgmode").setup() end },
       { "Mofiqul/dracula.nvim" },
       { "ellisonleao/glow.nvim" },
     },
