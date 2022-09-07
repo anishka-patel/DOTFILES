@@ -16,7 +16,6 @@ local config = {
     --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
     -- },
   },
-
   -- Set colorscheme
   colorscheme = "dracula",
 
@@ -48,7 +47,14 @@ local config = {
     },
   },
 
-  header = {},
+  header = {
+    " ███╗░░██╗███████╗░█████╗░██╗░░░██╗██╗███╗░░░███╗",
+    " ████╗░██║██╔════╝██╔══██╗██║░░░██║██║████╗░████║",
+    " ██╔██╗██║█████╗░░██║░░██║╚██╗░██╔╝██║██╔████╔██║",
+    " ██║╚████║██╔══╝░░██║░░██║░╚████╔╝░██║██║╚██╔╝██║",
+    " ██║░╚███║███████╗╚█████╔╝░░╚██╔╝░░██║██║░╚═╝░██║",
+    " ╚═╝░░╚══╝╚══════╝░╚════╝░░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝",
+  },
 
   -- Default theme configuration
   default_theme = {
@@ -102,6 +108,19 @@ local config = {
       -- },
       { "Mofiqul/dracula.nvim" },
       { "ellisonleao/glow.nvim" },
+      { "nvim-orgmode/orgmode" },
+      { "folke/twilight.nvim" },
+      {
+        "folke/zen-mode.nvim",
+        config = function()
+          require("zen-mode").setup {
+            window = {
+              width = 90,
+              height = 1,
+            },
+          }
+        end,
+      },
     },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
@@ -116,8 +135,31 @@ local config = {
         null_ls.builtins.formatting.shellharden,
         null_ls.builtins.formatting.autopep8,
         null_ls.builtins.formatting.isort,
-        null_ls.builtins.formatting.csharpier,
         null_ls.builtins.formatting.markdownlint,
+        null_ls.builtins.formatting.gdformat,
+        null_ls.builtins.formatting.rustfmt,
+        null_ls.builtins.formatting.stylelint,
+        null_ls.builtins.formatting.yamlfmt,
+        -- Set a code_actions
+        null_ls.builtins.code_actions.eslint,
+        null_ls.builtins.code_actions.proselint,
+        null_ls.builtins.code_actions.shellcheck,
+        --[[ null_ls.builtins.code_actions.spell, ]]
+        -- Set a completion
+        null_ls.builtins.completion.spell,
+        null_ls.builtins.completion.luasnip,
+        -- Set a Diagnostics
+        -- null_ls.builtins.diagnostics.cspell,
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.diagnostics.gdlint,
+        null_ls.builtins.diagnostics.jsonlint,
+        null_ls.builtins.diagnostics.markdownlint,
+        null_ls.builtins.diagnostics.proselint,
+        null_ls.builtins.diagnostics.shellcheck,
+        null_ls.builtins.diagnostics.stylelint,
+        null_ls.builtins.diagnostics.yamllint,
+        -- Set a hover
+        null_ls.builtins.hover.dictionary,
       }
       -- set up null-ls's on_attach function
       config.on_attach = function(client)
@@ -166,8 +208,8 @@ local config = {
   -- true == 1000
   cmp = {
     source_priority = {
-      nvim_lsp = 1000,
-      luasnip = 750,
+      luasnip = 1000,
+      nvim_lsp = 750,
       buffer = 500,
       path = 250,
     },
@@ -233,6 +275,8 @@ local config = {
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+      -- zen mode
+      ["<leader>z"] = { "<cmd>ZenMode<cr>", desc = "Toogle ZenMode" },
     },
     t = {
       -- setting a mapping to false will disable it
@@ -251,6 +295,8 @@ local config = {
           -- third key is the key to bring up next level and its displayed
           -- group name in which-key top level menu
           ["b"] = { name = "Buffer" },
+          ["m"] = { name = "Org Mode" },
+          ["z"] = { name = "Zen Mode" },
         },
       },
     },
@@ -268,7 +314,34 @@ local config = {
       pattern = "plugins.lua",
       command = "source <afile> | PackerSync",
     })
+    -- Orgmode.nvim - Config start
+    -- init.lua
 
+    -- Load custom tree-sitter grammar for org filetype
+    require("orgmode").setup_ts_grammar()
+
+    -- Tree-sitter configuration
+    require("nvim-treesitter.configs").setup {
+      -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "org" }, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
+      },
+      ensure_installed = { "org" }, -- Or run :TSUpdate org
+    }
+
+    require("orgmode").setup {
+      org_agenda_files = { "~/org/*", "~/orgs/**/*" },
+      org_default_notes_file = "~/org/refile.org",
+      org_todo_keywords = { "TODO", "WAIT", "HALT", "PROJ", "IDEA", "STRT", "LOOP", "|", "DONE", "KILL" },
+      mappings = {
+        prefix = "<Leader>m",
+      },
+    }
+    -- Orgmode.nvim - Config end
+    -- Omnisharp mono config start
+    -- require("lspconfig").omnisharp_mono.setup {}
+    -- Omnisharp mono config end
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
