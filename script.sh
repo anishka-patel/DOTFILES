@@ -4,13 +4,11 @@
 # Last modified: 22-08-2022
 # Description: Script to run in Plasma Command Output Widget
 
-echo "<<-------------->>"
 DATE=$(date +" %d.%m.%y  %a   %H:%M")
 echo "$DATE"
 echo ""
 echo -n "$USER @ $HOSTNAME"
 echo "  <$(uname -r)>"
-echo ""
 echo ""
 MEMTOTINFO=$(cat /proc/meminfo | 
   numfmt --field 2 --from-unit=Ki --to-unit=Gi |
@@ -23,12 +21,22 @@ echo "---------------------------------------"
 CPUUSRINFO=$(mpstat 1 1 | grep -i average | awk '{print $3}')
 CPUSYSINFO=$(mpstat 1 1 | grep -i average | awk '{print $5}')
 CPUIDLINFO=$(mpstat 1 1 | grep -i average | awk '{print $12}')
-echo "CPU:    ${CPUUSRINFO}      ${CPUSYSINFO}   累 ${CPUIDLINFO}"
+echo "CPU:   ${CPUUSRINFO}    ${CPUSYSINFO} 累 ${CPUIDLINFO}"
+echo "---------------------------------------"
+IONAME="nvme0n1"
+IOREADINFO=$(iostat | grep "$IONAME" | awk '{print $3}')
+IOWRITINFO=$(iostat | grep "$IONAME" | awk '{print $4}')
+echo "IO:  ${IONAME}  ${IOREADINFO}   ${IOWRITINFO}"
 echo "---------------------------------------"
 PSUSR=$(ps --user "$USER" | wc -l)
 PSSYS=$(ps --user root | wc -l)
 PSTOT=$(ps -ef | wc -l)
 echo "PRO:    ${PSTOT}    ${PSUSR}     ${PSSYS}"
+echo "---------------------------------------"
+IFNAME="wlp1s0"
+IFRXINFO=$(ifstat | grep "$IFNAME" | awk '{print $6}')
+IFTXINFO=$(ifstat | grep "$IFNAME" | awk '{print $8}')
+echo "NET:  ${IFNAME}   ${IFRXINFO}   ${IFTXINFO}"
 echo ""
 echo "---------------------------------------"
 PACPKGS=$(pacman -Qn | wc -l)
@@ -64,4 +72,3 @@ echo "---  ---"
 echo "Yakuake          Meta-Enter"
 echo "Konsole          Meta-enter"
 echo ""
-echo "<<-------------->>"
