@@ -21,7 +21,7 @@
  - ~.rpm~ packages: yum, dnf (Fedora based distros)
  - ~.flatpak~ packages: flatpak (*) MoreInfo: [[https://flathub.org/home][Flathub—An app store and build service for Linux]]
  - ~.nix~ packages: nix-env (*) MoreInfo: [[https://nixos.org/manual/nix/stable/installation/installing-binary.html][Nix Install]]
- - ~.cask~ packages: brew (*) MoreInfo: [[https://brew.sh/][HomeBrew-Homepage]]
+ - ~.formula~ packages: brew (*) MoreInfo: [[https://brew.sh/][HomeBrew-Homepage]]
  - Development related package manager
    - NPM: Node package manager
    - PIP: Python package manager
