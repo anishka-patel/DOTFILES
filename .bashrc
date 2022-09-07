@@ -1,10 +1,11 @@
-#
+#! /usr/bin/bash
 # ~/.bashrc
 #
 
 set -o vi
 export EDITOR=nvim
 export VISUAL=nvim
+export GOPATH="$HOME/go/bin/"
 
 
 alias vi=nvim
@@ -151,5 +152,5 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/.GodotMono:$HOME/.emacs.d/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.GodotMono:$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/go/bin"
 neofetch
