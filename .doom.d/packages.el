@@ -53,3 +53,5 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+; LocalWords:  el MELPA ELPA emacsmirror vue repo src myfork raxod

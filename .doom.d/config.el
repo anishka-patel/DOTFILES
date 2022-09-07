@@ -84,13 +84,13 @@
 (setq +zen-text-scale 0) ;; Does not scale up text in zen modes
 (beacon-mode 1) ;; Activates beacon-mode
 (use-package! tree-sitter
-  :hook (prog-mode . turn-on-tree-sitter-mode)
-  :hook (tree-sitter-after-on . tree-sitter-hl-mode)
   :config
   (require 'tree-sitter-langs)
-  (setq tree-sitter-debug-jump-buttons t
-        tree-sitter-debug-highlight-jump-region t)) ;; Activates tree-sitter
+  (global-tree-sitter-mode)
+  (add-hook! 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)) ;; Activates tree-sitter
 
 (use-package! command-log-mode
   :ensure t
   :config (global-command-log-mode))
+
+; LocalWords:  el GPG xlfd
