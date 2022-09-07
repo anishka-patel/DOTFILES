@@ -398,3 +398,7 @@ Use -R for recursive/cascade ownership changes to directory
  * ~lsb_release -a~
  * ~lsmod~
  * ~lsinitcpio~
+
+#  LocalWords:  Stdin Ctrl nala snapd distros pacman yay AUR dnf flatpak env os
+#  LocalWords:  NPM NUGET ELPA linux Init SATA SAS NFS LVM cfg dev sbin proc
+#  LocalWords:  tmp mnt
