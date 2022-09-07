@@ -52,6 +52,10 @@
 #+begin_src bash
     sudo pacman -S konsole yakuake --noconfirm
 #+end_src
+** KDE Package Explorer
+#+begin_src bash
+    sudo pacman -S discover --noconfirm
+#+end_src
 * Fonts
 #+begin_src bash
     sudo yay -S nerd-fonts-complete
@@ -107,6 +111,10 @@
 ** Mono
 #+begin_src bash
     sudo pacman -S mono mono-addins --noconfirm
+#+end_src
+** Go
+#+begin_src bash
+    sudo pacman -S go --noconfirm
 #+end_src
 * Game & 3d Modelling
 #+begin_src bash
