@@ -5,7 +5,7 @@
 # Description: Script to run in Plasma Command Output Widget
 
 echo "<<-------------->>"
-DATE=$(date +"%a     %d.%m.%y    %H:%M")
+DATE=$(date +" %d.%m.%y  %a   %H:%M")
 echo "$DATE"
 echo ""
 echo -n "$USER @ $HOSTNAME"
@@ -18,44 +18,50 @@ MEMTOTINFO=$(cat /proc/meminfo |
 MEMAVLINFO=$(cat /proc/meminfo |
   numfmt --field 2 --from-unit=Ki --to-unit=Gi |
   sed 's/ kB//g'| grep -i memavailable | awk '{print $2}')
-echo "MEM:   tot ${MEMTOTINFO}G   use $((MEMTOTINFO - MEMAVLINFO))G   idl ${MEMAVLINFO}G" 
+echo "MEM:    ${MEMTOTINFO}G     $((MEMTOTINFO - MEMAVLINFO))G   累 ${MEMAVLINFO}G" 
 echo "---------------------------------------"
 CPUUSRINFO=$(mpstat 1 1 | grep -i average | awk '{print $3}')
 CPUSYSINFO=$(mpstat 1 1 | grep -i average | awk '{print $5}')
 CPUIDLINFO=$(mpstat 1 1 | grep -i average | awk '{print $12}')
-echo "CPU:   usr ${CPUUSRINFO}   sys ${CPUSYSINFO}   idl ${CPUIDLINFO}"
+echo "CPU:    ${CPUUSRINFO}      ${CPUSYSINFO}   累 ${CPUIDLINFO}"
 echo "---------------------------------------"
 PSUSR=$(ps --user "$USER" | wc -l)
 PSSYS=$(ps --user root | wc -l)
 PSTOT=$(ps -ef | wc -l)
-echo "PRO:   tot ${PSTOT}   usr ${PSUSR}   sys ${PSSYS}"
+echo "PRO:    ${PSTOT}    ${PSUSR}     ${PSSYS}"
 echo ""
 echo "---------------------------------------"
-PACMANPKGS=$(pacman -Q | wc -l)
+PACPKGS=$(pacman -Qn | wc -l)
+YAYPKGS=$(yay -Qm | wc -l)
 FLATPKGS=$(flatpak list | wc -l)
 BREWPKGS=$(brew list | wc -l)
-NIXPKGS=$(nix-env -q | wc -l)
-echo -n "Pacman  : ${PACMANPKGS}"
-echo "         Flatpak : ${FLATPKGS}"
-echo -n "Brew    : ${BREWPKGS}"
-echo "           Nix     : ${NIXPKGS}"
+PIPPKGS=$(pip list | wc -l)
+NPMPKGS=$(npm -g list | wc -l)
+CARGOPKGS=$(cargo install --list | wc -l)
+GOPKGS=$(go list ... | wc -l)
+echo -n "Pac    $(printf "%4d" "$PACPKGS")"
+echo "   Yay    $(printf "%4d" "$YAYPKGS")"
+echo -n "Brew   $(printf "%4d" "$BREWPKGS")"
+echo "   Flat   $(printf "%4d" "$FLATPKGS")"
+echo -n "Npm    $(printf "%4d" "$NPMPKGS")"
+echo "   Pip    $(printf "%4d" "$PIPPKGS")"
+echo -n "Go     $(printf "%4d" "$GOPKGS")"
+echo "   Rust   $(printf "%4d" "$CARGOPKGS")"
 echo "---------------------------------------"
 echo ""
-echo "Shortcuts"
-echo "----------------"
-echo "---System---"
-echo "Launcher               Meta"
-echo "Dolphin              Meta-e"
-echo "Vifm                 Meta-E"
-echo "KRunner          Meta-space"
-echo "---Editor---"
-echo "Emacs                Meta-t"
-echo "Neovide              Meta-T"
-echo "---Browser---"
-echo "Chrome               Meta-i"
-echo "Firefox              Meta-I"
-echo "---Terminal---"
-echo "Yakuake          Meta-Enter"
-echo "Konsole          Meta-enter"
+echo ""
+echo "--------------"
+echo "---  ---"
+echo "Dolphin              Meta-e"
+echo "KRunner          Meta-space"
+echo "---  ---"
+echo "Emacs                Meta-t"
+echo "Neovide              Meta-T"
+echo "---  ---"
+echo "Chrome               Meta-i"
+echo "Firefox              Meta-I"
+echo "---  ---"
+echo "Yakuake          Meta-Enter"
+echo "Konsole          Meta-enter"
 echo ""
 echo "<<-------------->>"
