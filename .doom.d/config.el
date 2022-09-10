@@ -19,8 +19,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code" :size 24 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Fira Code" :size 24))
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 24 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Roboto" :size 24))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -80,7 +80,6 @@
                                 "* %U %?
                                 %i
                                 %a" :prepend t)))) ;; Setup custom org-capture-templates
-
 (setq +zen-text-scale 0) ;; Does not scale up text in zen modes
 (beacon-mode 1) ;; Activates beacon-mode
 (use-package! tree-sitter
@@ -92,5 +91,9 @@
 (use-package! command-log-mode
   :ensure t
   :config (global-command-log-mode))
-
+(setq evil-ex-search-case nil)
+(use-package! org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode)
+  :config (setq org-auto-tangle-default t))
 ; LocalWords:  el GPG xlfd

@@ -163,6 +163,7 @@
        ;;ocaml             ; an objective camel
        (org
         +journal
+        +jupyter
         +noter
         +pandoc
         +pomodoro
