@@ -38,6 +38,7 @@ local config = {
       relativenumber = true, -- sets vim.opt.relativenumber
       colorcolumn = "80",
       guifont = { "FiraCode Nerd Font", "16" },
+      ignorecase = false,
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
