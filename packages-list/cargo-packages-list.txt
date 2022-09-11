@@ -1,0 +1,4 @@
+cargo-generate v0.13.1:
+    cargo-generate
+wasm-pack v0.10.2:
+    wasm-pack

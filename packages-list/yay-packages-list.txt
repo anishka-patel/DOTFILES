@@ -1,0 +1,9 @@
+gnome-icon-theme 3.12.0-7
+gnome-icon-theme-symbolic 3.12.0-6
+google-chrome 105.0.5195.52-1
+js-beautify 1.14.4-1
+nerd-fonts-complete 2.2.1-1
+playonlinux 4.4+29+gd0ae9ce6-1
+rtw89-dkms-git 1:r174.e369940-1
+wordnet-cli 3.1-4
+wordnet-common 3.1-4
