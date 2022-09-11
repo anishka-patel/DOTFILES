@@ -12,6 +12,18 @@ let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_winsize=75
 
+" Configuration for NERDCommenter -- begin
+let g:NERDCreateDefaultMappings = 1                                     " Create default mappings
+let g:NERDSpaceDelims = 1                                               " Add spaces after comment delimiters by default
+let g:NERDCompactSexyComs = 1                                           " Use compact syntax for prettified multi-line comments
+let g:NERDDefaultAlign = 'left'                                         " Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDAltDelims_java = 1                                            " Set a language to use its alternate delimiters by default
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }   " Add your own custom formats or override the defaults
+let g:NERDCommentEmptyLines = 1                                         " Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDTrimTrailingWhitespace = 1                                    " Enable trimming of trailing whitespace when uncommenting
+let g:NERDToggleCheckAllLines = 1                                       " Enable NERDCommenterToggle to check all selected lines is commented or not
+" -- end
+
 " Set to auto read when a file is changed from the outside
 set autoread
 au FocusGained,BufEnter * checktime
@@ -30,7 +42,7 @@ set whichwrap+=<,>,h,l
 
 set path+=**
 set nocompatible
-set cursorline 
+set cursorline
 set colorcolumn=80,120
 set foldcolumn=1
 set nowrap
@@ -55,6 +67,7 @@ set t_vb=
 set tm=500
 set encoding=utf8
 
+" Mappings
 nnoremap <SPACE> <Nop>
 nnoremap <Leader>/ :nohlsearch<CR>
 
@@ -65,11 +78,17 @@ map <leader>bp :bprevious<cr>
 map <leader>bq :e ~/buffer<cr>
 map <leader>bx :e ~/buffer.md<cr>
 
-map <leader>e  :Lexplore 20<cr>
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-map <leader>fs : w!<cr>
+map <leader>ee :NERDTreeToggle<cr>
+map <leader>eo :NERDTreeFocus<cr>
+map <leader>ef :NERDTreeFind<cr>
+map <leader>el :Lexplore 20<cr>
+
+map <leader>fs :w!<cr>
 
 map <leader>h  :nohl<cr>
+
 
 map <leader>tN :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -78,7 +97,8 @@ map <leader>tm :tabmove
 map <leader>tn :tabnext
 map <leader>tp :tabprev
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+map <leader>Tw :FixWhitespace<cr>
 
 map <leader>ss :setlocal spell!<cr>
 map <leader>sn ]s
@@ -88,7 +108,25 @@ map <leader>s? z=
 
 map <leader>pp :setlocal paste!<cr>
 map <leader>q  :q<cr>
+map <leader>z  :Goyo<cr>
 
+" Indent guide default mapping <Leader>ig
+" Default mapping for NERDCommenter -- Begin
+" [count]<leader>cc |NERDCommenterComment           " Comment out the current line or text selected in visual mode.
+" [count]<leader>cn |NERDCommenterNested|           " Same as cc but forces nesting.
+" [count]<leader>c<space> |NERDCommenterToggle|     " Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa.
+" [count]<leader>cm |NERDCommenterMinimal|          " Comments the given lines using only one set of multipart delimiters.
+" [count]<leader>ci |NERDCommenterInvert|           " Toggles the comment state of the selected line(s) individually.
+" [count]<leader>cs |NERDCommenterSexy|             " Comments out the selected lines with a pretty block formatted layout.
+" [count]<leader>cy |NERDCommenterYank|             " Same as cc except that the commented line(s) are yanked first.
+" <leader>c$ |NERDCommenterToEOL|                   " Comments the current line from the cursor to the end of line.
+" <leader>cA |NERDCommenterAppend|                  " Adds comment delimiters to the end of line and goes into insert mode between them.
+"            |NERDCommenterInsert|                  " Adds comment delimiters at the current cursor position and inserts between. Disabled by default.
+" <leader>ca |NERDCommenterAltDelims|               " Switches to the alternative set of delimiters.
+" [count]<leader>cl |NERDCommenterAlignLeft
+" [count]<leader>cb |NERDCommenterAlignBoth         " Same as |NERDCommenterComment| except that the delimiters are aligned down the left side (<leader>cl) or both sides (<leader>cb).
+" [count]<leader>cu |NERDCommenterUncomment|        " Uncomments the selected line(s).
+" -- End
 
 try
     set switchbuf=useopen,usetab,newtab
@@ -123,7 +161,21 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'dracula/vim', {'name':'dracula'}
-Plug 'townk/vim-autoclose'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/goyo.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
+
 colorscheme dracula
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
