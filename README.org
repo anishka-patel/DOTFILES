@@ -32,28 +32,28 @@ ln ~/.vimrc
 #+END_SRC
 ** Requirements
 - Vim
-  #+begin_src bash
-    sudo pacman -S vim
-  #+end_src
+#+begin_src bash
+sudo pacman -S vim
+#+end_src
 * AstroNvim config
 AstroNvim - Another more advanced distribution for neovim with IDE like features.
 ** Requirements
 - Neovim 0.7+
-  #+begin_src bash
-  sudo pacman -S neovim --noconfirm
-  #+end_src
+#+begin_src bash
+sudo pacman -S neovim --noconfirm
+#+end_src
 - Nerd Fonts
-  #+begin_src bash
-  sudo yay -S nerd-fonts-complete
-  #+end_src
+#+begin_src bash
+sudo yay -S nerd-fonts-complete
+#+end_src
 - Terminal w/ true color
-  #+begin_src bash
-  sudo pacman -S kitty --noconfirm
-  #+end_src
+#+begin_src bash
+sudo pacman -S kitty --noconfirm
+#+end_src
 - Optional:
-  #+begin_src bash
-  sudo pacman -S ripgrep lazygit ncdu htop python nodejs --noconfirm
-  #+end_src
+#+begin_src bash
+sudo pacman -S ripgrep lazygit ncdu htop python nodejs --noconfirm
+#+end_src
 ** Install - [[https://github.com/AstroNvim/AstroNvim][GitHub - AstroNvim]]
 #+BEGIN_SRC bash
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
@@ -73,18 +73,18 @@ nvim +PackerSync
 - Personal modifications outside ~user/init.lua~
   - Show menu name in neovim completions
      ~ ~/.config/nvim/lua/configs/cmp.lua~
-    #+begin_src lua
-    -- format = function(_, vim_item) -- removed
-    format = function(entry, vim_item) -- modified
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind]) -- nop
-      vim_item.menu = ({      -- added
-          luasnip = "[SNIP]", -- added
-          nvim_lsp = "[LSP]", -- added
-          buffer = "[BUFF]",  -- added
-          path = "[PATH]",    -- added
-      })[entry.source.name]   -- added
-      return vim_item -- nop
-    #+end_src
+#+begin_src lua
+-- format = function(_, vim_item) -- removed
+format = function(entry, vim_item) -- modified
+  vim_item.kind = string.format("%s", kind_icons[vim_item.kind]) -- nop
+  vim_item.menu = ({      -- added
+      luasnip = "[SNIP]", -- added
+      nvim_lsp = "[LSP]", -- added
+      buffer = "[BUFF]",  -- added
+      path = "[PATH]",    -- added
+  })[entry.source.name]   -- added
+  return vim_item -- nop
+#+end_src
 
 * DoomEmacs config
 ** Requirements
@@ -107,15 +107,15 @@ Pacman: Package installer for Arch Linux
 1. Explicitly installed packages
    Link to file: [[file:pacman-packages-list.txt][Pacman-Packages-List]]
    Created with command:
-   #+BEGIN_SRC bash
-   pacman -Qqe > pacman-packages-list.txt
-   #+END_SRC
+#+BEGIN_SRC bash
+pacman -Qqe > pacman-packages-list.txt
+#+END_SRC
 2. All packages
    Link to file: [[file:pacman-packages-list-full.txt][Pacman-Full-Packages-List]]
    Created with command:
-   #+BEGIN_SRC bash
-   pacman -Qq > pacman-packages-list-full.txt
-   #+END_SRC
+#+BEGIN_SRC bash
+pacman -Qq > pacman-packages-list-full.txt
+#+END_SRC
 3. Pacman option to remember for list generation:
    |--------+-----------------------------------------|
    | Option | Action                                  |
@@ -127,9 +127,9 @@ Pacman: Package installer for Arch Linux
    | -m     | List all foreign packages               |
    |--------+-----------------------------------------|
 4. Examples
-   #+BEGIN_SRC bash
-    pacman -Qqen
-   #+END_SRC
+#+BEGIN_SRC bash
+pacman -Qqen
+#+END_SRC
 5. Link for reference: [[https://wiki.archlinux.org/title/pacman/Tips_and_tricks#List_of_installed_packages][Pacman/Tips and tricks - ArchWiki]]
 * Pip global packages
 Pip: Package install for python
