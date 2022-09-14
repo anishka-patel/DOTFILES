@@ -91,7 +91,7 @@
 (use-package! command-log-mode
   :ensure t
   :config (global-command-log-mode))
-(setq evil-ex-search-case nil)
+; (setq evil-ex-search-case nil) ;; Ignore case during evil search
 (use-package! org-auto-tangle
   :defer t
   :hook (org-mode . org-auto-tangle-mode)
