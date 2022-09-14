@@ -14,7 +14,6 @@ export PATH="$PATH:$HOME/.cargo/bin:$HOME/.GodotMono:$HOME/.emacs.d/bin:$HOME/.l
 export EDITOR=nvim
 export VISUAR=nvim
 
-
-alias vi=nvim
+alias vi=vim
 
 neofetch

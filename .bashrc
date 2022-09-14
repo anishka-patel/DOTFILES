@@ -7,9 +7,9 @@ export EDITOR=nvim
 export VISUAL=nvim
 export GOPATH="$HOME/go/bin/"
 
-
-alias vi=nvim
+alias vi=vim
 alias dmacs="emacsclient -c -a emacs &"
+alias code=vscodium
 
 
 [[ $- != *i* ]] && return
