@@ -18,7 +18,7 @@ Activate Next Tab=Ctrl+PgDown; Ctrl+]
 Activate Previous Tab=Ctrl+PgUp; Ctrl+[
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
-Back=Alt+Left; Back
+Back=Back; Alt+Left
 BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
@@ -26,9 +26,9 @@ Clear=
 Close=Ctrl+Esc; Ctrl+W
 ConfigureNotifications=
 ConfigureToolbars=
-Copy=Ctrl+Ins; Ctrl+C
+Copy=Ctrl+C; Ctrl+Ins
 CreateFolder=F10
-Cut=Shift+Del; Ctrl+X
+Cut=Ctrl+X; Shift+Del
 DeleteFile=Shift+Del
 DeleteWordBack=Ctrl+Backspace
 DeleteWordForward=Ctrl+Del
@@ -52,7 +52,7 @@ Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=F1
-Home=Home Page; Alt+Home
+Home=Alt+Home; Home Page
 KeyBindings=Ctrl+Alt+,
 Mail=
 MoveToTrash=Del
@@ -61,7 +61,7 @@ Next=PgDown
 NextCompletion=Ctrl+Down
 Open=Ctrl+O
 OpenRecent=
-Paste=Ctrl+V; Shift+Ins
+Paste=Shift+Ins; Ctrl+V
 Paste Selection=Ctrl+Shift+Ins
 Preferences=Ctrl+Shift+,
 PrevCompletion=Ctrl+Up
@@ -81,7 +81,7 @@ Save=Ctrl+S
 SaveAs=Ctrl+Shift+S
 SaveOptions=
 SelectAll=Ctrl+A
-ShowHideHiddenFiles=Ctrl+H; Alt+.
+ShowHideHiddenFiles=Alt+.; Ctrl+H
 ShowMenubar=Ctrl+M
 ShowStatusbar=
 ShowToolbar=
@@ -97,13 +97,18 @@ Zoom=
 ZoomIn=Ctrl++; Ctrl+=
 ZoomOut=Ctrl+-
 
+[emacsclient.desktop][Global Shortcuts]
+_launch=
+new-instance=
+new-window=Meta+T
+
 [firefox.desktop][Global Shortcuts]
-_launch=Ctrl+Alt+Shift+I
+_launch=Meta+Shift+I
 new-private-window=
 new-window=
 
 [google-chrome.desktop][Global Shortcuts]
-_launch=Ctrl+Alt+I
+_launch=Meta+I
 new-private-window=
 new-window=
 
@@ -117,7 +122,7 @@ Toggle Touchpad=Touchpad Toggle
 
 [kded5][Global Shortcuts]
 Show System Activity=Ctrl+Esc
-display=Meta+P; Display
+display=Display; Meta+P
 
 [khotkeys][Global Shortcuts]
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=
@@ -132,7 +137,7 @@ mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Screensaver; Ctrl+Alt+L
+Lock Session=Ctrl+Alt+L; Screensaver
 Log Out=Ctrl+Alt+Del
 Log Out Without Confirmation=
 Reboot Without Confirmation=
@@ -140,8 +145,8 @@ Reboot Without Confirmation=
 [kwin][Global Shortcuts]
 Activate Window Demanding Attention=Ctrl+Alt+A
 Decrease Opacity=
-Expose=Ctrl+F9; Ctrl+Alt+D
-ExposeAll=Ctrl+F10; Ctrl+Alt+Shift+D; Launch (C)
+Expose=Ctrl+Alt+D; Ctrl+F9
+ExposeAll=Ctrl+Alt+Shift+D; Launch (C); Ctrl+F10
 ExposeClass=Ctrl+F7
 Increase Opacity=
 Invert Screen Colors=
@@ -295,7 +300,7 @@ previousmedia=Media Previous
 stopmedia=Media Stop
 
 [neovide.desktop][Global Shortcuts]
-_launch=Ctrl+Alt+E
+_launch=Meta+Shift+T
 
 [org.kde.dolphin.desktop][Global Shortcuts]
 _launch=Meta+E
@@ -305,12 +310,12 @@ _launch=Ctrl+Alt+Shift+E
 
 [org.kde.konsole.desktop][Global Shortcuts]
 NewTab=
-NewWindow=
-_launch=Ctrl+Alt+T
+NewWindow=Meta+Return
+_launch=
 
 [org.kde.krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Alt+Space; Search; Alt+F2
+_launch=Meta+Space; Search; Alt+F2
 
 [org.kde.plasma.emojier.desktop][Global Shortcuts]
 _launch=Meta+.
@@ -362,7 +367,7 @@ manage activities=Meta+Q
 next activity=Meta+Tab
 previous activity=Meta+Shift+Tab
 repeat_action=Ctrl+Alt+R
-show dashboard=Ctrl+F12
+show dashboard=Meta+D; Ctrl+F12
 show-barcode=
 show-on-mouse-pos=Meta+V
 stop current activity=Meta+S
@@ -379,4 +384,4 @@ powerdevilprofilesconfig=
 screenlocker=
 
 [yakuake][Global Shortcuts]
-toggle-window-state=Ctrl+Alt+Shift+T
+toggle-window-state=Meta+Shift+Return
