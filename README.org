@@ -103,16 +103,15 @@ nvim +PackerSync
 - Personal modifications outside ~user/init.lua~
   - Show menu name in neovim completions
      ~ ~/.config/nvim/lua/configs/cmp.lua~
-#+begin_src lua
--- format = function(_, vim_item) -- removed
-format = function(entry, vim_item) -- modified
-  vim_item.kind = string.format("%s", kind_icons[vim_item.kind]) -- nop
-  vim_item.menu = ({      -- added
-      luasnip = "[SNIP]", -- added
-      nvim_lsp = "[LSP]", -- added
-      buffer = "[BUFF]",  -- added
-      path = "[PATH]",    -- added
-  })[entry.source.name]   -- added
+#+begin_src lua :exports code
+format = function(entry, vim_item)
+  vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+  vim_item.menu = ({
+      luasnip = "[SNIP]",
+      nvim_lsp = "[LSP]",
+      buffer = "[BUFF]",
+      path = "[PATH]",
+  })[entry.source.name]
   return vim_item -- nop
 #+end_src
 
