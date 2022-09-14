@@ -87,6 +87,7 @@ nvim +PackerSync
 ** Notes
 - AstroNvim(nvim) does remove previous nvim configurations.
 - nvim binary located at ~"/usr/bin/nvim"~
+- Specification for ~vscodium~ plugin ~vscode-neovim~ are added to ~"~/.config/nvim/init.lua"~
 - Plugins and configurations are added to ~plugin~ section in ~"~/.config/nvim/lua/user/init.lua"~
 - Imp commands
   - ~:LspInstall~
