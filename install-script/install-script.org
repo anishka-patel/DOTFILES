@@ -96,6 +96,7 @@ sudo pacman -S firewall --noconfirm
 #+begin_src bash
 sudo pacman -S neovim emacs --noconfirm
 # sudo pacman -S vi vim --noconfirm
+# sudo yay -S vscodium-bin
 #+end_src
 * Web Browsers
 #+begin_src bash

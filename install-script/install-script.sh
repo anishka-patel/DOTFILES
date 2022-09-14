@@ -47,6 +47,7 @@ sudo pacman -S firewall --noconfirm
 
 sudo pacman -S neovim emacs --noconfirm
 # sudo pacman -S vi vim --noconfirm
+# sudo yay -S vscodium-bin
 
 sudo pacman -S firefox --noconfirm
 sudo flatpak install com.google.Chrome -y
