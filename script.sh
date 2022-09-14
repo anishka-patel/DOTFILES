@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author: ANISHKA PATEL
-# Created: 21-08-2022 
+# Created: 21-08-2022
 # Last modified: 22-08-2022
 # Description: Script to run in Plasma Command Output Widget
 # Script is customised to cater to arch plasma setups
@@ -8,8 +8,8 @@
 # Dependencies : Resolution
 # - nerd-fonts : yay -S nerd-fonts-complete
 # - mpstat     : pacman -S sysstat
-# - iostat     : pacman -S iostat 
-# - ifstat     : pacman -S sysstat 
+# - iostat     : pacman -S iostat
+# - ifstat     : pacman -S sysstat
 
 DATE=$(date +" %d.%m.%y  %a   %H:%M (%z)")
 echo "$DATE"
@@ -17,13 +17,13 @@ echo ""
 echo -n "$USER @ $HOSTNAME"
 echo "  <$(uname -r)>"
 echo ""
-MEMTOTINFO=$(cat /proc/meminfo | 
+MEMTOTINFO=$(cat /proc/meminfo |
   numfmt --field 2 --from-unit=Ki --to-unit=Gi |
   sed 's/ kB//g'| grep -i memtotal | awk '{print $2}')
 MEMAVLINFO=$(cat /proc/meminfo |
   numfmt --field 2 --from-unit=Ki --to-unit=Gi |
   sed 's/ kB//g'| grep -i memavailable | awk '{print $2}')
-echo "MEM:     ${MEMTOTINFO}G     $((MEMTOTINFO - MEMAVLINFO))G   累 ${MEMAVLINFO}G" 
+echo "MEM:     ${MEMTOTINFO}G     $((MEMTOTINFO - MEMAVLINFO))G   累 ${MEMAVLINFO}G"
 echo "---------------------------------------"
 CPUUSRINFO=$(mpstat 1 1 | grep -i average | awk '{print $3}')
 CPUSYSINFO=$(mpstat 1 1 | grep -i average | awk '{print $5}')
