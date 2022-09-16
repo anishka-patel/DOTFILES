@@ -39,7 +39,7 @@ tree . -L 1 -a
 # Title: Dotconfig Script
 # Description: A script file to move relevant files to relevent directories and backup where it is required
 # Created: [2022-09-16 Fri]
-# usage: ./dotconfig.sh
+# Usage: ./dotconfig.sh
 #+end_src
 * Bash Config
 Click below to take a look:
@@ -51,7 +51,7 @@ ln ~/.bashrc
 #+END_SRC
 **  Setup files
 #+begin_src bash :tangle dotconfig.sh
-if [[ -f ~/.bashrc]]; then
+if [[ -f ~/.bashrc ]]; then
     echo -n "Backing up old .bashrc file..."
     mv ~/.bashrc ~/.bashrc.bak
     echo "Completed"
@@ -60,7 +60,6 @@ echo -n "Setting up bash files..."
 mv .bashrc ~/.bashrc
 echo "Completed"
 #+end_src
-
 * Zsh Config
 Click below to take a look:
 [[file:.zshrc][.zshrc file]]
@@ -71,12 +70,12 @@ ln ~/.zshrc
 #+END_SRC
 ** Setup files
 #+begin_src bash :tangle dotconfig.sh
-if [[ -f ~/.zshrc]]; then
+if [[ -f ~/.zshrc ]]; then
     echo -n "Backing up old .zshrc file..."
     mv ~/.zshrc ~/.zshrc.bak
     echo "Completed"
 fi
-echo =n "Setting up zsh files..."
+echo -n "Setting up zsh files..."
 mv .zshrc ~/.zshrc
 echo "Completed"
 #+end_src
@@ -91,13 +90,13 @@ ln ~/.vimrc
 ** Requirements
 - Vim
 #+begin_src bash
-sudo pacman -S vim
+sudo pacman -S vim --noconfirm
 #+end_src
 ** Notes
 - Run ~:PlugInstall~ inside vim to install plugins
 ** Setup files
 #+begin_src bash :tangle dotconfig.sh
-if [[ -f ~/.vimrc]]; then
+if [[ -f ~/.vimrc ]]; then
     echo -n "Backing up old vim files..."
     mv ~/.vimrc ~/.vimrc.bak
     echo "Completed"
@@ -154,11 +153,11 @@ format = function(entry, vim_item)
       buffer = "[BUFF]",
       path = "[PATH]",
   })[entry.source.name]
-  return vim_item -- nop
+  return vim_item
 #+end_src
 ** Setup files
 #+begin_src bash :tangle dotconfig.sh
-if [[ -f ~/.config/nvim/init.lua]]; then
+if [[ -f ~/.config/nvim/init.lua ]]; then
     echo -n "Backing up old nvim/init.lua"
     mv ~/.config/nvim/init.lua ~/.config/nvim/init.lua.bak
     echo "Completed"
@@ -166,7 +165,7 @@ fi
 echo -n "Setting up nvim/init.lua"
 mv .config/nvim/init.lua ~/.config/nvim/init.lua
 echo "Completed"
-if [[ -f ~/.config/nvim/lua/user/init.lua]]; then
+if [[ -f ~/.config/nvim/lua/user/init.lua ]]; then
     echo -n "Backing up old nvim/lua/user/init.lua"
     mv ~/.config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/init.lua.bak
     echo "Completed"
@@ -175,7 +174,6 @@ echo -n "Setting up nvim/lua/user/init.lua"
 mv .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/init.lua
 echo "Completed"
 #+end_src
-
 * DoomEmacs config
 ** Requirements
 #+begin_src bash
@@ -199,7 +197,7 @@ Run ~doom sync~ for install config modules
 #+end_src
 ** Setup config
 #+begin_src bash :tangle dotconfig.sh
-if[[ -d ~/.doom.d]]; then
+if [[ -d ~/.doom.d/ ]]; then
     echo -n "Backing up old doom emacs files..."
     mv ~/.doom.d ~/.doom.d.bak
     echo "Completed"
@@ -208,7 +206,6 @@ echo -n "Setting up doom files"
 mv .doom.d ~/.doom.d
 echo "Completed"
 #+end_src
-
 * VSCodium config
 ** Requirements
 ** Install
@@ -230,7 +227,7 @@ cat vscodium-packages-list.txt | xargs vscodium --install-extensions
 echo "Installing vscodium extensions..."
 cat packages-list/vscodium-packages-list.txt | xargs -L1 codium --install-extension
 echo "Installing vscodium extensions... Completed"
-if [[-d ~/.config/VSCodium/user]]; then
+if [[ -d ~/.config/VSCodium/user ]]; then
     echo -n "Backing old codium files"
     mv ~/.config/VSCodium/user ~/.config/VSCodium/user.bak
     echo "Completed"
@@ -249,6 +246,10 @@ sudo pacman -S community/gestures
 ** Configuration
 Files stored as ~"~/.config/libinput-gestures.conf"~
 Link to file: [[file:.config/libinput-gestures.conf][Gestures config file.]]
+** Setup gestures
+#+begin_src bash
+mv .config/libinput-gestures.conf  ~/.config/libinput-gestures.conf
+#+end_src
 * Packages List ~packages-list/~
 ** Directory structure
 #+begin_src bash :shebang /usr/bin/bash :results code :exports both
@@ -305,8 +306,17 @@ pacman -Qqen
 #+END_SRC
 5. Link for reference: [[https://wiki.archlinux.org/title/pacman/Tips_and_tricks#List_of_installed_packages][Pacman/Tips and tricks - ArchWiki]]
 ** Yay packages
+#+begin_src bash
+yay -Qm > yay-packages-list.txt
+#+end_src
 ** Brew packages
+#+begin_src bash
+brew list > brew-packages-list.txt
+#+end_src
 ** Flatpak packages
+#+begin_src bash
+flatpak list > flatpak-packages-list.txt
+#+end_src
 ** Pip global packages
 Pip: Package install for python
 Link to file: [[file:pip-packages-list.txt][pip-packages-list]]
@@ -320,7 +330,13 @@ Link to file: [[file:npm-packages-list.txt][npm-packages-list]]
  npm -g list | awk '{print $2}' | awk -F '@' '{print $1}' > npm-packages-list.txt
  #+END_SRC
 ** Go global packages
+#+begin_src bash
+go list ... > go-packages-list.txt
+#+end_src
 ** Rust global packages
+#+begin_src bash
+cargo install --list > rust-packages-list.txt
+#+end_src
 * Manuals
 #+begin_src bash :shebang /usr/bin/bash :results code :exports both
 tree ./manuals
