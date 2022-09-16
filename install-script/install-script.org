@@ -11,8 +11,6 @@
 #! /usr/bin/bash
 
 # sudo apt update && sudo apt upgrade -y
-# sudo dnf update
-# sudo apk update
 sudo pacman -Syu --noconfirm
 #+end_src
 * Package Managers
@@ -21,7 +19,7 @@ sudo pacman -S flatpak appimagelauncher yay --noconfirm
 #+end_src
 ** Homebrew
 #+begin_src bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 #+end_src
 * System Utilities
 #+begin_src bash
@@ -85,7 +83,7 @@ sudo yay -S nerd-fonts-complete
 * Shells
 #+begin_src bash
 # sudo pacman -S sh bash --noconfirm
-sudo pacman -S zsh fish --noconfirm
+sudo pacman -S zsh --noconfirm
 #+end_src
 * Firewall
 #+begin_src bash
@@ -94,21 +92,20 @@ sudo pacman -S firewall --noconfirm
 #+end_src
 * Text Editors
 #+begin_src bash
-sudo pacman -S neovim emacs --noconfirm
-# sudo pacman -S vi vim --noconfirm
+sudo pacman -S vim neovim emacs --noconfirm
 # sudo yay -S vscodium-bin
 #+end_src
 * Web Browsers
 #+begin_src bash
 sudo pacman -S firefox --noconfirm
-sudo flatpak install com.google.Chrome -y
+sudo yay -S google.chrome --noconfirm
+# sudo flatpak install com.google.Chrome -y
 # sudo pacman -S brave chromium --noconfirm
-# sudo yay -S google.chrome --noconfirm
 #+end_src
 * Languages, Runtime & Development Environment
 ** Most Important
 #+begin_src bash
-sudo pacman -S python nodejs rust go --noconfirm
+# sudo pacman -S python nodejs rust go --noconfirm
 #+end_src
 ** Python
 #+begin_src bash
@@ -156,7 +153,7 @@ sudo pacman -S vlc elias kdenlive --noconfirm
 * Virtual Machines & Containers
 ** Containers
 #+begin_src bash
-sudo pacman -S docker virtualbox vagrant --noconfirm
+sudo pacman -S docker --noconfirm
 # sudo pacman -S lxc lxd --noconfirm
 #+end_src
 ** Virtual Machines
@@ -168,7 +165,6 @@ sudo pacman -S virtualbox vagarant --noconfirm
 #+begin_src bash
 sudo pacman -S okular onlyoffice-desktopeditors --noconfirm
 # sudo pacman -S dia --noconfirm
-# sudo pacman -S skanlite --noconfirm
 #+end_src
 * Other Utilities
 #+begin_src bash

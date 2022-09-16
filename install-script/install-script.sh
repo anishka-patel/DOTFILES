@@ -1,13 +1,11 @@
 #! /usr/bin/bash
 
 # sudo apt update && sudo apt upgrade -y
-# sudo dnf update
-# sudo apk update
 sudo pacman -Syu --noconfirm
 
 sudo pacman -S flatpak appimagelauncher yay --noconfirm
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
 sudo pacman -S htop glances --noconfirm
 # sudo pacman -S sysstat ifstat --noconfirm
@@ -40,21 +38,20 @@ sudo yay -S nerd-fonts-complete
 # sudo pacman -S ttf-cascadia-code ttf-dejavu ttf-fira-code ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji terminus-font --noconfirm
 
 # sudo pacman -S sh bash --noconfirm
-sudo pacman -S zsh fish --noconfirm
+sudo pacman -S zsh --noconfirm
 
 sudo pacman -S firewall --noconfirm
 # sudo pacman -S ufw gufw --noconfirm
 
-sudo pacman -S neovim emacs --noconfirm
-# sudo pacman -S vi vim --noconfirm
+sudo pacman -S vim neovim emacs --noconfirm
 # sudo yay -S vscodium-bin
 
 sudo pacman -S firefox --noconfirm
-sudo flatpak install com.google.Chrome -y
+sudo yay -S google.chrome --noconfirm
+# sudo flatpak install com.google.Chrome -y
 # sudo pacman -S brave chromium --noconfirm
-# sudo yay -S google.chrome --noconfirm
 
-sudo pacman -S python nodejs rust go --noconfirm
+# sudo pacman -S python nodejs rust go --noconfirm
 
 sudo pacman -S python ipython --noconfirm
 
@@ -78,7 +75,7 @@ sudo pacman -S gimp krita inkscape --noconfirm
 sudo pacman -S vlc elias kdenlive --noconfirm
 # sudo pacman -S audacity lmms handbrake --noconfirm
 
-sudo pacman -S docker virtualbox vagrant --noconfirm
+sudo pacman -S docker --noconfirm
 # sudo pacman -S lxc lxd --noconfirm
 
 sudo pacman -S virtualbox vagarant --noconfirm
@@ -86,6 +83,5 @@ sudo pacman -S virtualbox vagarant --noconfirm
 
 sudo pacman -S okular onlyoffice-desktopeditors --noconfirm
 # sudo pacman -S dia --noconfirm
-# sudo pacman -S skanlite --noconfirm
 
 sudo pacman -S spectacle uget gestures ventoy --noconfirm
