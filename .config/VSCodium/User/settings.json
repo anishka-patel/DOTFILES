@@ -52,7 +52,7 @@
     {
       "keys": "o",
       "position": 10,
-      "name": "Open...",
+      "name": "+Open",
       "type": "bindings",
       "bindings": [
         {
@@ -60,7 +60,7 @@
           "name": "Terminal",
           "type": "command",
           "command": "workbench.action.togglePanel"
-        }
+        },
       ]
     }
   ]

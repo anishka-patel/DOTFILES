@@ -7,6 +7,8 @@ if vim.g.vscode then
   vim.g.maplocalleader = " "
   keymap("n", "<leader>", ":call VSCodeNotify('whichkey.show')<CR>", opts)
   keymap("x", "<leader>", ":call VSCodeNotify('whichkey.show')<CR>", opts)
+
+  vim.opt.clipboard = "unnamedplus"
 else
   -- ordinary Neovim
   local impatient_ok, impatient = pcall(require, "impatient")
