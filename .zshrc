@@ -15,6 +15,7 @@ export EDITOR=nvim
 export VISUAR=nvim
 
 alias vi=vim
+alias dmacs=emacsclient -c -a "emacs"
 
 autoload -U edit-command-line
 zle -N edit-command-line
