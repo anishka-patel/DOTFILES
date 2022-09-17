@@ -125,7 +125,6 @@ desktop-file-utils
 device-mapper
 dhclient
 dhcpcd
-dia
 dialog
 diffutils
 ding-libs
@@ -182,7 +181,6 @@ filesystem
 findutils
 firefox
 firewalld
-fish
 flac
 flashrom
 flatpak
@@ -610,7 +608,6 @@ kwallet-pam
 kwalletmanager
 kwayland
 kwayland-integration
-kwayland-server
 kwidgetsaddons
 kwin
 kwindowsystem
@@ -1585,6 +1582,7 @@ tmux
 tpm2-tss
 tracker3
 transcode
+trash-cli
 tree
 tree-sitter
 tslib

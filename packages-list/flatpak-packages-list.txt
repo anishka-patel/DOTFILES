@@ -6,3 +6,4 @@ Mesa
 Mesa
 openh264
 Freedesktop
+Zoom

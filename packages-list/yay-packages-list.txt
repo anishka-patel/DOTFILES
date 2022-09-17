@@ -1,7 +1,9 @@
+dia
 gnome-icon-theme
 gnome-icon-theme-symbolic
 google-chrome
 js-beautify
+kwayland-server
 nerd-fonts-complete
 playonlinux
 rtw89-dkms-git
