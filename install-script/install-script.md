@@ -1,76 +1,76 @@
 
 # Table of Contents
 
-1.  [Updating cache & packages](#org68a9e7d)
-2.  [Package Managers](#orgff28f35)
-    1.  [Homebrew](#orgd878cf7)
-3.  [System Utilities](#org8b71b3e)
-    1.  [System info utilities](#orgb01bdad)
-    2.  [Finding utilities](#org5cd3bf9)
-    3.  [Disk Management Utilities](#org12fd7f7)
-4.  [Source Code Management](#org1749b4b)
-5.  [Desktop Manager](#org01d790a)
-6.  [Desktop Environment](#org7917c48)
-    1.  [KDE Plasma Desktop](#org599dd4f)
-    2.  [Other Plasma Utilities](#org958a32c)
-    3.  [KDE File manager](#orge3d6a15)
-    4.  [KDE Battery manager](#orgd38bc0f)
-    5.  [ARCH GUI Package manager](#org980eaae)
-    6.  [KDE Virtual consoles](#org1601ba3)
-    7.  [KDE Package Explorer](#orga48ec43)
-7.  [Fonts](#org25dc8dd)
-8.  [Shells](#org35726a1)
-9.  [Firewall](#orgf648bed)
-10. [Text Editors](#org40917f1)
-11. [Web Browsers](#org11b74e6)
-12. [Languages, Runtime & Development Environment](#org7e5179a)
-    1.  [Most Important](#orgda94744)
-    2.  [Python](#org072a325)
-    3.  [Node](#orgfd9752d)
-    4.  [Rust](#org9c6fd5b)
-    5.  [Lua](#org812ead0)
-    6.  [Dotnet](#org3109f63)
-    7.  [Mono](#orgeae31d4)
-    8.  [Go](#orgc675e11)
-13. [Game & 3d Modelling](#org764b671)
-14. [Audio, Video & Multimedia](#org222055f)
-    1.  [Photo Viewer & editor](#org29f49fe)
-    2.  [Multimedia viewer & editor](#org7b5428c)
-15. [Virtual Machines & Containers](#orgaa138b5)
-    1.  [Containers](#org489131c)
-    2.  [Virtual Machines](#org65bd2ae)
-16. [Office Utilities](#orgceaedfc)
-17. [Other Utilities](#org88ee1cb)
+1.  [Updating cache & packages](#orgde426dd)
+2.  [Package Managers](#org7ddeec7)
+    1.  [Homebrew](#org4d868f7)
+3.  [System Utilities](#org4add6cf)
+    1.  [System info utilities](#orga9e8b77)
+    2.  [Finding utilities](#org558b71a)
+    3.  [Disk Management Utilities](#org4eaee2a)
+4.  [Source Code Management](#orge1f82c7)
+5.  [Desktop Manager](#org842a9b8)
+6.  [Desktop Environment](#org89330b7)
+    1.  [KDE Plasma Desktop](#orgca1d3c7)
+    2.  [Other Plasma Utilities](#org8ee68aa)
+    3.  [KDE File manager](#orgb1f6b16)
+    4.  [ARCH GUI Package manager](#org77dde50)
+    5.  [KDE Package Explorer](#orga73f72c)
+    6.  [KDE Virtual consoles](#orgcc242f1)
+    7.  [KDE Battery manager](#org3ff6fcc)
+    8.  [KDE System monitor](#orge98ff83)
+7.  [Fonts](#orgf3a97d3)
+8.  [Shells](#orga620cad)
+9.  [Firewall](#orgef0a03b)
+10. [Text Editors](#org1c525eb)
+11. [Web Browsers](#orga7d757e)
+12. [Languages, Runtime & Development Environment](#org7479056)
+    1.  [Most Important](#org1d6aa41)
+    2.  [Python](#org005a4f0)
+    3.  [Node](#org07a1793)
+    4.  [Rust](#orgfcfb2db)
+    5.  [Lua](#orgdbf706d)
+    6.  [Dotnet](#org40d7d71)
+    7.  [Mono](#org5114f78)
+    8.  [Go](#orge7183e4)
+13. [Game & 3d Modelling](#org263b510)
+14. [Audio, Video & Multimedia](#orgcf97315)
+    1.  [Photo Viewer & editor](#org3d0d48e)
+    2.  [Audio viewer & editor](#org6f72bc7)
+    3.  [Video viewer & editor](#orgbec542d)
+15. [Virtual Machines & Containers](#org8a696cf)
+    1.  [Containers](#org4997854)
+    2.  [Virtual Machines](#orgf2292c3)
+16. [Office Utilities](#orgf0e59d5)
+17. [Other Utilities](#orgb561082)
 
 
 
-<a id="org68a9e7d"></a>
+<a id="orgde426dd"></a>
 
 # Updating cache & packages
 
     #! /usr/bin/bash
     
     # sudo apt update && sudo apt upgrade -y
-    # sudo dnf update
-    # sudo apk update
     sudo pacman -Syu --noconfirm
 
 
-<a id="orgff28f35"></a>
+<a id="org7ddeec7"></a>
 
 # Package Managers
 
     sudo pacman -S flatpak appimagelauncher yay --noconfirm
 
 
-<a id="orgd878cf7"></a>
+<a id="org4d868f7"></a>
 
 ## Homebrew
 
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
 
-<a id="org8b71b3e"></a>
+<a id="org4add6cf"></a>
 
 # System Utilities
 
@@ -78,96 +78,103 @@
     # sudo pacman -S sysstat ifstat --noconfirm
 
 
-<a id="orgb01bdad"></a>
+<a id="orga9e8b77"></a>
 
 ## System info utilities
 
     sudo pacman -S neofetch --noconfirm
 
 
-<a id="org5cd3bf9"></a>
+<a id="org558b71a"></a>
 
 ## Finding utilities
 
     sudo pacman -S fd mlocate --noconfirm
 
 
-<a id="org12fd7f7"></a>
+<a id="org4eaee2a"></a>
 
 ## Disk Management Utilities
 
-    sudo pacman -S ncdu df du --noconfirm
+    sudo pacman -S df du --noconfirm
 
 
-<a id="org1749b4b"></a>
+<a id="orge1f82c7"></a>
 
 # Source Code Management
 
     sudo -S git github-cli --noconfirm
 
 
-<a id="org01d790a"></a>
+<a id="org842a9b8"></a>
 
 # Desktop Manager
 
     sudo pacman -S sddm --noconfirm
 
 
-<a id="org7917c48"></a>
+<a id="org89330b7"></a>
 
 # Desktop Environment
 
 
-<a id="org599dd4f"></a>
+<a id="orgca1d3c7"></a>
 
 ## KDE Plasma Desktop
 
     sudo pacman -S plasma-desktop --noconfirm
 
 
-<a id="org958a32c"></a>
+<a id="org8ee68aa"></a>
 
 ## Other Plasma Utilities
 
     sudo pacman -S plasma-nm plasma-pa kdeplasma-addons kde-gtk-config --noconfirm
 
 
-<a id="orge3d6a15"></a>
+<a id="orgb1f6b16"></a>
 
 ## KDE File manager
 
     sudo pacman -S doplhin --noconfirm
 
 
-<a id="orgd38bc0f"></a>
-
-## KDE Battery manager
-
-    sudo pacman -S powerdevil --noconfirm
-
-
-<a id="org980eaae"></a>
+<a id="org77dde50"></a>
 
 ## ARCH GUI Package manager
 
     sudo pacman -S pamac --noconfirm
 
 
-<a id="org1601ba3"></a>
-
-## KDE Virtual consoles
-
-    sudo pacman -S konsole yakuake --noconfirm
-
-
-<a id="orga48ec43"></a>
+<a id="orga73f72c"></a>
 
 ## KDE Package Explorer
 
     sudo pacman -S discover --noconfirm
 
 
-<a id="org25dc8dd"></a>
+<a id="orgcc242f1"></a>
+
+## KDE Virtual consoles
+
+    sudo pacman -S konsole yakuake --noconfirm
+
+
+<a id="org3ff6fcc"></a>
+
+## KDE Battery manager
+
+    sudo pacman -S powerdevil --noconfirm
+
+
+<a id="orge98ff83"></a>
+
+## KDE System monitor
+
+    sudo pacman -S ksysguard --noconfirm
+
+
+<a id="orgf3a97d3"></a>
 
 # Fonts
 
@@ -175,15 +182,15 @@
     # sudo pacman -S ttf-cascadia-code ttf-dejavu ttf-fira-code ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji terminus-font --noconfirm
 
 
-<a id="org35726a1"></a>
+<a id="orga620cad"></a>
 
 # Shells
 
     # sudo pacman -S sh bash --noconfirm
-    sudo pacman -S zsh fish --noconfirm
+    sudo pacman -S zsh --noconfirm
 
 
-<a id="orgf648bed"></a>
+<a id="orgef0a03b"></a>
 
 # Firewall
 
@@ -191,127 +198,134 @@
     # sudo pacman -S ufw gufw --noconfirm
 
 
-<a id="org40917f1"></a>
+<a id="org1c525eb"></a>
 
 # Text Editors
 
-    sudo pacman -S neovim emacs --noconfirm
-    # sudo pacman -S vi vim --noconfirm
+    sudo pacman -S vim neovim emacs --noconfirm
+    # sudo yay -S vscodium-bin
 
 
-<a id="org11b74e6"></a>
+<a id="orga7d757e"></a>
 
 # Web Browsers
 
     sudo pacman -S firefox --noconfirm
-    sudo flatpak install com.google.Chrome -y
+    sudo yay -S google.chrome
+    # sudo flatpak install com.google.Chrome -y
     # sudo pacman -S brave chromium --noconfirm
-    # sudo yay -S google.chrome --noconfirm
 
 
-<a id="org7e5179a"></a>
+<a id="org7479056"></a>
 
 # Languages, Runtime & Development Environment
 
 
-<a id="orgda94744"></a>
+<a id="org1d6aa41"></a>
 
 ## Most Important
 
-    sudo pacman -S python nodejs rust go --noconfirm
+    # sudo pacman -S python nodejs rust go --noconfirm
 
 
-<a id="org072a325"></a>
+<a id="org005a4f0"></a>
 
 ## Python
 
     sudo pacman -S python ipython --noconfirm
 
 
-<a id="orgfd9752d"></a>
+<a id="org07a1793"></a>
 
 ## Node
 
     sudo pacman -S nodejs --noconfirm
 
 
-<a id="org9c6fd5b"></a>
+<a id="orgfcfb2db"></a>
 
 ## Rust
 
     sudo pacman -S rustup rust-analyzer --noconfirm
 
 
-<a id="org812ead0"></a>
+<a id="orgdbf706d"></a>
 
 ## Lua
 
     sudo pacman -S lua luarocks luajit --noconfirm
 
 
-<a id="org3109f63"></a>
+<a id="org40d7d71"></a>
 
 ## Dotnet
 
     sudo pacman -S dotnet-host dotnet-sdk dotnet-runtime dotnet-targeting-pack --noconfirm
 
 
-<a id="orgeae31d4"></a>
+<a id="org5114f78"></a>
 
 ## Mono
 
     sudo pacman -S mono mono-addins --noconfirm
 
 
-<a id="orgc675e11"></a>
+<a id="orge7183e4"></a>
 
 ## Go
 
     sudo pacman -S go --noconfirm
 
 
-<a id="org764b671"></a>
+<a id="org263b510"></a>
 
 # Game & 3d Modelling
 
     sudo pacman -S godot blender freecad --noconfirm
 
 
-<a id="org222055f"></a>
+<a id="orgcf97315"></a>
 
 # Audio, Video & Multimedia
 
 
-<a id="org29f49fe"></a>
+<a id="org3d0d48e"></a>
 
 ## Photo Viewer & editor
 
-    sudo pacman -S gimp krita inkscape --noconfirm
-    # sudo pacman -S gwenview --noconfirm
+    sudo pacman -S gwenview gimp krita inkscape --noconfirm
 
 
-<a id="org7b5428c"></a>
+<a id="org6f72bc7"></a>
 
-## Multimedia viewer & editor
+## Audio viewer & editor
 
-    sudo pacman -S vlc elias kdenlive --noconfirm
-    # sudo pacman -S audacity lmms handbrake --noconfirm
+    # Video viewing/editing/encoding
+    sudo pacman -S vlc kdenlive handbrake --noconfirm
 
 
-<a id="orgaa138b5"></a>
+<a id="orgbec542d"></a>
+
+## Video viewer & editor
+
+    # Audio viewing/editing/composition
+    sudo pacman -S elias audacity lmms --noconfirm
+
+
+<a id="org8a696cf"></a>
 
 # Virtual Machines & Containers
 
 
-<a id="org489131c"></a>
+<a id="org4997854"></a>
 
 ## Containers
 
-    sudo pacman -S docker virtualbox vagrant --noconfirm
+    sudo pacman -S docker --noconfirm
     # sudo pacman -S lxc lxd --noconfirm
 
 
-<a id="org65bd2ae"></a>
+<a id="orgf2292c3"></a>
 
 ## Virtual Machines
 
@@ -319,18 +333,18 @@
     # sudo pacman -S virt-manager --noconfirm
 
 
-<a id="orgceaedfc"></a>
+<a id="orgf0e59d5"></a>
 
 # Office Utilities
 
     sudo pacman -S okular onlyoffice-desktopeditors --noconfirm
     # sudo pacman -S dia --noconfirm
-    # sudo pacman -S skanlite --noconfirm
+    # sudo pacman -S simple-scan --noconfirm
 
 
-<a id="org88ee1cb"></a>
+<a id="orgb561082"></a>
 
 # Other Utilities
 
-    sudo pacman -S spectacle uget gestures ventoy --noconfirm
+    sudo pacman -S ark spectacle uget gestures ventoy --noconfirm
 

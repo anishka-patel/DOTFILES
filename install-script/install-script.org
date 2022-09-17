@@ -36,7 +36,7 @@ sudo pacman -S fd mlocate --noconfirm
 #+end_src
 ** Disk Management Utilities
 #+begin_src bash
-sudo pacman -S ncdu df du --noconfirm
+sudo pacman -S df du --noconfirm
 #+end_src
 * Source Code Management
 #+begin_src bash
@@ -59,21 +59,25 @@ sudo pacman -S plasma-nm plasma-pa kdeplasma-addons kde-gtk-config --noconfirm
 #+begin_src bash
 sudo pacman -S doplhin --noconfirm
 #+end_src
-** KDE Battery manager
-#+begin_src bash
-sudo pacman -S powerdevil --noconfirm
-#+end_src
 ** ARCH GUI Package manager
 #+begin_src bash
 sudo pacman -S pamac --noconfirm
+#+end_src
+** KDE Package Explorer
+#+begin_src bash
+sudo pacman -S discover --noconfirm
 #+end_src
 ** KDE Virtual consoles
 #+begin_src bash
 sudo pacman -S konsole yakuake --noconfirm
 #+end_src
-** KDE Package Explorer
+** KDE Battery manager
 #+begin_src bash
-sudo pacman -S discover --noconfirm
+sudo pacman -S powerdevil --noconfirm
+#+end_src
+** KDE System monitor
+#+begin_src bash
+sudo pacman -S ksysguard --noconfirm
 #+end_src
 * Fonts
 #+begin_src bash
@@ -98,7 +102,7 @@ sudo pacman -S vim neovim emacs --noconfirm
 * Web Browsers
 #+begin_src bash
 sudo pacman -S firefox --noconfirm
-sudo yay -S google.chrome --noconfirm
+sudo yay -S google.chrome
 # sudo flatpak install com.google.Chrome -y
 # sudo pacman -S brave chromium --noconfirm
 #+end_src
@@ -142,13 +146,17 @@ sudo pacman -S godot blender freecad --noconfirm
 * Audio, Video & Multimedia
 ** Photo Viewer & editor
 #+begin_src bash
-sudo pacman -S gimp krita inkscape --noconfirm
-# sudo pacman -S gwenview --noconfirm
+sudo pacman -S gwenview gimp krita inkscape --noconfirm
 #+end_src
-** Multimedia viewer & editor
+** Audio viewer & editor
 #+begin_src bash
-sudo pacman -S vlc elias kdenlive --noconfirm
-# sudo pacman -S audacity lmms handbrake --noconfirm
+# Video viewing/editing/encoding
+sudo pacman -S vlc kdenlive handbrake --noconfirm
+#+end_src
+** Video viewer & editor
+#+begin_src bash
+# Audio viewing/editing/composition
+sudo pacman -S elias audacity lmms --noconfirm
 #+end_src
 * Virtual Machines & Containers
 ** Containers
@@ -165,10 +173,11 @@ sudo pacman -S virtualbox vagarant --noconfirm
 #+begin_src bash
 sudo pacman -S okular onlyoffice-desktopeditors --noconfirm
 # sudo pacman -S dia --noconfirm
+# sudo pacman -S simple-scan --noconfirm
 #+end_src
 * Other Utilities
 #+begin_src bash
-sudo pacman -S spectacle uget gestures ventoy --noconfirm
+sudo pacman -S ark spectacle uget gestures ventoy --noconfirm
 #+end_src
 
 #  LocalWords:  KDE Homebrew Lua
