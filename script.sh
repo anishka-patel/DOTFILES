@@ -38,7 +38,7 @@ echo ""
 IONAME=$(lsblk | grep -E "disk"| head | awk '{print $1}')
 IOREADINFO=$(iostat | grep "$IONAME" | awk '{print $3}')
 IOWRITINFO=$(iostat | grep "$IONAME" | awk '{print $4}')
-echo "$(printf "IO: %8s  %6d  %6d" "$IONAME" "$IOREADINFO" "$IOWRITINFO")"
+echo "$(printf "IO: %-8s %6d   %6d  " "$IONAME" "$IOREADINFO" "$IOWRITINFO")"
 # PSUSR=$(ps --user "$USER" | wc -l)
 # PSSYS=$(ps --user root | wc -l)
 # PSTOT=$(ps -ef | wc -l)
@@ -46,7 +46,7 @@ echo "$(printf "IO: %8s  %6d  %6d" "$IONAME" "$IOREADINFO" "$IOWRITINFO")"
 # echo "---------------------------------------"
 IFRXINFO=$(ifstat | grep "$IFNAME" | awk '{print $6}')
 IFTXINFO=$(ifstat | grep "$IFNAME" | awk '{print $8}')
-echo "$(printf "IF: %8s  %6d  %6d" "$IFNAME" "$IFRXINFO" "$IFTXINFO")"
+echo "$(printf "IF: %-8s %6d   %6d  " "$IFNAME" "$IFTXINFO" "$IFRXINFO")"
 echo ""
 echo "---------------------------------------"
 PACMANPKGS=$(pacman -Qn | wc -l)
