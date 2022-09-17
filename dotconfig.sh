@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 # Title: Dotconfig Script
-# Description: A script file to move relevant files to relevent directories and backup where it is required
+# Description: A script file to link relevant files to relevent directories and backup where it is required
 # Created: [2022-09-16 Fri]
 # Usage: ./dotconfig.sh
 
@@ -10,7 +10,7 @@ if [[ -f ~/.bashrc ]]; then
     echo "Completed"
 fi
 echo -n "Setting up bash files..."
-mv .bashrc ~/.bashrc
+ln -s .bashrc ~/.bashrc
 echo "Completed"
 
 if [[ -f ~/.zshrc ]]; then
@@ -19,7 +19,7 @@ if [[ -f ~/.zshrc ]]; then
     echo "Completed"
 fi
 echo -n "Setting up zsh files..."
-mv .zshrc ~/.zshrc
+ln -s .zshrc ~/.zshrc
 echo "Completed"
 
 if [[ -f ~/.vimrc ]]; then
@@ -28,7 +28,7 @@ if [[ -f ~/.vimrc ]]; then
     echo "Completed"
 fi
 echo -n "Setting up vim files..."
-mv .vimrc ~/.vimrc
+ln -s .vimrc ~/.vimrc
 echo "Completed"
 
 if [[ -f ~/.config/nvim/init.lua ]]; then
@@ -37,7 +37,7 @@ if [[ -f ~/.config/nvim/init.lua ]]; then
     echo "Completed"
 fi
 echo -n "Setting up nvim/init.lua"
-mv .config/nvim/init.lua ~/.config/nvim/init.lua
+ln -s .config/nvim/init.lua ~/.config/nvim/init.lua
 echo "Completed"
 if [[ -f ~/.config/nvim/lua/user/init.lua ]]; then
     echo -n "Backing up old nvim/lua/user/init.lua"
@@ -45,7 +45,7 @@ if [[ -f ~/.config/nvim/lua/user/init.lua ]]; then
     echo "Completed"
 fi
 echo -n "Setting up nvim/lua/user/init.lua"
-mv .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/init.lua
+ln -s .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/init.lua
 echo "Completed"
 
 if [[ -d ~/.doom.d/ ]]; then
@@ -54,7 +54,7 @@ if [[ -d ~/.doom.d/ ]]; then
     echo "Completed"
 fi
 echo -n "Setting up doom files"
-mv .doom.d ~/.doom.d
+ln -s .doom.d ~/.doom.d
 echo "Completed"
 
 echo "Installing vscodium extensions..."
@@ -62,9 +62,11 @@ cat packages-list/vscodium-packages-list.txt | xargs -L1 codium --install-extens
 echo "Installing vscodium extensions... Completed"
 if [[ -d ~/.config/VSCodium/user ]]; then
     echo -n "Backing old codium files"
-    mv ~/.config/VSCodium/user ~/.config/VSCodium/user.bak
+    mv ~/.config/VSCodium/user/keybindings.json ~/.config/VSCodium/user/keybindings.json.bak
+    mv ~/.config/VSCodium/user/settings.json ~/.config/VSCodium/user/settings.json.bak
     echo "Completed"
 fi
 echo "Moving codium files..."
-mv .config/VSCodium/user/* ~/.config/VSCodium/user/
+ln -s .config/VSCodium/user/keybindings.json ~/.config/VSCodium/user/keybindings.json
+ln -s .config/VSCodium/user/settings.json ~/.config/VSCodium/user/settings.json
 echo "Completed"
