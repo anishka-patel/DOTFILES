@@ -96,4 +96,13 @@
   :defer t
   :hook (org-mode . org-auto-tangle-mode)
   :config (setq org-auto-tangle-default t))
+(use-package! dashboard
+  :init
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-startup-banner "~/.doom.d/doom-emacs-dash.png")
+  (setq dashboard-center-content t)
+  :config
+  (dashboard-setup-startup-hook))
+(setq doom-fallback-buffer-name "*dashboard*")
 ; LocalWords:  el GPG xlfd

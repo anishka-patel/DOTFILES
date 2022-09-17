@@ -11,6 +11,7 @@
 (package! vue-mode) ;; To activate vue context aware highlighting, code look up and completion.
 (package! beacon)
 (package! command-log-mode)
+(package! dashboard)
 (package! tree-sitter)
 (package! tree-sitter-langs)
 (package! org-auto-tangle)
