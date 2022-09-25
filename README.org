@@ -36,7 +36,7 @@ tree . -L 1 -a
 #+end_src
 ** Setup dotconfig.sh
 #+begin_src bash :tangle dotconfig.sh
-#! /usr/bin/bash
+#!/usr/bin/bash
 # Title: Dotconfig Script
 # Description: A script file to link relevant files to relevent directories and backup where it is required
 # Created: [2022-09-16 Fri]
@@ -378,6 +378,5 @@ Link to file: [[file:script.sh][script.sh]]
 * Exports
 ** KDE-Shortcut-files
 [[file:exports/ani-kde-scheme.kksrc][Global configuration file for KDE]]
-
-
-#  LocalWords:  Pacman Npm Zsh AstroNvim neovim
+** KDE-Tiling
+ * Korhnkite: Kwin script to emulate tiling window manager.
