@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#!/usr/bin/bash
 # Title: Dotconfig Script
 # Description: A script file to link relevant files to relevent directories and backup where it is required
 # Created: [2022-09-16 Fri]
