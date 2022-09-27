@@ -105,4 +105,5 @@
   :config
   (dashboard-setup-startup-hook))
 (setq doom-fallback-buffer-name "*dashboard*")
+(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
 ; LocalWords:  el GPG xlfd
