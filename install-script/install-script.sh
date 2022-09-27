@@ -1,11 +1,26 @@
 #! /usr/bin/bash
+# Title: Arch KDE Install Guide Script
+# Description: A script to guide through KDE setup on archlinux
+# Author: Anishka Patel
+# Created: [2022-08-29 Mon]
+# Usage: ./install-script.sh
 
-# sudo apt update && sudo apt upgrade -y
 sudo pacman -Syu --noconfirm
 
-sudo pacman -S flatpak appimagelauncher yay --noconfirm
+sudo pacman -S flatpak --noconfirm
+
+sudo pacman -S appimagelauncher --noconfirm
 
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+
+sudo pacman -S --needed base-devel git --noconfirm
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+
+makepkg -si
+
+yay --version
 
 sudo pacman -S htop glances --noconfirm
 # sudo pacman -S sysstat ifstat --noconfirm
@@ -18,11 +33,17 @@ sudo pacman -S df du --noconfirm
 
 sudo -S git github-cli --noconfirm
 
+pacman -S xorg
+
 sudo pacman -S sddm --noconfirm
+
+sudo pacman -S plasma --noconfirm
 
 sudo pacman -S plasma-desktop --noconfirm
 
 sudo pacman -S plasma-nm plasma-pa kdeplasma-addons kde-gtk-config --noconfirm
+
+sudo pacman -S konsole yakuake --noconfirm
 
 sudo pacman -S doplhin --noconfirm
 
@@ -30,11 +51,14 @@ sudo pacman -S pamac --noconfirm
 
 sudo pacman -S discover --noconfirm
 
-sudo pacman -S konsole yakuake --noconfirm
-
 sudo pacman -S powerdevil --noconfirm
 
 sudo pacman -S ksysguard --noconfirm
+
+sudo pacman -S kde-applications
+
+sudo systemctl enable sddm.service
+sudo systemctl enable NetworkManager.service
 
 sudo yay -S nerd-fonts-complete
 # sudo pacman -S ttf-cascadia-code ttf-dejavu ttf-fira-code ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji terminus-font --noconfirm
@@ -45,7 +69,8 @@ sudo pacman -S zsh --noconfirm
 sudo pacman -S firewall --noconfirm
 # sudo pacman -S ufw gufw --noconfirm
 
-sudo pacman -S vim neovim emacs --noconfirm
+# sudo pacman -S vi vim --noconfirm
+sudo pacman -S neovim emacs --noconfirm
 # sudo yay -S vscodium-bin
 
 sudo pacman -S firefox --noconfirm

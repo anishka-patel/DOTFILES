@@ -6,20 +6,49 @@
 #+PROPERTY: header-args :tangle install-script.sh
 #+auto_tangle: t
 
-* Updating cache & packages
+* About Script
 #+begin_src bash
 #! /usr/bin/bash
-
-# sudo apt update && sudo apt upgrade -y
+# Title: Arch KDE Install Guide Script
+# Description: A script to guide through KDE setup on archlinux
+# Author: Anishka Patel
+# Created: [2022-08-29 Mon]
+# Usage: ./install-script.sh
+#+end_src
+* Updating cache & packages
+#+begin_src bash
 sudo pacman -Syu --noconfirm
 #+end_src
-* Package Managers
+* Other Package Managers
+** Flatpak
 #+begin_src bash
-sudo pacman -S flatpak appimagelauncher yay --noconfirm
+sudo pacman -S flatpak --noconfirm
+#+end_src
+** AppImages
+#+begin_src bash
+sudo pacman -S appimagelauncher --noconfirm
 #+end_src
 ** Homebrew
 #+begin_src bash
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+#+end_src
+** Yay
+ * Get ~base-devel~ and ~git~
+#+begin_src bash
+sudo pacman -S --needed base-devel git --noconfirm
+#+end_src
+ * Get ~yay~ repository
+#+begin_src bash
+git clone https://aur.archlinux.org/yay.git
+cd yay
+#+end_src
+ * Install ~yay~ with ~makepkg~
+#+begin_src bash
+makepkg -si
+#+end_src
+ * Check version
+#+begin_src bash
+yay --version
 #+end_src
 * System Utilities
 #+begin_src bash
@@ -42,6 +71,10 @@ sudo pacman -S df du --noconfirm
 #+begin_src bash
 sudo -S git github-cli --noconfirm
 #+end_src
+* Display Server
+#+begin_src bash
+pacman -S xorg
+#+end_src
 * Desktop Manager
 #+begin_src bash
 sudo pacman -S sddm --noconfirm
@@ -49,11 +82,19 @@ sudo pacman -S sddm --noconfirm
 * Desktop Environment
 ** KDE Plasma Desktop
 #+begin_src bash
+sudo pacman -S plasma --noconfirm
+#+end_src
+** KDE Plasma Desktop Minimal
+#+begin_src bash
 sudo pacman -S plasma-desktop --noconfirm
 #+end_src
 ** Other Plasma Utilities
 #+begin_src bash
 sudo pacman -S plasma-nm plasma-pa kdeplasma-addons kde-gtk-config --noconfirm
+#+end_src
+** KDE Virtual console
+#+begin_src bash
+sudo pacman -S konsole yakuake --noconfirm
 #+end_src
 ** KDE File manager
 #+begin_src bash
@@ -67,10 +108,6 @@ sudo pacman -S pamac --noconfirm
 #+begin_src bash
 sudo pacman -S discover --noconfirm
 #+end_src
-** KDE Virtual consoles
-#+begin_src bash
-sudo pacman -S konsole yakuake --noconfirm
-#+end_src
 ** KDE Battery manager
 #+begin_src bash
 sudo pacman -S powerdevil --noconfirm
@@ -78,6 +115,15 @@ sudo pacman -S powerdevil --noconfirm
 ** KDE System monitor
 #+begin_src bash
 sudo pacman -S ksysguard --noconfirm
+#+end_src
+** KDE Applications
+#+begin_src bash
+sudo pacman -S kde-applications
+#+end_src
+* X Session
+#+begin_src bash
+sudo systemctl enable sddm.service
+sudo systemctl enable NetworkManager.service
 #+end_src
 * Fonts
 #+begin_src bash
@@ -96,7 +142,8 @@ sudo pacman -S firewall --noconfirm
 #+end_src
 * Text Editors
 #+begin_src bash
-sudo pacman -S vim neovim emacs --noconfirm
+# sudo pacman -S vi vim --noconfirm
+sudo pacman -S neovim emacs --noconfirm
 # sudo yay -S vscodium-bin
 #+end_src
 * Web Browsers
@@ -139,7 +186,7 @@ sudo pacman -S mono mono-addins --noconfirm
 #+begin_src bash
 sudo pacman -S go --noconfirm
 #+end_src
-* Game & 3d Modelling
+* Game & 3d Modeling
 #+begin_src bash
 sudo pacman -S godot blender freecad --noconfirm
 #+end_src
