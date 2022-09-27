@@ -67,7 +67,7 @@
   (setq org-todo-keywords
         '((sequence "TODO(t!)" "PROJ(p!)" "LOOP(r!)" "STRT(s!)" "WAIT(w@)" "HOLD(h@)" "IDEA(i!)" "|" "DONE(d@)" "KILL(k@)")
           (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)")
-          (sequence "|" "OKAY(o)" "YES(y)" "NO(n)"))) ;; Setup custom TODO keywords
+          (sequence "|" "OKAY(o)" "YES(y)" "NO(n)")))
   (setq org-capture-templates '(("t" "Personal todo" entry
                                 (file+headline +org-capture-todo-file "Inbox")
                                 "* %?
@@ -82,7 +82,8 @@
                                 (file+olp+datetree +org-capture-journal-file)
                                 "* %U %?
                                 %i
-                                %a" :prepend t)))) ;; Setup custom org-capture-templates
+                                %a" :prepend t)))
+) ;; Setup custom TODO keywords
 (setq +zen-text-scale 0) ;; Does not scale up text in zen modes
 (beacon-mode 1) ;; Activates beacon-mode
 (use-package! tree-sitter
