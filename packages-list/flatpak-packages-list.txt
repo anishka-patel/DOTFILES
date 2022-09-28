@@ -1,9 +1,6 @@
 Postman
+FreeTube
 Freedesktop
-Freedesktop
-Mesa
-Mesa
 Mesa
 openh264
-Freedesktop
 Zoom
