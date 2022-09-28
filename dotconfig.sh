@@ -22,6 +22,15 @@ echo -n "Setting up zsh files..."
 ln -s .zshrc ~/.zshrc
 echo "Completed"
 
+if [[ -f ~/.exrc ]]; then
+    echo -n "Backing up old vim files..."
+    mv ~/.exrc ~/.exrc.bak
+    echo "Completed"
+fi
+echo -n "Setting up vi files..."
+ln -s .vimrc ~/.vimrc
+echo "Completed"
+
 if [[ -f ~/.vimrc ]]; then
     echo -n "Backing up old vim files..."
     mv ~/.vimrc ~/.vimrc.bak
@@ -70,3 +79,5 @@ echo "Moving codium files..."
 ln -s .config/VSCodium/user/keybindings.json ~/.config/VSCodium/user/keybindings.json
 ln -s .config/VSCodium/user/settings.json ~/.config/VSCodium/user/settings.json
 echo "Completed"
+
+pip install konsave
