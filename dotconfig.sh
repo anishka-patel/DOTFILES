@@ -57,6 +57,15 @@ echo -n "Setting up nvim/lua/user/init.lua"
 ln -s .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/init.lua
 echo "Completed"
 
+if [[ -f ~/.config/lvim/init.lua ]]; then
+    echo -n "Backing up old lvim/config.lua"
+    mv ~/.config/lvim/config.lua ~/.config/lvim/config.lua.bak
+    echo "Completed"
+fi
+echo -n "Setting up lvim/config.lua"
+ln -s .config/lvim/config.lua ~/.config/lvim/config.lua
+echo "Completed"
+
 if [[ -d ~/.doom.d/ ]]; then
     echo -n "Backing up old doom emacs files..."
     mv ~/.doom.d ~/.doom.d.bak
