@@ -14,6 +14,7 @@ export PATH="$PATH:$HOME/.cargo/bin:$HOME/.GodotMono:$HOME/.emacs.d/bin:$HOME/.l
 export EDITOR=nvim
 export VISUAR=nvim
 
+alias code=codium
 alias dmacs=emacsclient -c -a "emacs"
 
 autoload -U edit-command-line

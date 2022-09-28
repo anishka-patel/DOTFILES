@@ -7,6 +7,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export GOPATH="$HOME/go/bin/"
 
+alias code=codium
 alias dmacs="emacsclient -c -a emacs &"
 
 
