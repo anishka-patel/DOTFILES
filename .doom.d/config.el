@@ -58,8 +58,6 @@
 
 (setq which-key-use-C-h-commands t) ;; Enable paging in which key enabled binding prefixes
 (add-hook 'vue-mode-hook #'lsp!) ;; Configuration for vue mode plugin in plugins.el
-(add-to-list 'initial-frame-alist '(fullscreen . maximized)) ;; Enabled maximized window on emacs initial startup
-(add-to-list 'default-frame-alist '(fullscreen . maximized)) ;; Enabled maximized window on emacs every startup
 
 ;; Config for org-mode
 (after! org
