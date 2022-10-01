@@ -10,7 +10,7 @@ if [[ -f ~/.bashrc ]]; then
     echo "Completed"
 fi
 echo -n "Setting up bash files..."
-ln -s .bashrc ~/.bashrc
+cp .bashrc ~/.bashrc
 echo "Completed"
 
 if [[ -f ~/.zshrc ]]; then
@@ -19,7 +19,16 @@ if [[ -f ~/.zshrc ]]; then
     echo "Completed"
 fi
 echo -n "Setting up zsh files..."
-ln -s .zshrc ~/.zshrc
+cp .zshrc ~/.zshrc
+echo "Completed"
+
+if [[ -f ~/.config/fish/config.fish ]]; then
+    echo -n "Backing up old config.fish file..."
+    mv ~/.config/fish/config.fish ~/.config/fish/config.fish.bak
+    echo "Completed"
+fi
+echo -n "Setting up fish files..."
+ls -s .config/fish/config.fish ~/.config/fish/config.fish
 echo "Completed"
 
 if [[ -f ~/.exrc ]]; then
@@ -28,7 +37,7 @@ if [[ -f ~/.exrc ]]; then
     echo "Completed"
 fi
 echo -n "Setting up vi files..."
-ln -s .vimrc ~/.vimrc
+cp .vimrc ~/.vimrc
 echo "Completed"
 
 if [[ -f ~/.vimrc ]]; then
@@ -37,7 +46,7 @@ if [[ -f ~/.vimrc ]]; then
     echo "Completed"
 fi
 echo -n "Setting up vim files..."
-ln -s .vimrc ~/.vimrc
+cp .vimrc ~/.vimrc
 echo "Completed"
 
 if [[ -f ~/.config/nvim/init.lua ]]; then
@@ -46,7 +55,7 @@ if [[ -f ~/.config/nvim/init.lua ]]; then
     echo "Completed"
 fi
 echo -n "Setting up nvim/init.lua"
-ln -s .config/nvim/init.lua ~/.config/nvim/init.lua
+cp .config/nvim/init.lua ~/.config/nvim/init.lua
 echo "Completed"
 if [[ -f ~/.config/nvim/lua/user/init.lua ]]; then
     echo -n "Backing up old nvim/lua/user/init.lua"
@@ -54,7 +63,7 @@ if [[ -f ~/.config/nvim/lua/user/init.lua ]]; then
     echo "Completed"
 fi
 echo -n "Setting up nvim/lua/user/init.lua"
-ln -s .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/init.lua
+cp .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/init.lua
 echo "Completed"
 
 if [[ -f ~/.config/lvim/init.lua ]]; then
@@ -63,7 +72,7 @@ if [[ -f ~/.config/lvim/init.lua ]]; then
     echo "Completed"
 fi
 echo -n "Setting up lvim/config.lua"
-ln -s .config/lvim/config.lua ~/.config/lvim/config.lua
+cp .config/lvim/config.lua ~/.config/lvim/config.lua
 echo "Completed"
 
 if [[ -d ~/.doom.d/ ]]; then
@@ -72,7 +81,7 @@ if [[ -d ~/.doom.d/ ]]; then
     echo "Completed"
 fi
 echo -n "Setting up doom files"
-ln -s .doom.d ~/.doom.d
+cp .doom.d ~/.doom.d
 echo "Completed"
 
 echo "Installing vscodium extensions..."
@@ -85,8 +94,21 @@ if [[ -d ~/.config/VSCodium/user ]]; then
     echo "Completed"
 fi
 echo "Moving codium files..."
-ln -s .config/VSCodium/user/keybindings.json ~/.config/VSCodium/user/keybindings.json
-ln -s .config/VSCodium/user/settings.json ~/.config/VSCodium/user/settings.json
+cp .config/VSCodium/user/keybindings.json ~/.config/VSCodium/user/keybindings.json
+cp .config/VSCodium/user/settings.json ~/.config/VSCodium/user/settings.json
 echo "Completed"
 
 pip install konsave
+
+echo "Installing KDE Config"
+if [[ -e ~/ani-kde-config.knsv ]]; then
+    echo -n "Backing up old kde config files..."
+    mv ~/ani-kde-config.knsv ~/ani-kde-config.knsv.bak
+    echo "Completed"
+fi
+echo -n "Moving kde config files..."
+cp ./exports/ani-kde-config.knsv ~/ani-kde-config.knsv
+echo "Completed"
+echo -n "Applying kde config files..."
+konsave -i ~/ani-kde-config.knsv
+echo "Completed"
