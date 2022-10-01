@@ -11,11 +11,17 @@ fi
 # Vim mode
 bindkey -v
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/.GodotMono:$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/go/bin"
-export EDITOR=nvim
-export VISUAR=nvim
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -t"
 
 alias code=codium
-alias dmacs=emacsclient -c -a "emacs"
+alias vi=vim
+alias nv=nvim
+alias lv=lvim
+alias es=emacs
+alias ec=emacsclient
+alias gec="emacsclient -c -a emacs&"
+alias tec="emacsclient -t"
 
 autoload -U edit-command-line
 zle -N edit-command-line

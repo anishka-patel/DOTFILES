@@ -3,12 +3,18 @@
 #
 
 set -o vi
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -t"
 export GOPATH="$HOME/go/bin/"
 
 alias code=codium
-alias dmacs="emacsclient -c -a emacs &"
+alias vi=vim
+alias nv=nvim
+alias lv=lvim
+alias ec=emacsclient
+alias es=emacs
+alias gec="emacsclient -c -a emacs&"
+alias tec="emacsclient -t"
 
 
 [[ $- != *i* ]] && return
@@ -104,7 +110,6 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
-alias emacs="emacsclient -c -a 'emacs'"
 
 xhost +local:root > /dev/null 2>&1
 
