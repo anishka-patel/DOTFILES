@@ -10,18 +10,22 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 # Vim mode
 bindkey -v
+
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/.GodotMono:$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/go/bin"
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -t"
 
-alias code=codium
 alias vi=vim
 alias nv=nvim
+alias gnv=neovide
 alias lv=lvim
+alias glv=leovide
 alias es=emacs
-alias ec=emacsclient
-alias gec="emacsclient -c -a emacs&"
-alias tec="emacsclient -t"
+alias ec="emacsclient -t"
+alias gec="emacsclient -cnqua ''"
+alias ka=kate
+alias kw=kwrite
+alias code=codium
 
 autoload -U edit-command-line
 zle -N edit-command-line

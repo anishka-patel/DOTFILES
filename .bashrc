@@ -1,20 +1,24 @@
-#! /usr/bin/bash
+#! /bin/bash
 # ~/.bashrc
 #
-
+# Vi style bindings
 set -o vi
+
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -t"
 export GOPATH="$HOME/go/bin/"
 
-alias code=codium
 alias vi=vim
 alias nv=nvim
+alias gnv=neovide
 alias lv=lvim
-alias ec=emacsclient
+alias glv=leovide
 alias es=emacs
-alias gec="emacsclient -c -a emacs&"
-alias tec="emacsclient -t"
+alias ec="emacsclient -t"
+alias gec="emacsclient -cnqua ''"
+alias ka=kate
+alias kw=kwrite
+alias code=codium
 
 
 [[ $- != *i* ]] && return
