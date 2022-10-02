@@ -73,7 +73,7 @@ sudo -S git github-cli --noconfirm
 #+end_src
 * Display Server
 #+begin_src bash
-pacman -S xorg
+# pacman -S xorg
 #+end_src
 * Desktop Manager
 #+begin_src bash
@@ -108,6 +108,10 @@ sudo pacman -S pamac --noconfirm
 #+begin_src bash
 sudo pacman -S discover --noconfirm
 #+end_src
+** KDE Text Editors
+#+begin_src bash
+sudo pacman -S kate kwrite --noconfirm
+#+end_src
 ** KDE Battery manager
 #+begin_src bash
 sudo pacman -S powerdevil --noconfirm
@@ -117,8 +121,14 @@ sudo pacman -S powerdevil --noconfirm
 sudo pacman -S ksysguard --noconfirm
 #+end_src
 ** KDE Applications
+List of applications: [[https://archlinux.org/groups/x86_64/kde-applications/][KDE-Applications | Arch Linux]]
 #+begin_src bash
-sudo pacman -S kde-applications
+# sudo pacman -S kde-applications --noconfirm
+#+end_src
+** KDE Utilities
+List of utilities: [[https://archlinux.org/groups/x86_64/kde-utilities/][KDE-Utilities | Arch Linux]]
+#+begin_src bash
+# sudo pacman -S kde-utilities --noconfirm
 #+end_src
 * X Session
 #+begin_src bash
@@ -133,7 +143,11 @@ sudo yay -S nerd-fonts-complete
 * Shells
 #+begin_src bash
 # sudo pacman -S sh bash --noconfirm
-sudo pacman -S zsh --noconfirm
+sudo pacman -S zsh fish --noconfirm
+#+end_src
+* Terminals
+#+begin_src bash
+sudo pacman -S kitty --noconfrim
 #+end_src
 * Firewall
 #+begin_src bash
@@ -144,6 +158,7 @@ sudo pacman -S firewall --noconfirm
 #+begin_src bash
 # sudo pacman -S vi vim --noconfirm
 sudo pacman -S neovim emacs --noconfirm
+# sudo pacman -S kate kwrite --noconfirm
 # sudo yay -S vscodium-bin
 #+end_src
 * Web Browsers
@@ -217,14 +232,33 @@ sudo pacman -S virtualbox vagarant --noconfirm
 # sudo pacman -S virt-manager --noconfirm
 #+end_src
 * Office Utilities
+** Most Important
 #+begin_src bash
-sudo pacman -S okular onlyoffice-desktopeditors --noconfirm
+# sudo pacman -S abiword okular onlyoffice-desktopeditors simple-scan --noconfirm
+#+end_src
+** Office Suite
+#+begin_src bash
+sudo pacman -S onlyoffice-desktopeditors --noconfirm
+# sudo pacman -S libre-office-still --noconfirm
+#+end_src
+** Rich Text Editor
+#+begin_src bash
+sudo pacman -S abiword --noconfirm
+#+end_src
+** Diagram Editor
+#+begin_src bash
 # sudo pacman -S dia --noconfirm
-# sudo pacman -S simple-scan --noconfirm
+flatpak install draw.io
+#+end_src
+** Document Viewer
+#+begin_src bash
+sudo pacman -S okular --noconfirm
+#+end_src
+** Document Scan
+#+begin_src bash
+sudo pacman -S simple-scan --nocomfirm
 #+end_src
 * Other Utilities
 #+begin_src bash
 sudo pacman -S ark spectacle uget gestures ventoy --noconfirm
 #+end_src
-
-#  LocalWords:  KDE Homebrew Lua

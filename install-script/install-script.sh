@@ -33,7 +33,7 @@ sudo pacman -S df du --noconfirm
 
 sudo -S git github-cli --noconfirm
 
-pacman -S xorg
+# pacman -S xorg
 
 sudo pacman -S sddm --noconfirm
 
@@ -51,11 +51,15 @@ sudo pacman -S pamac --noconfirm
 
 sudo pacman -S discover --noconfirm
 
+sudo pacman -S kate kwrite --noconfirm
+
 sudo pacman -S powerdevil --noconfirm
 
 sudo pacman -S ksysguard --noconfirm
 
-sudo pacman -S kde-applications
+# sudo pacman -S kde-applications --noconfirm
+
+# sudo pacman -S kde-utilities --noconfirm
 
 sudo systemctl enable sddm.service
 sudo systemctl enable NetworkManager.service
@@ -64,13 +68,16 @@ sudo yay -S nerd-fonts-complete
 # sudo pacman -S ttf-cascadia-code ttf-dejavu ttf-fira-code ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji terminus-font --noconfirm
 
 # sudo pacman -S sh bash --noconfirm
-sudo pacman -S zsh --noconfirm
+sudo pacman -S zsh fish --noconfirm
+
+sudo pacman -S kitty --noconfrim
 
 sudo pacman -S firewall --noconfirm
 # sudo pacman -S ufw gufw --noconfirm
 
 # sudo pacman -S vi vim --noconfirm
 sudo pacman -S neovim emacs --noconfirm
+# sudo pacman -S kate kwrite --noconfirm
 # sudo yay -S vscodium-bin
 
 sudo pacman -S firefox --noconfirm
@@ -110,8 +117,18 @@ sudo pacman -S docker --noconfirm
 sudo pacman -S virtualbox vagarant --noconfirm
 # sudo pacman -S virt-manager --noconfirm
 
-sudo pacman -S okular onlyoffice-desktopeditors --noconfirm
+# sudo pacman -S abiword okular onlyoffice-desktopeditors simple-scan --noconfirm
+
+sudo pacman -S onlyoffice-desktopeditors --noconfirm
+# sudo pacman -S libre-office-still --noconfirm
+
+sudo pacman -S abiword --noconfirm
+
 # sudo pacman -S dia --noconfirm
-# sudo pacman -S simple-scan --noconfirm
+flatpak install draw.io
+
+sudo pacman -S okular --noconfirm
+
+sudo pacman -S simple-scan --nocomfirm
 
 sudo pacman -S ark spectacle uget gestures ventoy --noconfirm
