@@ -28,7 +28,16 @@ if [[ -f ~/.config/fish/config.fish ]]; then
     echo "Completed"
 fi
 echo -n "Setting up fish files..."
-ls -s .config/fish/config.fish ~/.config/fish/config.fish
+cp .config/fish/config.fish ~/.config/fish/config.fish
+echo "Completed"
+
+if [[ -f ~/.config/kitty/kitty.conf ]]; then
+    echo -n "Backing up old kitty.conf file..."
+    mv ~/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf.bak
+    echo "Completed"
+fi
+echo -n "Setting up kitty files..."
+cp .config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 echo "Completed"
 
 if [[ -f ~/.exrc ]]; then
