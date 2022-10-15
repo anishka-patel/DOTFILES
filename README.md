@@ -1,87 +1,91 @@
 
 # Table of Contents
 
-1.  [Project Structure](#org607bba2)
-    1.  [Setup dotconfig.sh](#org2674226)
-    2.  [Dotconfig file](#orgb7e8de2)
-2.  [Shells](#org9811c0f)
-    1.  [Bash Config](#org9a56220)
-        1.  [Setup files](#org5fb8aed)
-    2.  [Zsh Config](#orge9d50ff)
-        1.  [Setup files](#orgc6f56e1)
-    3.  [Fish config](#orgf85e679)
-        1.  [Setup files](#org8f73961)
-3.  [Terminals](#org7e856af)
-    1.  [Kitty](#org09e8ffa)
-        1.  [Install](#orgd026e5a)
-        2.  [Kitty config](#orgb8684d8)
-        3.  [Setup files](#org9701b63)
-    2.  [Konsole](#org85dced2)
-        1.  [Install](#org8e5f8c0)
-    3.  [Yakuake](#orgdb2f98b)
-        1.  [Install](#orgf9c8ef5)
-4.  [Editors](#org0a0419f)
-    1.  [Vi Config](#org4a4e698)
-        1.  [Requirements](#org1c63774)
-        2.  [Setup files](#orga1bab1e)
-    2.  [Vim Config](#org465591d)
-        1.  [Requirements](#org506834b)
-        2.  [Notes](#org308c45c)
-        3.  [Setup files](#org725e45e)
-    3.  [AstroNvim config](#orgf049c6c)
-        1.  [Requirements](#org05d0faa)
-        2.  [Install - GitHub - AstroNvim](#org088f937)
-        3.  [Docs Link - Getting Started | AstroNvim](#org0009820)
-        4.  [Notes](#org76c66c2)
-        5.  [Setup files](#org5e78ac8)
-    4.  [LunarVim config](#org0356939)
-        1.  [Requirements](#orgb7f7962)
-        2.  [Doc Link: LunarVim | Documentation](#orgd43cc3e)
-        3.  [Install](#org5ab26d0)
-        4.  [Setup files](#org61a58e6)
-    5.  [DoomEmacs config](#org93480ce)
-        1.  [Requirements](#orgd4043b4)
-        2.  [Install](#orgb5e1ab3)
-        3.  [Notes](#orga7d8510)
-        4.  [Setup config](#org76f058a)
-    6.  [VSCodium config](#org631fb48)
-        1.  [Requirements](#org673a201)
-        2.  [Install](#org6cc4b84)
-        3.  [Notes](#org73f80b0)
-        4.  [Setup config](#orgb3a138c)
-    7.  [Kwrite](#org3c53e5c)
-        1.  [Install](#orgaee2821)
-    8.  [Kate](#org7a24070)
-        1.  [Install](#org391be6c)
-5.  [Gesture config](#org83ca38b)
-    1.  [Requirements](#orgfa999a7)
-    2.  [Install `Gestures` application](#org0f2fad7)
-    3.  [Configuration](#org086b9c5)
-    4.  [Setup gestures](#orga8db8a9)
-6.  [Packages List `packages-list/`](#org1167982)
-    1.  [Directory structure](#org4619372)
-    2.  [script.sh](#orgb42201c)
-    3.  [Pacman packages](#orgfdaab90)
-        1.  [List generated](#orgd2af079)
-    4.  [Yay packages](#org0752ff3)
-    5.  [Brew packages](#orgf5365fb)
-    6.  [Flatpak packages](#org567c3f6)
-    7.  [Pip global packages](#org43f8b22)
-    8.  [Npm global packages](#org8ea8187)
-    9.  [Go global packages](#org6ee127e)
-    10. [Rust global packages](#orgd965946)
-7.  [Manuals](#org3e4c435)
-8.  [Install-Script](#org1ee63b1)
-    1.  [Directory structure](#orga4c8712)
-9.  [Script.sh](#org45e916d)
-10. [Exports](#org49209b8)
-    1.  [KDE-Shortcuts](#orge937fbd)
-    2.  [KDE-Config](#orgd1e1446)
-    3.  [KDE-Tiling](#org2053c77)
+1.  [Project Structure](#org6210578)
+    1.  [Setup dotconfig.sh](#org392857a)
+    2.  [Dotconfig file](#orgc199e85)
+2.  [Shells](#orgce8f31c)
+    1.  [Bash Config](#org4df3f0e)
+        1.  [Setup files](#orgf7fb3ef)
+    2.  [Zsh Config](#orgc9ea916)
+        1.  [Setup files](#orgf28a22a)
+    3.  [Fish config](#org1d2584f)
+        1.  [Setup files](#org9062754)
+3.  [Terminals](#orgf9b1d53)
+    1.  [Kitty](#org8b7a4b6)
+        1.  [Install](#org668e74f)
+        2.  [Kitty config](#orgf6353aa)
+        3.  [Setup files](#orgd85a259)
+    2.  [Konsole](#org26538ee)
+        1.  [Install](#org9a3a0bd)
+    3.  [Yakuake](#org2baf457)
+        1.  [Install](#orgec1a15c)
+4.  [Editors](#org6f8426c)
+    1.  [Vi Config](#org8048700)
+        1.  [Requirements](#org6bd93a5)
+        2.  [Setup files](#orga020eca)
+    2.  [Vim Config](#orga9d22e6)
+        1.  [Requirements](#org79a0676)
+        2.  [Notes](#org75661ea)
+        3.  [Setup files](#org482073e)
+    3.  [AstroNvim config](#orgf0adc6f)
+        1.  [Requirements](#orgfdb8372)
+        2.  [Install - GitHub - AstroNvim](#org93c5519)
+        3.  [Docs Link - Getting Started | AstroNvim](#orgf502208)
+        4.  [Notes](#org2f130ab)
+        5.  [Setup files](#org1e4d443)
+    4.  [LunarVim config](#org40595aa)
+        1.  [Requirements](#org711fbd6)
+        2.  [Doc Link: LunarVim | Documentation](#org52c76a9)
+        3.  [Install](#orgfdfa1f7)
+        4.  [Setup files](#orgd6db9d7)
+    5.  [DoomEmacs config](#org2b0b5d4)
+        1.  [Requirements](#org095e8c0)
+        2.  [Install](#org0622cc8)
+        3.  [Notes](#org83fd31d)
+        4.  [Setup config](#org5984400)
+    6.  [VSCodium config](#orgb7b4b25)
+        1.  [Requirements](#org842c65a)
+        2.  [Install](#org78739fb)
+        3.  [Notes](#org716dbbc)
+        4.  [Setup config](#org902d854)
+    7.  [Kwrite](#org3e8c22b)
+        1.  [Install](#orgd97e163)
+    8.  [Kate](#orgfbc338c)
+        1.  [Install](#orgb92cf97)
+5.  [Gesture config](#org6e4150c)
+    1.  [Requirements](#org0c43454)
+    2.  [Install `Gestures` application](#org9e3eb94)
+    3.  [Configuration](#org9deab93)
+    4.  [Setup gestures](#orga3643ad)
+6.  [Packages List `packages-list/`](#org7741838)
+    1.  [Directory structure](#orgabd9efb)
+    2.  [script.sh](#orgc499941)
+    3.  [Pacman packages](#org6c27560)
+        1.  [List generated](#orgf047ba2)
+    4.  [Yay packages](#org7c6c368)
+    5.  [Brew packages](#orga48ee34)
+    6.  [Flatpak packages](#org5b4b14b)
+    7.  [Pip global packages](#org29162b0)
+    8.  [Npm global packages](#orgdfa7b5d)
+    9.  [Go global packages](#org6bb1829)
+    10. [Rust global packages](#org329d7df)
+7.  [Manuals](#org7db7710)
+8.  [Install-Script](#orgeee5fe5)
+    1.  [Directory structure](#orgbe9a8fd)
+9.  [Script.sh](#org56eeacb)
+10. [Exports](#orge66bbce)
+    1.  [KDE-Shortcuts](#orgdbc1f1c)
+    2.  [KDE-Config](#org0bb8afd)
+        1.  [Requirements](#orgc3344de)
+        2.  [File: Konsave configuration file](#org70ee7bf)
+        3.  [Setup](#org2efbf66)
+        4.  [Documentation: Konsave | Github](#org03fe2dc)
+    3.  [KDE-Tiling](#org62dd5d9)
 
 
 
-<a id="org607bba2"></a>
+<a id="org6210578"></a>
 
 # Project Structure
 
@@ -89,36 +93,14 @@ Directory structure for whole repository.
 
     tree . -L 1 -a -d
 
-    .
-    ├── .config
-    ├── .doom.d
-    ├── exports
-    ├── .git
-    ├── install-script
-    ├── .local
-    ├── manuals
-    └── packages-list
     
-    8 directories
 
 Files in the current directory
 
     tree . -L 1 -a -F |  grep -v /$
 
-    ├── .bashrc
-    ├── dotconfig.sh
-    ├── .exrc
-    ├── .gitignore
-    ├── README.md
-    ├── README.org
-    ├── script.sh*
-    ├── .vimrc
-    └── .zshrc
-    
-    8 directories, 9 files
 
-
-<a id="org2674226"></a>
+<a id="org392857a"></a>
 
 ## Setup dotconfig.sh
 
@@ -129,7 +111,7 @@ Files in the current directory
     # Usage: ./dotconfig.sh
 
 
-<a id="orgb7e8de2"></a>
+<a id="orgc199e85"></a>
 
 ## Dotconfig file
 
@@ -137,7 +119,7 @@ File to quick setup links to appropriate directories
 Link to file: [dotconfig.sh](dotconfig.sh)
 
 
-<a id="org9811c0f"></a>
+<a id="orgce8f31c"></a>
 
 # Shells
 
@@ -148,14 +130,14 @@ Link to file: [dotconfig.sh](dotconfig.sh)
     
     /bin/sh
     /bin/bash
-    /bin/zsh
-    /usr/bin/zsh
     /usr/bin/git-shell
     /usr/bin/fish
     /bin/fish
+    /bin/zsh
+    /usr/bin/zsh
 
 
-<a id="org9a56220"></a>
+<a id="org4df3f0e"></a>
 
 ## Bash Config
 
@@ -167,7 +149,7 @@ Generated by hard linking. The code is below:
     ln ~/.bashrc
 
 
-<a id="org5fb8aed"></a>
+<a id="orgf7fb3ef"></a>
 
 ### Setup files
 
@@ -181,7 +163,7 @@ Generated by hard linking. The code is below:
     echo "Completed"
 
 
-<a id="orge9d50ff"></a>
+<a id="orgc9ea916"></a>
 
 ## Zsh Config
 
@@ -193,7 +175,7 @@ Generated by hard linking. The code is below:
     ln ~/.zshrc
 
 
-<a id="orgc6f56e1"></a>
+<a id="orgf28a22a"></a>
 
 ### Setup files
 
@@ -207,7 +189,7 @@ Generated by hard linking. The code is below:
     echo "Completed"
 
 
-<a id="orgf85e679"></a>
+<a id="org1d2584f"></a>
 
 ## Fish config
 
@@ -219,7 +201,7 @@ Generated by hard linking. The code is below:
     ln ~/.config/fish/config.fish
 
 
-<a id="org8f73961"></a>
+<a id="org9062754"></a>
 
 ### Setup files
 
@@ -233,26 +215,26 @@ Generated by hard linking. The code is below:
     echo "Completed"
 
 
-<a id="org7e856af"></a>
+<a id="orgf9b1d53"></a>
 
 # Terminals
 
 
-<a id="org09e8ffa"></a>
+<a id="org8b7a4b6"></a>
 
 ## Kitty
 
 A GPU accelerated totally configurable terminal
 
 
-<a id="orgd026e5a"></a>
+<a id="org668e74f"></a>
 
 ### Install
 
     sudo pacman -S kitty --noconfirm
 
 
-<a id="orgb8684d8"></a>
+<a id="orgf6353aa"></a>
 
 ### Kitty config
 
@@ -263,7 +245,7 @@ Generated by hard linking. The code is below:
     ln ~/.config/kitty/kitty.conf
 
 
-<a id="org9701b63"></a>
+<a id="orgd85a259"></a>
 
 ### Setup files
 
@@ -277,40 +259,40 @@ Generated by hard linking. The code is below:
     echo "Completed"
 
 
-<a id="org85dced2"></a>
+<a id="org26538ee"></a>
 
 ## Konsole
 
-Managed through KDE config : [KDE-Config](#orgd1e1446)
+Managed through KDE config : [KDE-Config](#org0bb8afd)
 
 
-<a id="org8e5f8c0"></a>
+<a id="org9a3a0bd"></a>
 
 ### Install
 
     sudo pacman -S konsole --noconfirm
 
 
-<a id="orgdb2f98b"></a>
+<a id="org2baf457"></a>
 
 ## Yakuake
 
-Managed through KDE config : [KDE-Config](#orgd1e1446)
+Managed through KDE config : [KDE-Config](#org0bb8afd)
 
 
-<a id="orgf9c8ef5"></a>
+<a id="orgec1a15c"></a>
 
 ### Install
 
     sudo pacman -S yakuake --noconfirm
 
 
-<a id="org0a0419f"></a>
+<a id="org6f8426c"></a>
 
 # Editors
 
 
-<a id="org4a4e698"></a>
+<a id="org8048700"></a>
 
 ## Vi Config
 
@@ -322,7 +304,7 @@ Generated by the code below:
     ln ~/.exrc
 
 
-<a id="org1c63774"></a>
+<a id="org6bd93a5"></a>
 
 ### Requirements
 
@@ -331,7 +313,7 @@ Vi
     sudo pacman -S vi --noconfirm
 
 
-<a id="orga1bab1e"></a>
+<a id="orga020eca"></a>
 
 ### Setup files
 
@@ -345,7 +327,7 @@ Vi
     echo "Completed"
 
 
-<a id="org465591d"></a>
+<a id="orga9d22e6"></a>
 
 ## Vim Config
 
@@ -357,7 +339,7 @@ Generate by the code below:
     ln ~/.vimrc
 
 
-<a id="org506834b"></a>
+<a id="org79a0676"></a>
 
 ### Requirements
 
@@ -366,14 +348,14 @@ Generate by the code below:
     sudo pacman -S vim --noconfirm
 
 
-<a id="org308c45c"></a>
+<a id="org75661ea"></a>
 
 ### Notes
 
 -   Run `:PlugInstall` inside vim to install plugins
 
 
-<a id="org725e45e"></a>
+<a id="org482073e"></a>
 
 ### Setup files
 
@@ -387,14 +369,14 @@ Generate by the code below:
     echo "Completed"
 
 
-<a id="orgf049c6c"></a>
+<a id="orgf0adc6f"></a>
 
 ## AstroNvim config
 
 AstroNvim - Highly pre-configured distribution for neovim with IDE like features.
 
 
-<a id="org05d0faa"></a>
+<a id="orgfdb8372"></a>
 
 ### Requirements
 
@@ -415,7 +397,7 @@ AstroNvim - Highly pre-configured distribution for neovim with IDE like features
     sudo pacman -S ripgrep lazygit ncdu htop python nodejs --noconfirm
 
 
-<a id="org088f937"></a>
+<a id="org93c5519"></a>
 
 ### Install - [GitHub - AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
@@ -423,12 +405,12 @@ AstroNvim - Highly pre-configured distribution for neovim with IDE like features
     nvim +PackerSync
 
 
-<a id="org0009820"></a>
+<a id="orgf502208"></a>
 
 ### Docs Link - [Getting Started | AstroNvim](https://astronvim.github.io/)
 
 
-<a id="org76c66c2"></a>
+<a id="org2f130ab"></a>
 
 ### Notes
 
@@ -444,7 +426,7 @@ AstroNvim - Highly pre-configured distribution for neovim with IDE like features
     -   `:checkhealth` for optional dependencies
 
 
-<a id="org5e78ac8"></a>
+<a id="org1e4d443"></a>
 
 ### Setup files
 
@@ -466,33 +448,33 @@ AstroNvim - Highly pre-configured distribution for neovim with IDE like features
     echo "Completed"
 
 
-<a id="org0356939"></a>
+<a id="org40595aa"></a>
 
 ## LunarVim config
 
 LunarVim - Another pre-configure great out-of-the-box neovim setup
 
 
-<a id="orgb7f7962"></a>
+<a id="org711fbd6"></a>
 
 ### Requirements
 
 -   NerdFonts
 
 
-<a id="orgd43cc3e"></a>
+<a id="org52c76a9"></a>
 
 ### Doc Link: [LunarVim | Documentation](https://www.lunarvim.org/)
 
 
-<a id="org5ab26d0"></a>
+<a id="orgfdfa1f7"></a>
 
 ### Install
 
     bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
 
 
-<a id="org61a58e6"></a>
+<a id="orgd6db9d7"></a>
 
 ### Setup files
 
@@ -506,19 +488,19 @@ LunarVim - Another pre-configure great out-of-the-box neovim setup
     echo "Completed"
 
 
-<a id="org93480ce"></a>
+<a id="org2b0b5d4"></a>
 
 ## DoomEmacs config
 
 
-<a id="orgd4043b4"></a>
+<a id="org095e8c0"></a>
 
 ### Requirements
 
     sudo pacman -S git emacs ripgrep find fd --noconfirm
 
 
-<a id="orgb5e1ab3"></a>
+<a id="org0622cc8"></a>
 
 ### Install
 
@@ -527,7 +509,7 @@ LunarVim - Another pre-configure great out-of-the-box neovim setup
     ~/.emacs.d/bin/doom install
 
 
-<a id="orga7d8510"></a>
+<a id="org83fd31d"></a>
 
 ### Notes
 
@@ -544,7 +526,7 @@ LunarVim - Another pre-configure great out-of-the-box neovim setup
         ~/.emacs.d/bin/doom sync
 
 
-<a id="org76f058a"></a>
+<a id="org5984400"></a>
 
 ### Setup config
 
@@ -558,24 +540,24 @@ LunarVim - Another pre-configure great out-of-the-box neovim setup
     echo "Completed"
 
 
-<a id="org631fb48"></a>
+<a id="orgb7b4b25"></a>
 
 ## VSCodium config
 
 
-<a id="org673a201"></a>
+<a id="org842c65a"></a>
 
 ### Requirements
 
 
-<a id="org6cc4b84"></a>
+<a id="org78739fb"></a>
 
 ### Install
 
     yay -S vscodium-bin
 
 
-<a id="org73f80b0"></a>
+<a id="org716dbbc"></a>
 
 ### Notes
 
@@ -586,10 +568,10 @@ LunarVim - Another pre-configure great out-of-the-box neovim setup
 
 2.  Install packages
 
-        cat vscodium-packages-list.txt | xargs -L1 vscodium --install-extensions
+        cat vscodium-packages-list.txt | xargs -L1 vscodium --install-extension
 
 
-<a id="orgb3a138c"></a>
+<a id="org902d854"></a>
 
 ### Setup config
 
@@ -608,35 +590,35 @@ LunarVim - Another pre-configure great out-of-the-box neovim setup
     echo "Completed"
 
 
-<a id="org3c53e5c"></a>
+<a id="org3e8c22b"></a>
 
 ## Kwrite
 
-Managed through KDE config : [KDE-Config](#orgd1e1446)
+Managed through KDE config : [KDE-Config](#org0bb8afd)
 
 
-<a id="orgaee2821"></a>
+<a id="orgd97e163"></a>
 
 ### Install
 
     sudo pacman -S kwrite --noconfirm
 
 
-<a id="org7a24070"></a>
+<a id="orgfbc338c"></a>
 
 ## Kate
 
-Managed through KDE config : [KDE-Config](#orgd1e1446)
+Managed through KDE config : [KDE-Config](#org0bb8afd)
 
 
-<a id="org391be6c"></a>
+<a id="orgb92cf97"></a>
 
 ### Install
 
     sudo pacman -S kate --noconfirm
 
 
-<a id="org83ca38b"></a>
+<a id="org6e4150c"></a>
 
 # Gesture config
 
@@ -644,21 +626,21 @@ Configuration for `Gestures` Application.
 `Gestures` application binds various keyboard shortcuts to touchpad gestures.
 
 
-<a id="orgfa999a7"></a>
+<a id="org0c43454"></a>
 
 ## Requirements
 
     sudo pacman -S xdotool --noconfirm
 
 
-<a id="org0f2fad7"></a>
+<a id="org9e3eb94"></a>
 
 ## Install `Gestures` application
 
     sudo pacman -S community/gestures --noconfirm
 
 
-<a id="org086b9c5"></a>
+<a id="org9deab93"></a>
 
 ## Configuration
 
@@ -666,40 +648,26 @@ Files stored as `"~/.config/libinput-gestures.conf"`
 Link to file: [Gestures config file.](.config/libinput-gestures.conf)
 
 
-<a id="orga8db8a9"></a>
+<a id="orga3643ad"></a>
 
 ## Setup gestures
 
     cp .config/libinput-gestures.conf  ~/.config/libinput-gestures.conf
 
 
-<a id="org1167982"></a>
+<a id="org7741838"></a>
 
 # Packages List `packages-list/`
 
 
-<a id="org4619372"></a>
+<a id="orgabd9efb"></a>
 
 ## Directory structure
 
     tree ./packages-list
 
-    ./packages-list
-    ├── brew-packages-list.txt
-    ├── cargo-packages-list.txt
-    ├── flatpak-packages-list.txt
-    ├── go-packages-list.txt
-    ├── npm-packages-list.txt
-    ├── pacman-packages-list.txt
-    ├── pip-packages-list.txt
-    ├── script.sh
-    ├── vscodium-packages-list.txt
-    └── yay-packages-list.txt
-    
-    0 directories, 10 files
 
-
-<a id="orgb42201c"></a>
+<a id="orgc499941"></a>
 
 ## script.sh
 
@@ -707,14 +675,14 @@ Script to generate packages list for all package managers
 [Pacakge list generator script](packages-list/script.sh)
 
 
-<a id="orgfdaab90"></a>
+<a id="org6c27560"></a>
 
 ## Pacman packages
 
 Pacman: Package installer for Arch Linux
 
 
-<a id="orgd2af079"></a>
+<a id="orgf047ba2"></a>
 
 ### List generated
 
@@ -783,28 +751,28 @@ Pacman: Package installer for Arch Linux
 1.  Link for reference: [Pacman/Tips and tricks - ArchWiki](https://wiki.archlinux.org/title/pacman/Tips_and_tricks#List_of_installed_packages)
 
 
-<a id="org0752ff3"></a>
+<a id="org7c6c368"></a>
 
 ## Yay packages
 
     yay -Qm > yay-packages-list.txt
 
 
-<a id="orgf5365fb"></a>
+<a id="orga48ee34"></a>
 
 ## Brew packages
 
     brew list > brew-packages-list.txt
 
 
-<a id="org567c3f6"></a>
+<a id="org5b4b14b"></a>
 
 ## Flatpak packages
 
     flatpak list > flatpak-packages-list.txt
 
 
-<a id="org43f8b22"></a>
+<a id="org29162b0"></a>
 
 ## Pip global packages
 
@@ -813,7 +781,7 @@ Pip: Package install for python
     pip freeze | awk '{print $1}' > pip-packages-list.txt
 
 
-<a id="org8ea8187"></a>
+<a id="orgdfa7b5d"></a>
 
 ## Npm global packages
 
@@ -822,56 +790,40 @@ Npm: Node package manager
     npm -g list | awk '{print $2}' | awk -F '@' '{print $1}' > npm-packages-list.txt
 
 
-<a id="org6ee127e"></a>
+<a id="org6bb1829"></a>
 
 ## Go global packages
 
     go list ... > go-packages-list.txt
 
 
-<a id="orgd965946"></a>
+<a id="org329d7df"></a>
 
 ## Rust global packages
 
     cargo install --list > rust-packages-list.txt
 
 
-<a id="org3e4c435"></a>
+<a id="org7db7710"></a>
 
 # Manuals
 
     tree ./manuals
 
-    ./manuals
-    ├── emacs-manual.org
-    ├── linux-admin.md
-    ├── linux-admin.org
-    └── vue-nuxt-guide.org
-    
-    0 directories, 4 files
 
-
-<a id="org1ee63b1"></a>
+<a id="orgeee5fe5"></a>
 
 # Install-Script
 
 
-<a id="orga4c8712"></a>
+<a id="orgbe9a8fd"></a>
 
 ## Directory structure
 
     tree ./install-script
 
-    ./install-script
-    ├── install-script.md
-    ├── install-script.org
-    ├── install-script.pdf
-    └── install-script.sh
-    
-    0 directories, 4 files
 
-
-<a id="org45e916d"></a>
+<a id="org56eeacb"></a>
 
 # Script.sh
 
@@ -879,33 +831,43 @@ Script to run on KDE `cmd` widget: [Script](script.sh)
 Link to file: [script.sh](script.sh)
 
 
-<a id="org49209b8"></a>
+<a id="orge66bbce"></a>
 
 # Exports
 
 
-<a id="orge937fbd"></a>
+<a id="orgdbc1f1c"></a>
 
 ## KDE-Shortcuts
 
 [Global configuration file for KDE](exports/ani-kde-scheme.kksrc)
 
 
-<a id="orgd1e1446"></a>
+<a id="org0bb8afd"></a>
 
 ## KDE-Config
 
--   Requirements
+
+<a id="orgc3344de"></a>
+
+### Requirements
 
     pip install konsave
 
--   File: [Konsave configuration file](exports/ani-kde-config.knsv)
-    Generated by command
+
+<a id="org70ee7bf"></a>
+
+### File: [Konsave configuration file](exports/ani-kde-config.knsv)
+
+Generated by command
 
     konsave -s ani-kde-config
     konsave -e ani-kde-config
 
--   Setup
+
+<a id="org2efbf66"></a>
+
+### Setup
 
     echo "Installing KDE Config"
     if [[ -e ~/ani-kde-config.knsv ]]; then
@@ -920,10 +882,13 @@ Link to file: [script.sh](script.sh)
     konsave -i ~/ani-kde-config.knsv
     echo "Completed"
 
--   Documentation: [Konsave | Github](https://github.com/Prayag2/konsave)
+
+<a id="org03fe2dc"></a>
+
+### Documentation: [Konsave | Github](https://github.com/Prayag2/konsave)
 
 
-<a id="org2053c77"></a>
+<a id="org62dd5d9"></a>
 
 ## KDE-Tiling
 
