@@ -1,12 +1,8 @@
-cpu-x
-dia
-gnome-icon-theme
-gnome-icon-theme-symbolic
 google-chrome
-js-beautify
-nerd-fonts-complete
-playonlinux
-rtw89-dkms-git
+nerd-fonts-fira-code
+onlyoffice-bin
+ventoy-bin
 vscodium-bin
 wordnet-cli
 wordnet-common
+yay
