@@ -17,7 +17,7 @@ if [[ -f ~/.bashrc ]]; then
     errorCheck
 fi
 echo -n "Setting up bash files..."
-cp .bashrc ~/.bashrc
+cp .bashrc ~
 errorCheck
 
 if [[ -f ~/.zshrc ]]; then
@@ -26,7 +26,7 @@ if [[ -f ~/.zshrc ]]; then
     errorCheck
 fi
 echo -n "Setting up zsh files..."
-cp .zshrc ~/.zshrc
+cp .zshrc ~
 errorCheck
 
 if [[ -f ~/.config/fish/config.fish ]]; then
@@ -35,7 +35,7 @@ if [[ -f ~/.config/fish/config.fish ]]; then
     errorCheck
 fi
 echo -n "Setting up fish config files..."
-cp --parents .config/fish/config.fish ~/.config/fish/config.fish
+cp --parents .config/fish/config.fish ~/.config/fish/
 errorCheck
 
 if [[ -f ~/.config/kitty/kitty.conf ]]; then
@@ -44,7 +44,7 @@ if [[ -f ~/.config/kitty/kitty.conf ]]; then
     errorCheck
 fi
 echo -n "Setting up kitty files..."
-cp --parents .config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+cp --parents .config/kitty/kitty.conf ~/.config/kitty/
 errorCheck
 
 if [[ -f ~/.exrc ]]; then
@@ -53,7 +53,7 @@ if [[ -f ~/.exrc ]]; then
     errorCheck
 fi
 echo -n "Setting up vi files..."
-cp .exrc ~/.exrc
+cp .exrc ~
 errorCheck
 
 if [[ -f ~/.vimrc ]]; then
@@ -62,7 +62,7 @@ if [[ -f ~/.vimrc ]]; then
     errorCheck
 fi
 echo -n "Setting up vim files..."
-cp .vimrc ~/.vimrc
+cp .vimrc ~
 errorCheck
 
 if [[ -f ~/.config/nvim/init.lua ]]; then
@@ -71,7 +71,7 @@ if [[ -f ~/.config/nvim/init.lua ]]; then
     errorCheck
 fi
 echo -n "Setting up nvim/init.lua"
-cp --parents .config/nvim/init.lua ~/.config/nvim/init.lua
+cp --parents .config/nvim/init.lua ~/.config/nvim/
 errorCheck
 if [[ -f ~/.config/nvim/lua/user/init.lua ]]; then
     echo -n "Backing up old nvim/lua/user/init.lua"
@@ -79,7 +79,7 @@ if [[ -f ~/.config/nvim/lua/user/init.lua ]]; then
     errorCheck
 fi
 echo -n "Setting up nvim/lua/user/init.lua"
-cp --parents .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/init.lua
+cp --parents .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/
 errorCheck
 
 if [[ -f ~/.config/lvim/init.lua ]]; then
@@ -88,7 +88,7 @@ if [[ -f ~/.config/lvim/init.lua ]]; then
     errorCheck
 fi
 echo -n "Setting up lvim/config.lua"
-cp .config/lvim/config.lua ~/.config/lvim/config.lua
+cp .config/lvim/config.lua ~/.config/lvim/
 errorCheck
 
 if [[ -d ~/.doom.d/ ]]; then
@@ -97,7 +97,7 @@ if [[ -d ~/.doom.d/ ]]; then
     errorCheck
 fi
 echo -n "Setting up doom files"
-cp .doom.d ~/.doom.d
+cp --parents .doom.d/* ~/.doom.d/
 errorCheck
 
 echo "Installing vscodium extensions..."
@@ -106,11 +106,13 @@ echo "Installing vscodium extensions... Completed"
 if [[ -d ~/.config/VSCodium/user ]]; then
     echo -n "Backing old codium files"
     mv ~/.config/VSCodium/user/keybindings.json ~/.config/VSCodium/user/keybindings.json.bak
+    errorCheck
     mv ~/.config/VSCodium/user/settings.json ~/.config/VSCodium/user/settings.json.bak
     errorCheck
 fi
 echo "Moving codium files..."
 cp .config/VSCodium/user/keybindings.json ~/.config/VSCodium/user/keybindings.json
+errorCheck
 cp .config/VSCodium/user/settings.json ~/.config/VSCodium/user/settings.json
 errorCheck
 
