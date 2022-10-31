@@ -47,8 +47,21 @@
   "editor.wordWrap": "on",
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.linux": "/$HOME/.config/nvim/init.lua",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "window.zoomLevel": 1
+  "whichkey.bindingOverrides": [
+    {
+      "keys": "o",
+      "position": 10,
+      "name": "Open...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "t",
+          "name": "Terminal",
+          "type": "command",
+          "command": "workbench.action.togglePanel"
+        }
+      ]
+    }
+  ],
+  "window.zoomLevel": -1
 }

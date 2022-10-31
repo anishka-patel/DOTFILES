@@ -1,24 +1,20 @@
-#! /bin/bash
+#! /usr/bin/bash
 # ~/.bashrc
 #
-# Vi style bindings
-set -o vi
 
-export EDITOR="emacsclient -t"
-export VISUAL="emacsclient -t"
+set -o vi
+export EDITOR="emacsclient -t -a ''"
+export VISUAL="emacsclient -t -a ''"
+# export EDITOR="vim"
+# export VISUAL="vim"
 export GOPATH="$HOME/go/bin/"
 
 alias vi=vim
 alias nv=nvim
-alias gnv=neovide
 alias lv=lvim
-alias glv=leovide
-alias es=emacs
-alias ec="emacsclient -t"
-alias gec="emacsclient -cnqua ''"
-alias ka=kate
-alias kw=kwrite
-alias code=codium
+alias ec="emacsclient -t -a ''"
+alias gec="emacsclient -c -a ''"
+alias code=vscodium
 
 
 [[ $- != *i* ]] && return
@@ -114,6 +110,7 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
+alias emacs="emacsclient -c -a 'emacs'"
 
 xhost +local:root > /dev/null 2>&1
 
