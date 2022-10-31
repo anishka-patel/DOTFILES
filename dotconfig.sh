@@ -7,8 +7,9 @@
 errorCheck () {
     if [[ $? -eq 0 ]]; then
         echo "Completed"
+    else
+        echo "Error"
     fi
-    echo "Error"
 }
 
 if [[ -f ~/.bashrc ]]; then
@@ -35,7 +36,7 @@ if [[ -f ~/.config/fish/config.fish ]]; then
     errorCheck
 fi
 echo -n "Setting up fish config files..."
-cp --parents .config/fish/config.fish ~/.config/fish/
+cp  .config/fish/config.fish ~/.config/fish/
 errorCheck
 
 if [[ -f ~/.config/kitty/kitty.conf ]]; then
@@ -44,7 +45,7 @@ if [[ -f ~/.config/kitty/kitty.conf ]]; then
     errorCheck
 fi
 echo -n "Setting up kitty files..."
-cp --parents .config/kitty/kitty.conf ~/.config/kitty/
+cp  .config/kitty/kitty.conf ~/.config/kitty/
 errorCheck
 
 if [[ -f ~/.exrc ]]; then
@@ -71,7 +72,7 @@ if [[ -f ~/.config/nvim/init.lua ]]; then
     errorCheck
 fi
 echo -n "Setting up nvim/init.lua"
-cp --parents .config/nvim/init.lua ~/.config/nvim/
+cp  .config/nvim/init.lua ~/.config/nvim/
 errorCheck
 if [[ -f ~/.config/nvim/lua/user/init.lua ]]; then
     echo -n "Backing up old nvim/lua/user/init.lua"
@@ -79,7 +80,7 @@ if [[ -f ~/.config/nvim/lua/user/init.lua ]]; then
     errorCheck
 fi
 echo -n "Setting up nvim/lua/user/init.lua"
-cp --parents .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/
+cp  .config/nvim/lua/user/init.lua ~/.config/nvim/lua/user/
 errorCheck
 
 if [[ -f ~/.config/lvim/init.lua ]]; then
@@ -97,23 +98,23 @@ if [[ -d ~/.doom.d/ ]]; then
     errorCheck
 fi
 echo -n "Setting up doom files"
-cp --parents .doom.d/* ~/.doom.d/
+cp  .doom.d/* ~/.doom.d/
 errorCheck
 
 echo "Installing vscodium extensions..."
 cat packages-list/vscodium-packages-list.txt | xargs -L1 codium --install-extension
 echo "Installing vscodium extensions... Completed"
-if [[ -d ~/.config/VSCodium/user ]]; then
+if [[ -d ~/.config/VSCodium/User ]]; then
     echo -n "Backing old codium files"
-    mv ~/.config/VSCodium/user/keybindings.json ~/.config/VSCodium/user/keybindings.json.bak
+    mv ~/.config/VSCodium/User/keybindings.json ~/.config/VSCodium/User/keybindings.json.bak
     errorCheck
-    mv ~/.config/VSCodium/user/settings.json ~/.config/VSCodium/user/settings.json.bak
+    mv ~/.config/VSCodium/User/settings.json ~/.config/VSCodium/User/settings.json.bak
     errorCheck
 fi
 echo "Moving codium files..."
-cp .config/VSCodium/user/keybindings.json ~/.config/VSCodium/user/keybindings.json
+cp .config/VSCodium/User/keybindings.json ~/.config/VSCodium/User/keybindings.json
 errorCheck
-cp .config/VSCodium/user/settings.json ~/.config/VSCodium/user/settings.json
+cp .config/VSCodium/User/settings.json ~/.config/VSCodium/User/settings.json
 errorCheck
 
 pip install konsave
