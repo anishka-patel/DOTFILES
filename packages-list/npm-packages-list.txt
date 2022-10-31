@@ -1,19 +1,20 @@
 
+
+
 corepack
+create-nuxt-app
 eslint
-ethlint
-firebase-tools
-ganache-cli
-ganache
 js-beautify
+mocha
 neovim
 node-gyp
 nopt
 npm
 semver
 solc
+solium
 stylelint
 truffle
-ts-node
-typescript
+typescript-language-server
+web3
 
