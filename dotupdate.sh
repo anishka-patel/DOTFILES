@@ -5,7 +5,7 @@
 # Usage: ./dotupdate.sh
 
 errorCheck () {
-    if [[ $? -eq 0]]; then
+    if [[ $? -eq 0 ]]; then
         echo "Completed"
     fi
     echo "Error"

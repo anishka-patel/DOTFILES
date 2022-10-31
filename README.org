@@ -55,7 +55,7 @@ tree . -L 1 -a -F |  grep -v /$
 # Usage: ./dotconfig.sh
 
 errorCheck () {
-    if [[ $? -eq 0]]; then
+    if [[ $? -eq 0 ]]; then
         echo "Completed"
     fi
     echo "Error"
@@ -71,7 +71,7 @@ errorCheck () {
 # Usage: ./dotupdate.sh
 
 errorCheck () {
-    if [[ $? -eq 0]]; then
+    if [[ $? -eq 0 ]]; then
         echo "Completed"
     fi
     echo "Error"
