@@ -22,8 +22,10 @@ chardet
 click
 colorama
 commonmark
+contourpy
 cryptography
 cssselect
+cupshelpers
 cycler
 Cython
 debugpy
@@ -98,6 +100,7 @@ nbconvert
 nbformat
 nest-asyncio
 netsnmp-python
+nftables
 nose
 notebook
 notebook-shim
@@ -110,6 +113,7 @@ pandocfilters
 parso
 path-and-address
 pathspec
+pdfarranger
 pep517
 pexpect
 pickleshare
@@ -135,6 +139,7 @@ pycurl
 pydantic
 pyflakes
 Pygments
+PyGObject
 pynvim
 pyOpenSSL
 pyparsing

@@ -17,12 +17,14 @@ johnpapa.vscode-peacock
 JuanBlanco.solidity
 Koihik.vscode-lua-format
 mads-hartmann.bash-ide-vscode
-matklad.rust-analyzer
 ms-azuretools.vscode-docker
+ms-dotnettools.csharp
+ms-dotnettools.vscode-dotnet-runtime
 ms-python.python
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
+ms-vscode.mono-debug
 ms-vscode.references-view
 ms-vscode.vscode-typescript-tslint-plugin
 muhammad-sammy.csharp
@@ -31,6 +33,7 @@ octref.vetur
 PKief.material-icon-theme
 redhat.vscode-yaml
 rust-lang.rust
+rust-lang.rust-analyzer
 shd101wyy.markdown-preview-enhanced
 streetsidesoftware.code-spell-checker
 sumneko.lua

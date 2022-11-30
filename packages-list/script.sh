@@ -20,6 +20,9 @@ echo "Completed"
 echo -n "Generating Flatpak  packages list..."
 flatpak list | awk '{print $1}' > flatpak-packages-list.txt
 echo "Completed"
+echo -n "Generating Snap     packages list..."
+snap list --all > snap-packages-list.txt
+echo "Completed"
 echo -n "Generating Npm      packages list..."
 npm -g list | awk '{print $2}' | awk -F '@' '{print $1}' > npm-packages-list.txt
 echo "Completed"

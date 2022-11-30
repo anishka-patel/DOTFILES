@@ -1,8 +1,13 @@
+archlinux-appstream-data-pamac
 google-chrome
-nerd-fonts-fira-code
+kwin-bismuth
+libpamac-flatpak
 onlyoffice-bin
+pamac-flatpak
+plymouth
 ventoy-bin
 vscodium-bin
+vscodium-bin-marketplace
 wordnet-cli
 wordnet-common
 yay

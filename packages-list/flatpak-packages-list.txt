@@ -1,3 +1,5 @@
+Dropbox
+Postman
 draw.io
 Freedesktop
 Freedesktop
@@ -5,5 +7,6 @@ Mesa
 Mesa
 openh264
 openh264
+GNOME
 Breeze
 Zoom
