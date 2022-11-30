@@ -12,7 +12,7 @@
 
 DATE=$(date +" %d.%m.%y  %a   %H:%M (%z)")
 KERNEL=$(uname -r | awk -F '-' '{print $1}')
-DISTRO=$(uname -r | awk -F '-' '{print $NF}')
+DISTRO=$(cat /etc/os-release | grep ^NAME | awk -F= '{print $2}' | sed 's/\"//g'| awk '{print $1}')
 IFNAME=$(ip -brief a | grep "UP" |head| awk '{print $1}')
 IFADDR=$(ip -brief a | grep "UP" |head| awk '{print $3}'| sed 's/...$//' )
 echo "$DATE"
@@ -34,8 +34,15 @@ MEMAVLINFO=$(cat /proc/meminfo |
   numfmt --field 2 --from-unit=Ki --to-unit=Gi |
   sed 's/ kB//g'| grep -i memavailable | awk '{print $2}')
 echo "$(printf "MEM:   %02dG   %02dG  累 %02dG" "$MEMTOTINFO" $((MEMTOTINFO - MEMAVLINFO)) "$MEMAVLINFO")"
+SWPTOTINFO=$(cat /proc/meminfo |
+  numfmt --field 2 --from-unit=Ki --to-unit=Gi |
+  sed 's/ kB//g' | grep -i swaptotal | awk '{print $2}')
+SWPAVLINFO=$(cat /proc/meminfo |
+  numfmt --field 2 --from-unit=Ki --to-unit=Gi |
+  sed 's/ kB//g' | grep -i swapfree | awk '{print $2}')
+echo "$(printf "SWP:   %02dG   %02dG  累 %02dG" "$SWPTOTINFO" $((SWPTOTINFO - SWPAVLINFO)) "$SWPAVLINFO")"
 echo ""
-IONAME=$(lsblk | grep -E "disk"| head | awk '{print $1}')
+IONAME=$(lsblk | grep disk | tail -1 | awk '{print $1}')
 IOREADINFO=$(iostat | grep "$IONAME" | awk '{print $3}')
 IOWRITINFO=$(iostat | grep "$IONAME" | awk '{print $4}')
 echo "$(printf "IO: %-8s %6d   %6d  " "$IONAME" "$IOREADINFO" "$IOWRITINFO")"
@@ -49,9 +56,11 @@ IFTXINFO=$(ifstat | grep "$IFNAME" | awk '{print $8}')
 echo "$(printf "IF: %-8s %6d   %6d  " "$IFNAME" "$IFTXINFO" "$IFRXINFO")"
 echo ""
 echo "---------------------------------------"
+PACALLPKGS=$(pacman -Q | wc -l)
 PACMANPKGS=$(pacman -Qn | wc -l)
 YAYPKGS=$(yay -Qm | wc -l)
 FLATPAKPKGS=$(flatpak list | wc -l)
+SNAPPKGS=$(snap list --all | wc -l)
 BREWPKGS=$(brew list | wc -l)
 PYTHONPKGS=$(pip list | wc -l)
 NODEPKGS=$(npm -g list | wc -l)
@@ -59,8 +68,11 @@ RUSTPKGS=$(cargo install --list | wc -l)
 GOPKGS=$(go list ... | wc -l)
 echo -n "Pacman  """"$(printf "%5d" "$PACMANPKGS")"
 echo "   Yay     """"$(printf "%5d" "$YAYPKGS")"
-echo -n "Brew    """"$(printf "%5d" "$BREWPKGS")"
-echo "   Flatpak """"$(printf "%5d" "$FLATPAKPKGS")"
+echo -n "Flatpak """"$(printf "%5d" "$FLATPAKPKGS")"
+echo "   Snap    """"$(printf "%5d" "$SNAPPKGS")"
+# echo -n "Brew    """"$(printf "%5d" "$BREWPKGS")"
+# echo -n "Pacman  """"$(printf "%5d" "$PACALLPKGS")"
+# echo "   Flatpak """"$(printf "%5d" "$FLATPAKPKGS")"
 echo -n "Node    """"$(printf "%5d" "$NODEPKGS")"
 echo "   Python  """"$(printf "%5d" "$PYTHONPKGS")"
 echo -n "Go      """"$(printf "%5d" "$GOPKGS")"
@@ -70,15 +82,15 @@ echo ""
 echo ""
 echo "--------------"
 echo "---  ---"
-echo "Dolphin              Meta-e"
-echo "KRunner          Meta-space"
+echo "Dolphin                 M-e"
+echo "KRunner               M-SPC"
 echo "---  ---"
-echo "Emacs                Meta-t"
-echo "Neovide              Meta-T"
+echo "Emacs                   M-t"
+echo "Neovim                M-S-t"
 echo "---  ---"
-echo "Chrome               Meta-i"
-echo "Firefox              Meta-I"
+echo "Chrome                  M-i"
+echo "Firefox               M-S-i"
 echo "---  ---"
-echo "Yakuake          Meta-Enter"
-echo "Konsole          Meta-enter"
+echo "Konsole               M-RET"
+echo "Kitty               M-S-RET"
 echo ""
