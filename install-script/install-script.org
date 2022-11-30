@@ -16,60 +16,116 @@
 # Usage: ./install-script.sh
 #+end_src
 * Updating cache & packages
+Arch Linux
 #+begin_src bash
-sudo pacman -Syu --noconfirm
+sudo pacman -Syu --noconfirm --needed
+#+end_src
+Debian / Ubuntu Based Linux
+#+begin_src bash
+# sudo apt update && sudo apt upgrade -y
+#+end_src
+Fedora / RHEL Based Linux
+#+begin_src bash
+# sudo dnf update && sudo dnf upgrade -y
 #+end_src
 * Other Package Managers
 ** Flatpak
 #+begin_src bash
-sudo pacman -S flatpak --noconfirm
+sudo pacman -S flatpak --noconfirm --needed
 #+end_src
 ** AppImages
 #+begin_src bash
-sudo pacman -S appimagelauncher --noconfirm
+sudo pacman -S appimagelauncher --noconfirm --needed
 #+end_src
-** Homebrew
+** Brew
 #+begin_src bash
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 #+end_src
-** Yay
- * Get ~base-devel~ and ~git~
 #+begin_src bash
-sudo pacman -S --needed base-devel git --noconfirm
 #+end_src
- * Get ~yay~ repository
+** Yay (AUR)
+*** Get ~base-devel~ and ~git~
+#+begin_src bash
+sudo pacman -S --needed base-devel git --noconfirm --needed
+#+end_src
+*** Get ~yay~ repository
 #+begin_src bash
 git clone https://aur.archlinux.org/yay.git
 cd yay
 #+end_src
- * Install ~yay~ with ~makepkg~
+*** Install ~yay~ with ~makepkg~
 #+begin_src bash
 makepkg -si
 #+end_src
- * Check version
+*** Check version
 #+begin_src bash
 yay --version
 #+end_src
+** Snap
+*** Get ~snapd~
+#+begin_src bash
+git clone https://aur.archlinux.org/snapd.git
+cd snapd
+makepkg -si
+#+end_src
+*** Start ~snapd.socket~ service
+#+begin_src bash
+sudo systemctl enable --now snapd.socket
+#+end_src
+*** Enable classic ~snap~ support
+#+begin_src bash
+sudo ln -s /var/lib/snapd/snap /snap
+#+end_src
+** TODO Nix
+:LOGBOOK:
+- State "TODO"       from              [2022-11-29 Tue 13:39]
+:END:
+* Package Manager GUI
+** Pamac (ARCH)
+#+begin_src bash
+
+# Sources: pacman, aur
+# yay -S pamac-aur
+
+# Sources: pacman, flatpak, aur
+yay -S pamac-flatpak
+
+# Sources: pacman, flatpak, aur, snap
+# yay -S pamac-full
+
+#+end_src
+** Discover (KDE)
+#+begin_src bash
+
+# Arch distro
+sudo pacman -S discover --noconfirm --needed
+
+#+end_src
 * System Utilities
 #+begin_src bash
-sudo pacman -S htop glances --noconfirm
-# sudo pacman -S sysstat ifstat --noconfirm
+sudo pacman -S htop glances powertop --noconfirm --needed
+# sudo pacman -S sysstat ifstat --noconfirm --needed
 #+end_src
 ** System info utilities
 #+begin_src bash
-sudo pacman -S neofetch --noconfirm
+sudo pacman -S neofetch --noconfirm --needed
 #+end_src
 ** Finding utilities
 #+begin_src bash
-sudo pacman -S fd mlocate --noconfirm
+sudo pacman -S fd mlocate --noconfirm --needed
 #+end_src
 ** Disk Management Utilities
 #+begin_src bash
-sudo pacman -S df du --noconfirm
+sudo pacman -S df du --noconfirm --needed
+#+end_src
+* Help Utilities
+#+begin_src bash
+sudo pacman -S tldr --noconfirm --needed
+sduo pacman -S man-db mandoc --noconfirm --needed
 #+end_src
 * Source Code Management
 #+begin_src bash
-sudo -S git github-cli --noconfirm
+sudo -S git github-cli --noconfirm --needed
 #+end_src
 * Display Server
 #+begin_src bash
@@ -77,58 +133,54 @@ sudo -S git github-cli --noconfirm
 #+end_src
 * Desktop Manager
 #+begin_src bash
-sudo pacman -S sddm --noconfirm
+sudo pacman -S sddm --noconfirm --needed
 #+end_src
 * Desktop Environment
 ** KDE Plasma Desktop
 #+begin_src bash
-sudo pacman -S plasma --noconfirm
+sudo pacman -S plasma --noconfirm --needed
 #+end_src
 ** KDE Plasma Desktop Minimal
 #+begin_src bash
-sudo pacman -S plasma-desktop --noconfirm
+sudo pacman -S plasma-desktop --noconfirm --needed
 #+end_src
 ** Other Plasma Utilities
 #+begin_src bash
-sudo pacman -S plasma-nm plasma-pa kdeplasma-addons kde-gtk-config --noconfirm
+sudo pacman -S plasma-nm plasma-pa kdeplasma-addons kde-gtk-config --noconfirm --needed
 #+end_src
 ** KDE Virtual console
 #+begin_src bash
-sudo pacman -S konsole yakuake --noconfirm
+sudo pacman -S konsole yakuake --noconfirm --needed
 #+end_src
 ** KDE File manager
 #+begin_src bash
-sudo pacman -S doplhin --noconfirm
-#+end_src
-** ARCH GUI Package manager
-#+begin_src bash
-sudo pacman -S pamac --noconfirm
+sudo pacman -S doplhin --noconfirm --needed
 #+end_src
 ** KDE Package Explorer
 #+begin_src bash
-sudo pacman -S discover --noconfirm
+sudo pacman -S discover --noconfirm --needed
 #+end_src
 ** KDE Text Editors
 #+begin_src bash
-sudo pacman -S kate kwrite --noconfirm
+sudo pacman -S kate kwrite --noconfirm --needed
 #+end_src
 ** KDE Battery manager
 #+begin_src bash
-sudo pacman -S powerdevil --noconfirm
+sudo pacman -S powerdevil --noconfirm --needed
 #+end_src
 ** KDE System monitor
 #+begin_src bash
-sudo pacman -S ksysguard --noconfirm
+sudo pacman -S ksysguard --noconfirm --needed
 #+end_src
 ** KDE Applications
 List of applications: [[https://archlinux.org/groups/x86_64/kde-applications/][KDE-Applications | Arch Linux]]
 #+begin_src bash
-# sudo pacman -S kde-applications --noconfirm
+# sudo pacman -S kde-applications --noconfirm --needed
 #+end_src
 ** KDE Utilities
 List of utilities: [[https://archlinux.org/groups/x86_64/kde-utilities/][KDE-Utilities | Arch Linux]]
 #+begin_src bash
-# sudo pacman -S kde-utilities --noconfirm
+# sudo pacman -S kde-utilities --noconfirm --needed
 #+end_src
 * X Session
 #+begin_src bash
@@ -138,12 +190,12 @@ sudo systemctl enable NetworkManager.service
 * Fonts
 #+begin_src bash
 sudo yay -S nerd-fonts-complete
-# sudo pacman -S ttf-cascadia-code ttf-dejavu ttf-fira-code ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji terminus-font --noconfirm
+# sudo pacman -S ttf-cascadia-code ttf-dejavu ttf-fira-code ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji terminus-font --noconfirm --needed
 #+end_src
 * Shells
 #+begin_src bash
-# sudo pacman -S sh bash --noconfirm
-sudo pacman -S zsh fish --noconfirm
+# sudo pacman -S sh bash --noconfirm --needed
+sudo pacman -S zsh fish --noconfirm --needed
 #+end_src
 * Terminals
 #+begin_src bash
@@ -151,108 +203,114 @@ sudo pacman -S kitty --noconfrim
 #+end_src
 * Firewall
 #+begin_src bash
-sudo pacman -S firewall --noconfirm
-# sudo pacman -S ufw gufw --noconfirm
+sudo pacman -S firewall --noconfirm --needed
+# sudo pacman -S ufw gufw --noconfirm --needed
 #+end_src
 * Text Editors
 #+begin_src bash
-# sudo pacman -S vi vim --noconfirm
-sudo pacman -S neovim emacs --noconfirm
-# sudo pacman -S kate kwrite --noconfirm
-# sudo yay -S vscodium-bin
+sudo pacman -S vi vim --noconfirm --needed
+sudo pacman -S neovim emacs --noconfirm --needed
+sudo pacman -S kate kwrite --noconfirm --needed
+sudo yay -S vscodium-bin
 #+end_src
 * Web Browsers
 #+begin_src bash
-sudo pacman -S firefox --noconfirm
+sudo pacman -S firefox --noconfirm --needed
 sudo yay -S google.chrome
 # sudo flatpak install com.google.Chrome -y
-# sudo pacman -S brave chromium --noconfirm
+# sudo pacman -S brave chromium --noconfirm --needed
 #+end_src
 * Languages, Runtime & Development Environment
 ** Most Important
 #+begin_src bash
-# sudo pacman -S python nodejs rust go --noconfirm
+# sudo pacman -S python nodejs rust go --noconfirm --needed
 #+end_src
 ** Python
 #+begin_src bash
-sudo pacman -S python ipython --noconfirm
+sudo pacman -S python ipython --noconfirm --needed
+# sudo pacman -S pip --noconfirm --needed
 #+end_src
 ** Node
 #+begin_src bash
-sudo pacman -S nodejs --noconfirm
+sudo pacman -S nodejs --noconfirm --needed
+sudo pacman -S npm --noconfirm --needed
 #+end_src
 ** Rust
 #+begin_src bash
-sudo pacman -S rustup rust-analyzer --noconfirm
+sudo pacman -S rustup rust-analyzer --noconfirm --needed
 #+end_src
 ** Lua
 #+begin_src bash
-sudo pacman -S lua luarocks luajit --noconfirm
+sudo pacman -S lua luarocks luajit --noconfirm --needed
 #+end_src
 ** Dotnet
 #+begin_src bash
-sudo pacman -S dotnet-host dotnet-sdk dotnet-runtime dotnet-targeting-pack --noconfirm
+sudo pacman -S dotnet-host dotnet-sdk dotnet-runtime dotnet-targeting-pack --noconfirm --needed
 #+end_src
 ** Mono
 #+begin_src bash
-sudo pacman -S mono mono-addins --noconfirm
+sudo pacman -S mono mono-addins --noconfirm --needed
 #+end_src
 ** Go
 #+begin_src bash
-sudo pacman -S go --noconfirm
+sudo pacman -S go --noconfirm --needed
 #+end_src
 * Game & 3d Modeling
 #+begin_src bash
-sudo pacman -S godot blender freecad --noconfirm
+sudo pacman -S godot blender freecad --noconfirm --needed
 #+end_src
 * Audio, Video & Multimedia
 ** Photo Viewer & editor
 #+begin_src bash
-sudo pacman -S gwenview gimp krita inkscape --noconfirm
+sudo pacman -S gwenview gimp krita inkscape --noconfirm --needed
 #+end_src
 ** Audio viewer & editor
 #+begin_src bash
 # Video viewing/editing/encoding
-sudo pacman -S vlc kdenlive handbrake --noconfirm
+sudo pacman -S vlc kdenlive handbrake --noconfirm --needed
 #+end_src
 ** Video viewer & editor
 #+begin_src bash
 # Audio viewing/editing/composition
-sudo pacman -S elias audacity lmms --noconfirm
+sudo pacman -S elias audacity lmms --noconfirm --needed
 #+end_src
 * Virtual Machines & Containers
 ** Containers
 #+begin_src bash
-sudo pacman -S docker --noconfirm
-# sudo pacman -S lxc lxd --noconfirm
+sudo pacman -S docker --noconfirm --needed
+# sudo pacman -S lxc lxd --noconfirm --needed
+# sudo pacman -S podman --noconfirm --needed
 #+end_src
 ** Virtual Machines
 #+begin_src bash
-sudo pacman -S virtualbox vagarant --noconfirm
-# sudo pacman -S virt-manager --noconfirm
+sudo pacman -S linux-headers linux-lts-headers --noconfirm --needed
+sudo pacman -S virtualbox vagarant --noconfirm --needed
+sudo pacman -S virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-iso --noconfirm --needed
+# sudo pacman -S virt-manager --noconfirm --needed
 #+end_src
 * Office Utilities
 ** Most Important
 #+begin_src bash
-# sudo pacman -S abiword okular onlyoffice-desktopeditors simple-scan --noconfirm
+# sudo pacman -S abiword okular simple-scan --noconfirm --needed
+# yay onlyoffice-desktopeditors
 #+end_src
 ** Office Suite
 #+begin_src bash
-sudo pacman -S onlyoffice-desktopeditors --noconfirm
-# sudo pacman -S libre-office-still --noconfirm
+yay -S onlyoffice-desktopeditors
+# sudo pacman -S libre-office-still --noconfirm --needed
 #+end_src
 ** Rich Text Editor
 #+begin_src bash
-sudo pacman -S abiword --noconfirm
+sudo pacman -S abiword --noconfirm --needed
 #+end_src
 ** Diagram Editor
 #+begin_src bash
-# sudo pacman -S dia --noconfirm
-flatpak install draw.io
+# sudo pacman -S dia --noconfirm --needed
+flatpak install drawio
 #+end_src
 ** Document Viewer
 #+begin_src bash
-sudo pacman -S okular --noconfirm
+sudo pacman -S okular calibre --noconfirm --needed
 #+end_src
 ** Document Scan
 #+begin_src bash
@@ -260,5 +318,32 @@ sudo pacman -S simple-scan --nocomfirm
 #+end_src
 * Other Utilities
 #+begin_src bash
-sudo pacman -S ark spectacle uget gestures ventoy --noconfirm
+sudo pacman -S spectacle uget elinks --noconfirm --needed
+yay -S ventoy-bin --noconfirm --needed
+#+end_src
+** Screenshot
+#+begin_src bash
+# sudo pacman -S flameshot --noconfirm --needed
+sudo pacman -S spectacle --noconfirm --needed
+#+end_src
+** Cloud storage
+*** Dropbox
+#+begin_src bash
+sudo flatpak install dropbox -y
+#+end_src
+*** Google Drive
+#+begin_src bash
+sudo pacman -S kio-gdrive --noconfirm --needed
+#+end_src
+** Text Based internet browser
+#+begin_src bash
+sudo pacman -S elinks --noconfirm --needed
+#+end_src
+** Download Manager
+#+begin_src bash
+sudo pacman -S uget --noconfrim --needed
+#+end_src
+** Bootable Media Creation Tool
+#+begin_src bash
+yay -S ventoy-bin
 #+end_src

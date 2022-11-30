@@ -1,69 +1,88 @@
 
 # Table of Contents
 
-1.  [About Script](#org5af92bc)
-2.  [Updating cache & packages](#orgd1eed15)
-3.  [Other Package Managers](#org572a9af)
-    1.  [Flatpak](#orgbae2081)
-    2.  [AppImages](#orgcd449ed)
-    3.  [Homebrew](#orgbcdf72c)
-    4.  [Yay](#orgff35835)
-4.  [System Utilities](#orge215b46)
-    1.  [System info utilities](#org867355d)
-    2.  [Finding utilities](#orgffe4bfc)
-    3.  [Disk Management Utilities](#org7dc69ef)
-5.  [Source Code Management](#org923db2a)
-6.  [Display Server](#org473152f)
-7.  [Desktop Manager](#org0adf574)
-8.  [Desktop Environment](#orgc032e60)
-    1.  [KDE Plasma Desktop](#org2b1baff)
-    2.  [KDE Plasma Desktop Minimal](#org2d30e88)
-    3.  [Other Plasma Utilities](#org8d05c2d)
-    4.  [KDE Virtual console](#orgc3af4e1)
-    5.  [KDE File manager](#orgb698a42)
-    6.  [ARCH GUI Package manager](#org31b975b)
-    7.  [KDE Package Explorer](#orgb266d43)
-    8.  [KDE Text Editors](#orgefd8144)
-    9.  [KDE Battery manager](#orgad27327)
-    10. [KDE System monitor](#orgf53a318)
-    11. [KDE Applications](#org214b620)
-    12. [KDE Utilities](#org09585cd)
-9.  [X Session](#org121ca60)
-10. [Fonts](#orgd7b54b3)
-11. [Shells](#orge9e61e2)
-12. [Terminals](#orgce3b2a0)
-13. [Firewall](#orgfe1d1cd)
-14. [Text Editors](#org39b22a7)
-15. [Web Browsers](#orgc68eb84)
-16. [Languages, Runtime & Development Environment](#org4f09ea2)
-    1.  [Most Important](#orgd4696cb)
-    2.  [Python](#orgb1f733c)
-    3.  [Node](#org8a817f4)
-    4.  [Rust](#orge61b8dc)
-    5.  [Lua](#orgd0ffa32)
-    6.  [Dotnet](#org239f5b7)
-    7.  [Mono](#orgf4076ce)
-    8.  [Go](#orgee672b3)
-17. [Game & 3d Modeling](#org3840727)
-18. [Audio, Video & Multimedia](#org87db5de)
-    1.  [Photo Viewer & editor](#org27e10db)
-    2.  [Audio viewer & editor](#orgd59674d)
-    3.  [Video viewer & editor](#orgf976b1f)
-19. [Virtual Machines & Containers](#org4ba1fe1)
-    1.  [Containers](#org6e6b991)
-    2.  [Virtual Machines](#org1fde2bf)
-20. [Office Utilities](#org72e758e)
-    1.  [Most Important](#org27790fd)
-    2.  [Office Suite](#orgfabca8d)
-    3.  [Rich Text Editor](#org58d763b)
-    4.  [Diagram Editor](#org886011f)
-    5.  [Document Viewer](#orged84559)
-    6.  [Document Scan](#org50c578d)
-21. [Other Utilities](#org520f97d)
+1.  [About Script](#orge629af3)
+2.  [Updating cache & packages](#org91b0679)
+3.  [Other Package Managers](#org81b676d)
+    1.  [Flatpak](#org38f08e3)
+    2.  [AppImages](#org9e2a99f)
+    3.  [Brew](#org5e92be0)
+    4.  [Yay (AUR)](#org31ea7ec)
+        1.  [Get `base-devel` and `git`](#orgfa4df79)
+        2.  [Get `yay` repository](#orgdc1b169)
+        3.  [Install `yay` with `makepkg`](#orga1fa3d2)
+        4.  [Check version](#orgb8c645c)
+    5.  [Snap](#org96f5ff7)
+        1.  [Get `snapd`](#org5521240)
+        2.  [Start `snapd.socket` service](#org6951434)
+        3.  [Enable classic `snap` support](#orgcee2285)
+    6.  [Nix](#org0c190e0)
+4.  [Package Manager GUI](#org5dae1c3)
+    1.  [Pamac (ARCH)](#org94566a5)
+    2.  [Discover (KDE)](#org0fa91d7)
+5.  [System Utilities](#org6042e7d)
+    1.  [System info utilities](#orgec66095)
+    2.  [Finding utilities](#org4636fcb)
+    3.  [Disk Management Utilities](#orga2a5b62)
+6.  [Help Utilities](#org83c0510)
+7.  [Source Code Management](#orge5a3e20)
+8.  [Display Server](#orgc585b92)
+9.  [Desktop Manager](#orgd5346b7)
+10. [Desktop Environment](#org71fc2c3)
+    1.  [KDE Plasma Desktop](#org6219b8e)
+    2.  [KDE Plasma Desktop Minimal](#orgb58841d)
+    3.  [Other Plasma Utilities](#orgcedbd54)
+    4.  [KDE Virtual console](#org1dee2fa)
+    5.  [KDE File manager](#org9d55ef9)
+    6.  [KDE Package Explorer](#org71e86d5)
+    7.  [KDE Text Editors](#org6f4d46c)
+    8.  [KDE Battery manager](#orgdb40313)
+    9.  [KDE System monitor](#org261a082)
+    10. [KDE Applications](#org0d86f16)
+    11. [KDE Utilities](#orgb72d1e0)
+11. [X Session](#org0f0b2ef)
+12. [Fonts](#org68602b5)
+13. [Shells](#org09daf4e)
+14. [Terminals](#org295d1fc)
+15. [Firewall](#org5accbe3)
+16. [Text Editors](#orge10c685)
+17. [Web Browsers](#orgf4532cf)
+18. [Languages, Runtime & Development Environment](#orgfefc782)
+    1.  [Most Important](#org01cf80f)
+    2.  [Python](#org20fb720)
+    3.  [Node](#org63cfc0f)
+    4.  [Rust](#org778f099)
+    5.  [Lua](#org6e684a7)
+    6.  [Dotnet](#orgcce246f)
+    7.  [Mono](#org1a3fbee)
+    8.  [Go](#org18aa919)
+19. [Game & 3d Modeling](#org1317a55)
+20. [Audio, Video & Multimedia](#orga21af8e)
+    1.  [Photo Viewer & editor](#orgd8fc40a)
+    2.  [Audio viewer & editor](#orge75377c)
+    3.  [Video viewer & editor](#orgd428514)
+21. [Virtual Machines & Containers](#orgb70dfe3)
+    1.  [Containers](#org71e9341)
+    2.  [Virtual Machines](#org98000c7)
+22. [Office Utilities](#orgfb75ef8)
+    1.  [Most Important](#orga8b1b15)
+    2.  [Office Suite](#org26ab1fb)
+    3.  [Rich Text Editor](#org7d560d1)
+    4.  [Diagram Editor](#orgd9c6788)
+    5.  [Document Viewer](#org2ad2378)
+    6.  [Document Scan](#org5e4d985)
+23. [Other Utilities](#org51a5783)
+    1.  [Screenshot](#org251ca1a)
+    2.  [Cloud storage](#orgf70b7d9)
+        1.  [Dropbox](#org829df9c)
+        2.  [Google Drive](#org12721b1)
+    3.  [Text Based internet browser](#org76b5265)
+    4.  [Download Manager](#orga5a3333)
+    5.  [Bootable Media Creation Tool](#orgfb503d5)
 
 
 
-<a id="org5af92bc"></a>
+<a id="orge629af3"></a>
 
 # About Script
 
@@ -75,205 +94,290 @@
     # Usage: ./install-script.sh
 
 
-<a id="orgd1eed15"></a>
+<a id="org91b0679"></a>
 
 # Updating cache & packages
 
-    sudo pacman -Syu --noconfirm
+Arch Linux
+
+    sudo pacman -Syu --noconfirm --needed
+
+Debian / Ubuntu Based Linux
+
+    # sudo apt update && sudo apt upgrade -y
+
+Fedora / RHEL Based Linux
+
+    # sudo dnf update && sudo dnf upgrade -y
 
 
-<a id="org572a9af"></a>
+<a id="org81b676d"></a>
 
 # Other Package Managers
 
 
-<a id="orgbae2081"></a>
+<a id="org38f08e3"></a>
 
 ## Flatpak
 
-    sudo pacman -S flatpak --noconfirm
+    sudo pacman -S flatpak --noconfirm --needed
 
 
-<a id="orgcd449ed"></a>
+<a id="org9e2a99f"></a>
 
 ## AppImages
 
-    sudo pacman -S appimagelauncher --noconfirm
+    sudo pacman -S appimagelauncher --noconfirm --needed
 
 
-<a id="orgbcdf72c"></a>
+<a id="org5e92be0"></a>
 
-## Homebrew
+## Brew
 
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
 
-<a id="orgff35835"></a>
+<a id="org31ea7ec"></a>
 
-## Yay
+## Yay (AUR)
 
--   Get `base-devel` and `git`
 
-    sudo pacman -S --needed base-devel git --noconfirm
+<a id="orgfa4df79"></a>
 
--   Get `yay` repository
+### Get `base-devel` and `git`
+
+    sudo pacman -S --needed base-devel git --noconfirm --needed
+
+
+<a id="orgdc1b169"></a>
+
+### Get `yay` repository
 
     git clone https://aur.archlinux.org/yay.git
     cd yay
 
--   Install `yay` with `makepkg`
+
+<a id="orga1fa3d2"></a>
+
+### Install `yay` with `makepkg`
 
     makepkg -si
 
--   Check version
+
+<a id="orgb8c645c"></a>
+
+### Check version
 
     yay --version
 
 
-<a id="orge215b46"></a>
+<a id="org96f5ff7"></a>
+
+## Snap
+
+
+<a id="org5521240"></a>
+
+### Get `snapd`
+
+    git clone https://aur.archlinux.org/snapd.git
+    cd snapd
+    makepkg -si
+
+
+<a id="org6951434"></a>
+
+### Start `snapd.socket` service
+
+    sudo systemctl enable --now snapd.socket
+
+
+<a id="orgcee2285"></a>
+
+### Enable classic `snap` support
+
+    sudo ln -s /var/lib/snapd/snap /snap
+
+
+<a id="org0c190e0"></a>
+
+## TODO Nix
+
+
+<a id="org5dae1c3"></a>
+
+# Package Manager GUI
+
+
+<a id="org94566a5"></a>
+
+## Pamac (ARCH)
+
+    
+    # Sources: pacman, aur
+    # yay -S pamac-aur
+    
+    # Sources: pacman, flatpak, aur
+    yay -S pamac-flatpak
+    
+    # Sources: pacman, flatpak, aur, snap
+    # yay -S pamac-full
+
+
+<a id="org0fa91d7"></a>
+
+## Discover (KDE)
+
+    
+    # Arch distro
+    sudo pacman -S discover --noconfirm --needed
+
+
+<a id="org6042e7d"></a>
 
 # System Utilities
 
-    sudo pacman -S htop glances --noconfirm
-    # sudo pacman -S sysstat ifstat --noconfirm
+    sudo pacman -S htop glances powertop --noconfirm --needed
+    # sudo pacman -S sysstat ifstat --noconfirm --needed
 
 
-<a id="org867355d"></a>
+<a id="orgec66095"></a>
 
 ## System info utilities
 
-    sudo pacman -S neofetch --noconfirm
+    sudo pacman -S neofetch --noconfirm --needed
 
 
-<a id="orgffe4bfc"></a>
+<a id="org4636fcb"></a>
 
 ## Finding utilities
 
-    sudo pacman -S fd mlocate --noconfirm
+    sudo pacman -S fd mlocate --noconfirm --needed
 
 
-<a id="org7dc69ef"></a>
+<a id="orga2a5b62"></a>
 
 ## Disk Management Utilities
 
-    sudo pacman -S df du --noconfirm
+    sudo pacman -S df du --noconfirm --needed
 
 
-<a id="org923db2a"></a>
+<a id="org83c0510"></a>
+
+# Help Utilities
+
+    sudo pacman -S tldr --noconfirm --needed
+    sduo pacman -S man-db mandoc --noconfirm --needed
+
+
+<a id="orge5a3e20"></a>
 
 # Source Code Management
 
-    sudo -S git github-cli --noconfirm
+    sudo -S git github-cli --noconfirm --needed
 
 
-<a id="org473152f"></a>
+<a id="orgc585b92"></a>
 
 # Display Server
 
     # pacman -S xorg
 
 
-<a id="org0adf574"></a>
+<a id="orgd5346b7"></a>
 
 # Desktop Manager
 
-    sudo pacman -S sddm --noconfirm
+    sudo pacman -S sddm --noconfirm --needed
 
 
-<a id="orgc032e60"></a>
+<a id="org71fc2c3"></a>
 
 # Desktop Environment
 
 
-<a id="org2b1baff"></a>
+<a id="org6219b8e"></a>
 
 ## KDE Plasma Desktop
 
-    sudo pacman -S plasma --noconfirm
+    sudo pacman -S plasma --noconfirm --needed
 
 
-<a id="org2d30e88"></a>
+<a id="orgb58841d"></a>
 
 ## KDE Plasma Desktop Minimal
 
-    sudo pacman -S plasma-desktop --noconfirm
+    sudo pacman -S plasma-desktop --noconfirm --needed
 
 
-<a id="org8d05c2d"></a>
+<a id="orgcedbd54"></a>
 
 ## Other Plasma Utilities
 
-    sudo pacman -S plasma-nm plasma-pa kdeplasma-addons kde-gtk-config --noconfirm
+    sudo pacman -S plasma-nm plasma-pa kdeplasma-addons kde-gtk-config --noconfirm --needed
 
 
-<a id="orgc3af4e1"></a>
+<a id="org1dee2fa"></a>
 
 ## KDE Virtual console
 
-    sudo pacman -S konsole yakuake --noconfirm
+    sudo pacman -S konsole yakuake --noconfirm --needed
 
 
-<a id="orgb698a42"></a>
+<a id="org9d55ef9"></a>
 
 ## KDE File manager
 
-    sudo pacman -S doplhin --noconfirm
+    sudo pacman -S doplhin --noconfirm --needed
 
 
-<a id="org31b975b"></a>
-
-## ARCH GUI Package manager
-
-    sudo pacman -S pamac --noconfirm
-
-
-<a id="orgb266d43"></a>
+<a id="org71e86d5"></a>
 
 ## KDE Package Explorer
 
-    sudo pacman -S discover --noconfirm
+    sudo pacman -S discover --noconfirm --needed
 
 
-<a id="orgefd8144"></a>
+<a id="org6f4d46c"></a>
 
 ## KDE Text Editors
 
-    sudo pacman -S kate kwrite --noconfirm
+    sudo pacman -S kate kwrite --noconfirm --needed
 
 
-<a id="orgad27327"></a>
+<a id="orgdb40313"></a>
 
 ## KDE Battery manager
 
-    sudo pacman -S powerdevil --noconfirm
+    sudo pacman -S powerdevil --noconfirm --needed
 
 
-<a id="orgf53a318"></a>
+<a id="org261a082"></a>
 
 ## KDE System monitor
 
-    sudo pacman -S ksysguard --noconfirm
+    sudo pacman -S ksysguard --noconfirm --needed
 
 
-<a id="org214b620"></a>
+<a id="org0d86f16"></a>
 
 ## KDE Applications
 
 List of applications: [KDE-Applications | Arch Linux](https://archlinux.org/groups/x86_64/kde-applications/)
 
-    # sudo pacman -S kde-applications --noconfirm
+    # sudo pacman -S kde-applications --noconfirm --needed
 
 
-<a id="org09585cd"></a>
+<a id="orgb72d1e0"></a>
 
 ## KDE Utilities
 
 List of utilities: [KDE-Utilities | Arch Linux](https://archlinux.org/groups/x86_64/kde-utilities/)
 
-    # sudo pacman -S kde-utilities --noconfirm
+    # sudo pacman -S kde-utilities --noconfirm --needed
 
 
-<a id="org121ca60"></a>
+<a id="org0f0b2ef"></a>
 
 # X Session
 
@@ -281,226 +385,281 @@ List of utilities: [KDE-Utilities | Arch Linux](https://archlinux.org/groups/x86
     sudo systemctl enable NetworkManager.service
 
 
-<a id="orgd7b54b3"></a>
+<a id="org68602b5"></a>
 
 # Fonts
 
     sudo yay -S nerd-fonts-complete
-    # sudo pacman -S ttf-cascadia-code ttf-dejavu ttf-fira-code ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji terminus-font --noconfirm
+    # sudo pacman -S ttf-cascadia-code ttf-dejavu ttf-fira-code ttf-roboto ttf-roboto-mono noto-fonts noto-fonts-emoji terminus-font --noconfirm --needed
 
 
-<a id="orge9e61e2"></a>
+<a id="org09daf4e"></a>
 
 # Shells
 
-    # sudo pacman -S sh bash --noconfirm
-    sudo pacman -S zsh fish --noconfirm
+    # sudo pacman -S sh bash --noconfirm --needed
+    sudo pacman -S zsh fish --noconfirm --needed
 
 
-<a id="orgce3b2a0"></a>
+<a id="org295d1fc"></a>
 
 # Terminals
 
     sudo pacman -S kitty --noconfrim
 
 
-<a id="orgfe1d1cd"></a>
+<a id="org5accbe3"></a>
 
 # Firewall
 
-    sudo pacman -S firewall --noconfirm
-    # sudo pacman -S ufw gufw --noconfirm
+    sudo pacman -S firewall --noconfirm --needed
+    # sudo pacman -S ufw gufw --noconfirm --needed
 
 
-<a id="org39b22a7"></a>
+<a id="orge10c685"></a>
 
 # Text Editors
 
-    # sudo pacman -S vi vim --noconfirm
-    sudo pacman -S neovim emacs --noconfirm
-    # sudo pacman -S kate kwrite --noconfirm
-    # sudo yay -S vscodium-bin
+    sudo pacman -S vi vim --noconfirm --needed
+    sudo pacman -S neovim emacs --noconfirm --needed
+    sudo pacman -S kate kwrite --noconfirm --needed
+    sudo yay -S vscodium-bin
 
 
-<a id="orgc68eb84"></a>
+<a id="orgf4532cf"></a>
 
 # Web Browsers
 
-    sudo pacman -S firefox --noconfirm
+    sudo pacman -S firefox --noconfirm --needed
     sudo yay -S google.chrome
     # sudo flatpak install com.google.Chrome -y
-    # sudo pacman -S brave chromium --noconfirm
+    # sudo pacman -S brave chromium --noconfirm --needed
 
 
-<a id="org4f09ea2"></a>
+<a id="orgfefc782"></a>
 
 # Languages, Runtime & Development Environment
 
 
-<a id="orgd4696cb"></a>
+<a id="org01cf80f"></a>
 
 ## Most Important
 
-    # sudo pacman -S python nodejs rust go --noconfirm
+    # sudo pacman -S python nodejs rust go --noconfirm --needed
 
 
-<a id="orgb1f733c"></a>
+<a id="org20fb720"></a>
 
 ## Python
 
-    sudo pacman -S python ipython --noconfirm
+    sudo pacman -S python ipython --noconfirm --needed
+    # sudo pacman -S pip --noconfirm --needed
 
 
-<a id="org8a817f4"></a>
+<a id="org63cfc0f"></a>
 
 ## Node
 
-    sudo pacman -S nodejs --noconfirm
+    sudo pacman -S nodejs --noconfirm --needed
+    sudo pacman -S npm --noconfirm --needed
 
 
-<a id="orge61b8dc"></a>
+<a id="org778f099"></a>
 
 ## Rust
 
-    sudo pacman -S rustup rust-analyzer --noconfirm
+    sudo pacman -S rustup rust-analyzer --noconfirm --needed
 
 
-<a id="orgd0ffa32"></a>
+<a id="org6e684a7"></a>
 
 ## Lua
 
-    sudo pacman -S lua luarocks luajit --noconfirm
+    sudo pacman -S lua luarocks luajit --noconfirm --needed
 
 
-<a id="org239f5b7"></a>
+<a id="orgcce246f"></a>
 
 ## Dotnet
 
-    sudo pacman -S dotnet-host dotnet-sdk dotnet-runtime dotnet-targeting-pack --noconfirm
+    sudo pacman -S dotnet-host dotnet-sdk dotnet-runtime dotnet-targeting-pack --noconfirm --needed
 
 
-<a id="orgf4076ce"></a>
+<a id="org1a3fbee"></a>
 
 ## Mono
 
-    sudo pacman -S mono mono-addins --noconfirm
+    sudo pacman -S mono mono-addins --noconfirm --needed
 
 
-<a id="orgee672b3"></a>
+<a id="org18aa919"></a>
 
 ## Go
 
-    sudo pacman -S go --noconfirm
+    sudo pacman -S go --noconfirm --needed
 
 
-<a id="org3840727"></a>
+<a id="org1317a55"></a>
 
 # Game & 3d Modeling
 
-    sudo pacman -S godot blender freecad --noconfirm
+    sudo pacman -S godot blender freecad --noconfirm --needed
 
 
-<a id="org87db5de"></a>
+<a id="orga21af8e"></a>
 
 # Audio, Video & Multimedia
 
 
-<a id="org27e10db"></a>
+<a id="orgd8fc40a"></a>
 
 ## Photo Viewer & editor
 
-    sudo pacman -S gwenview gimp krita inkscape --noconfirm
+    sudo pacman -S gwenview gimp krita inkscape --noconfirm --needed
 
 
-<a id="orgd59674d"></a>
+<a id="orge75377c"></a>
 
 ## Audio viewer & editor
 
     # Video viewing/editing/encoding
-    sudo pacman -S vlc kdenlive handbrake --noconfirm
+    sudo pacman -S vlc kdenlive handbrake --noconfirm --needed
 
 
-<a id="orgf976b1f"></a>
+<a id="orgd428514"></a>
 
 ## Video viewer & editor
 
     # Audio viewing/editing/composition
-    sudo pacman -S elias audacity lmms --noconfirm
+    sudo pacman -S elias audacity lmms --noconfirm --needed
 
 
-<a id="org4ba1fe1"></a>
+<a id="orgb70dfe3"></a>
 
 # Virtual Machines & Containers
 
 
-<a id="org6e6b991"></a>
+<a id="org71e9341"></a>
 
 ## Containers
 
-    sudo pacman -S docker --noconfirm
-    # sudo pacman -S lxc lxd --noconfirm
+    sudo pacman -S docker --noconfirm --needed
+    # sudo pacman -S lxc lxd --noconfirm --needed
+    # sudo pacman -S podman --noconfirm --needed
 
 
-<a id="org1fde2bf"></a>
+<a id="org98000c7"></a>
 
 ## Virtual Machines
 
-    sudo pacman -S virtualbox vagarant --noconfirm
-    # sudo pacman -S virt-manager --noconfirm
+    sudo pacman -S linux-headers linux-lts-headers --noconfirm --needed
+    sudo pacman -S virtualbox vagarant --noconfirm --needed
+    sudo pacman -S virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-iso --noconfirm --needed
+    # sudo pacman -S virt-manager --noconfirm --needed
 
 
-<a id="org72e758e"></a>
+<a id="orgfb75ef8"></a>
 
 # Office Utilities
 
 
-<a id="org27790fd"></a>
+<a id="orga8b1b15"></a>
 
 ## Most Important
 
-    # sudo pacman -S abiword okular onlyoffice-desktopeditors simple-scan --noconfirm
+    # sudo pacman -S abiword okular simple-scan --noconfirm --needed
+    # yay onlyoffice-desktopeditors
 
 
-<a id="orgfabca8d"></a>
+<a id="org26ab1fb"></a>
 
 ## Office Suite
 
-    sudo pacman -S onlyoffice-desktopeditors --noconfirm
-    # sudo pacman -S libre-office-still --noconfirm
+    yay -S onlyoffice-desktopeditors
+    # sudo pacman -S libre-office-still --noconfirm --needed
 
 
-<a id="org58d763b"></a>
+<a id="org7d560d1"></a>
 
 ## Rich Text Editor
 
-    sudo pacman -S abiword --noconfirm
+    sudo pacman -S abiword --noconfirm --needed
 
 
-<a id="org886011f"></a>
+<a id="orgd9c6788"></a>
 
 ## Diagram Editor
 
-    # sudo pacman -S dia --noconfirm
-    flatpak install draw.io
+    # sudo pacman -S dia --noconfirm --needed
+    flatpak install drawio
 
 
-<a id="orged84559"></a>
+<a id="org2ad2378"></a>
 
 ## Document Viewer
 
-    sudo pacman -S okular --noconfirm
+    sudo pacman -S okular calibre --noconfirm --needed
 
 
-<a id="org50c578d"></a>
+<a id="org5e4d985"></a>
 
 ## Document Scan
 
     sudo pacman -S simple-scan --nocomfirm
 
 
-<a id="org520f97d"></a>
+<a id="org51a5783"></a>
 
 # Other Utilities
 
-    sudo pacman -S ark spectacle uget gestures ventoy --noconfirm
+    sudo pacman -S spectacle uget elinks --noconfirm --needed
+    yay -S ventoy-bin --noconfirm --needed
+
+
+<a id="org251ca1a"></a>
+
+## Screenshot
+
+    # sudo pacman -S flameshot --noconfirm --needed
+    sudo pacman -S spectacle --noconfirm --needed
+
+
+<a id="orgf70b7d9"></a>
+
+## Cloud storage
+
+
+<a id="org829df9c"></a>
+
+### Dropbox
+
+    sudo flatpak install dropbox -y
+
+
+<a id="org12721b1"></a>
+
+### Google Drive
+
+    sudo pacman -S kio-gdrive --noconfirm --needed
+
+
+<a id="org76b5265"></a>
+
+## Text Based internet browser
+
+    sudo pacman -S elinks --noconfirm --needed
+
+
+<a id="orga5a3333"></a>
+
+## Download Manager
+
+    sudo pacman -S uget --noconfrim --needed
+
+
+<a id="orgfb503d5"></a>
+
+## Bootable Media Creation Tool
+
+    yay -S ventoy-bin
 
