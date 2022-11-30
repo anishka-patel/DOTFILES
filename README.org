@@ -411,10 +411,11 @@ tree ./packages-list
 ├── pacman-packages-list.txt
 ├── pip-packages-list.txt
 ├── script.sh
+├── snap-packages-list.txt
 ├── vscodium-packages-list.txt
 └── yay-packages-list.txt
 
-0 directories, 10 files
+0 directories, 11 files
 #+end_src
 ** script.sh
 Script to generate packages list for all package managers
@@ -458,6 +459,10 @@ brew list > brew-packages-list.txt
 ** Flatpak packages
 #+begin_src bash
 flatpak list > flatpak-packages-list.txt
+#+end_src
+** Snap packages
+#+begin_src bash
+snap list --all > snap-packages-list.txt
 #+end_src
 ** Pip global packages
 Pip: Package install for python
@@ -544,4 +549,5 @@ echo "Completed"
 *** Documentation: [[https://github.com/Prayag2/konsave][Konsave | Github]]
 ** KDE-Tiling
 - ~Krohnkite~: Kwin script to emulate tiling window manager.
+- ~Bismuth~: Kwin script to emulate tiling window manager.
 - Documentation: [[https://github.com/esjeon/krohnkite][Krohnkite | Github]]
