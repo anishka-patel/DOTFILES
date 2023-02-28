@@ -1,10 +1,13 @@
 
+bash-language-server
 corepack
 eslint
 ethlint
 firebase-tools
 ganache-cli
 ganache
+ijavascript
+itypescript
 js-beautify
 neovim
 node-gyp
@@ -15,5 +18,7 @@ solc
 stylelint
 truffle
 ts-node
+typescript-language-server
 typescript
+vscode-langservers-extracted
 

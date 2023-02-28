@@ -1,10 +1,10 @@
 archlinux-appstream-data-pamac
 google-chrome
-kwin-bismuth
 libpamac-flatpak
 onlyoffice-bin
 pamac-flatpak
 plymouth
+sddm-git
 ventoy-bin
 vscodium-bin
 vscodium-bin-marketplace
