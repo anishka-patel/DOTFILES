@@ -43,6 +43,14 @@ curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | 
 #+end_src
 #+begin_src bash
 #+end_src
+
+** Apx
+Requirements:
+    1. Docker / Podman
+    2. Distrobox
+#+begin_src bash
+yay -S apx
+#+end_src
 ** Yay (AUR)
 *** Get ~base-devel~ and ~git~
 #+begin_src bash
@@ -93,6 +101,10 @@ yay -S pamac-flatpak
 # Sources: pacman, flatpak, aur, snap
 # yay -S pamac-full
 
+#+end_src
+** Octopi (ARCH)
+#+begin_src bash
+yay -S octopi --noconfirm
 #+end_src
 ** Discover (KDE)
 #+begin_src bash
@@ -199,7 +211,8 @@ sudo pacman -S zsh fish --noconfirm --needed
 #+end_src
 * Terminals
 #+begin_src bash
-sudo pacman -S kitty --noconfrim
+sudo pacman -S kitty alacritty --noconfrim --needed
+sudo pacman -S tmux --noconfirm --needed
 #+end_src
 * Firewall
 #+begin_src bash
@@ -211,12 +224,18 @@ sudo pacman -S firewall --noconfirm --needed
 sudo pacman -S vi vim --noconfirm --needed
 sudo pacman -S neovim emacs --noconfirm --needed
 sudo pacman -S kate kwrite --noconfirm --needed
+#+end_src
+* Intedgrated Development Environment
+#+begin_src bash
 sudo yay -S vscodium-bin
+sudo pacman -S geany kdevelop --noconfirm --needed
+sudo pacman -S processing --noconfirm --needed
+sudo pacman -S jupyterlab --noconfirm --needed
 #+end_src
 * Web Browsers
 #+begin_src bash
 sudo pacman -S firefox --noconfirm --needed
-sudo yay -S google.chrome
+sudo yay -S google.chrome --noconfirm
 # sudo flatpak install com.google.Chrome -y
 # sudo pacman -S brave chromium --noconfirm --needed
 #+end_src
@@ -224,6 +243,10 @@ sudo yay -S google.chrome
 ** Most Important
 #+begin_src bash
 # sudo pacman -S python nodejs rust go --noconfirm --needed
+#+end_src
+** Android
+#+begin_src bash
+sudo pacman -S android-tools --noconfirm --needed
 #+end_src
 ** Python
 #+begin_src bash
@@ -255,21 +278,45 @@ sudo pacman -S mono mono-addins --noconfirm --needed
 #+begin_src bash
 sudo pacman -S go --noconfirm --needed
 #+end_src
-* Game & 3d Modeling
+* Game , 3d Modeling & 2D Pixel Art
+** Game Engine
 #+begin_src bash
-sudo pacman -S godot blender freecad --noconfirm --needed
+sudo pacman -S godot --noconfirm --needed
 #+end_src
+** 2d Drafting / Prototyping
+#+begin_src bash
+sudo pacman -S librecad --noconfirm
+sudo pacman -S pencil-bin --noconfirm
+# Refer to "PENPOT"
+#+end_src
+** 3d Modelling
+#+begin_src bash
+sudo pacman -S blender freecad --noconfirm
+#+end_src
+** Pixel Art
+#+begin_src bash
+yay -S aseprite pixelorama grafx2 --noconfirm
+#+end_src
+** Music Generation
+#+begin_src bash
+sudo pacman -S lmms --noconfirm --needed
+#+end_src
+** Texture Packer
+#+begin_src bash
+wget https://github.com/odrick/free-tex-packer/releases/download/v0.6.7/FreeTexturePacker-x86_64.AppImage
+#+end
+
 * Audio, Video & Multimedia
 ** Photo Viewer & editor
 #+begin_src bash
 sudo pacman -S gwenview gimp krita inkscape --noconfirm --needed
 #+end_src
-** Audio viewer & editor
+** Video viewer & editor
 #+begin_src bash
 # Video viewing/editing/encoding
-sudo pacman -S vlc kdenlive handbrake --noconfirm --needed
+sudo pacman -S vlc kdenlive shotcut handbrake --noconfirm --needed
 #+end_src
-** Video viewer & editor
+** Audio viewer & editor
 #+begin_src bash
 # Audio viewing/editing/composition
 sudo pacman -S elias audacity lmms --noconfirm --needed
@@ -280,13 +327,29 @@ sudo pacman -S elias audacity lmms --noconfirm --needed
 sudo pacman -S docker --noconfirm --needed
 # sudo pacman -S lxc lxd --noconfirm --needed
 # sudo pacman -S podman --noconfirm --needed
+sudo pacman -S distrobox --noconfirm --needed
 #+end_src
 ** Virtual Machines
+*** VirtualBox
 #+begin_src bash
-sudo pacman -S linux-headers linux-lts-headers --noconfirm --needed
 sudo pacman -S virtualbox vagarant --noconfirm --needed
-sudo pacman -S virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-iso --noconfirm --needed
+sudo pacman -S virtualbox-guest-utils virtualbox-guest-iso --noconfirm --needed
+# On linux kernel
+sudo pacman -S linux-headers --noconfirm --needed
+sudo pacman -S virtualbox-host-modules-arch --noconfirm --needed
+# On linux-lts kernel
+sudo pacman -S linux-lts-headers --noconfirm --needed
+sudo pacman -S virtualbox-host-dkms --noconfirm --needed
+
 # sudo pacman -S virt-manager --noconfirm --needed
+#+end_src
+*** Qemu/Kvm
+#+begin_src bash
+sudo pacman -S qemu virt-manager --noconfirm --needed
+#+end_src
+*** Android Emulation
+#+begin_src bash
+yay -S waydroid
 #+end_src
 * Office Utilities
 ** Most Important
@@ -314,7 +377,7 @@ sudo pacman -S okular calibre --noconfirm --needed
 #+end_src
 ** Document Scan
 #+begin_src bash
-sudo pacman -S simple-scan --nocomfirm
+sudo pacman -S simple-scan skanlite --nocomfirm
 #+end_src
 * Other Utilities
 #+begin_src bash
@@ -346,4 +409,13 @@ sudo pacman -S uget --noconfrim --needed
 ** Bootable Media Creation Tool
 #+begin_src bash
 yay -S ventoy-bin
+#+end_src
+**
+** Arco Utilities
+#+begin_src bash
+yay -S variety arch-tweak-tool --noconfirm
+#+end_src
+** Offline Documentation Viewer
+#+begin_src bash
+yay -S zeal --noconfirm
 #+end_src

@@ -19,6 +19,8 @@ curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | 
 
 
 
+yay -S apx
+
 sudo pacman -S --needed base-devel git --noconfirm --needed
 
 git clone https://aur.archlinux.org/yay.git
@@ -44,6 +46,8 @@ yay -S pamac-flatpak
 
 # Sources: pacman, flatpak, aur, snap
 # yay -S pamac-full
+
+yay -S octopi --noconfirm
 
 # Arch distro
 sudo pacman -S discover --noconfirm --needed
@@ -106,9 +110,10 @@ sudo pacman -S vi vim --noconfirm --needed
 sudo pacman -S neovim emacs --noconfirm --needed
 sudo pacman -S kate kwrite --noconfirm --needed
 sudo yay -S vscodium-bin
+sudo pacman -S geany --noconfirm --needed
 
 sudo pacman -S firefox --noconfirm --needed
-sudo yay -S google.chrome
+sudo yay -S google.chrome --noconfirm
 # sudo flatpak install com.google.Chrome -y
 # sudo pacman -S brave chromium --noconfirm --needed
 
@@ -130,12 +135,18 @@ sudo pacman -S mono mono-addins --noconfirm --needed
 
 sudo pacman -S go --noconfirm --needed
 
-sudo pacman -S godot blender freecad --noconfirm --needed
+sudo pacman -S godot --noconfirm --needed
+
+sudo pacman -S blender freecad --noconfirm
+
+yay -S aseprite pixelorama grafx2 --noconfirm
+
+sudo pacman -S lmms --noconfirm --needed
 
 sudo pacman -S gwenview gimp krita inkscape --noconfirm --needed
 
 # Video viewing/editing/encoding
-sudo pacman -S vlc kdenlive handbrake --noconfirm --needed
+sudo pacman -S vlc kdenlive shotcut handbrake --noconfirm --needed
 
 # Audio viewing/editing/composition
 sudo pacman -S elias audacity lmms --noconfirm --needed
@@ -179,3 +190,5 @@ sudo pacman -S elinks --noconfirm --needed
 sudo pacman -S uget --noconfrim --needed
 
 yay -S ventoy-bin
+
+   yay -S variety arch-tweak-tool --noconfirm

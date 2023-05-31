@@ -1,11 +1,8 @@
 Dropbox
 draw.io
 Freedesktop
-Freedesktop
 Mesa
 Mesa
-Mesa
-openh264
 openh264
 GNOME
 Breeze
