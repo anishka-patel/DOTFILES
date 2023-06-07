@@ -4,16 +4,10 @@ end
 # Vi style keybindings
 fish_vi_key_bindings
 
-alias vi=vim
-alias nv=nvim
-alias gnv=neovide
-alias lv=lvim
-alias glv=leovide
-alias es=emacs
-alias ec="emacsclient -t"
-alias gec="emacsclient -cnqua ''"
-alias ka=kate
-alias kw=kwrite
-alias code=codium
+source $HOME/.config/sh/alias.sh
+source $HOME/.config/sh/export.sh
 
 neofetch
+
+starship init fish | source
+

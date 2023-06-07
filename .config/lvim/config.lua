@@ -9,8 +9,8 @@ an executable
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 vim.opt.relativenumber = true
-vim.opt.colorcolumn = "80"
-vim.opt.guifont = { "FiraCode Nerd Font", "16" }
+vim.opt.colorcolumn = { "80" }
+vim.opt.guifont = { "FiraCode Nerd Font", "14" }
 
 vim.g.neovide_transparency = 0.95
 vim.g.neovide_remember_window_size = true
@@ -26,8 +26,15 @@ lvim.colorscheme = "dracula"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
+lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
+lvim.keys.normal_mode["<C-f>"] = "<C-f>zz"
+lvim.keys.normal_mode["<C-b>"] = "<C-b>zz"
+lvim.keys.normal_mode["<leader>ut"] = ":TagbarToggle<cr>"
+lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+
+lvim.builtin.terminal.open_mapping = "<c-t>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -169,6 +176,25 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
   { "Mofiqul/dracula.nvim" },
+  { "ggandor/leap.nvim" },
+  { "terryma/vim-expand-region" },
+  { "majutsushi/tagbar" },
+  {
+    "kylechui/nvim-surround",
+    config = function()
+      require("nvim-surround").setup {}
+    end
+  },
+  {
+    "baskerville/vim-sxhkdrc"
+  },
+  {
+    "waycrate/swhkd-vim"
+  },
+  {
+    "windwp/nvim-ts-autotag"
+  },
+  --  { "easymotion/vim-easymotion" },
   --     {"folke/tokyonight.nvim"},
   --     {
   --       "folke/trouble.nvim",
@@ -177,11 +203,39 @@ lvim.plugins = {
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
+vim.api.nvim_create_autocmd("BufEnter", {
+  --   pattern = { "*.json", "*.jsonc" },
+  --   -- enable wrap mode for json files only
+  --   command = "setlocal wrap",
+  callback = function()
+    require("leap").add_default_mappings()
+
+    require 'nvim-treesitter.configs'.setup {
+      autotag = {
+        enable = true,
+      }
+    }
+    local lspconfig = require('lspconfig')
+    local configs = require('lspconfig/configs')
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+    lspconfig.emmet_ls.setup({
+      -- on_attach = on_attach,
+      capabilities = capabilities,
+      filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug",
+        "typescriptreact", "vue" },
+      init_options = {
+        html = {
+          options = {
+            -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+            ["bem.enabled"] = true,
+          },
+        },
+      }
+    })
+  end
+})
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "zsh",
 --   callback = function()

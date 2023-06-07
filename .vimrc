@@ -43,7 +43,7 @@ set whichwrap+=<,>,h,l
 set path+=**
 set nocompatible
 set cursorline
-set colorcolumn=80,120
+set colorcolumn=80
 set foldcolumn=1
 set nowrap
 set number relativenumber
@@ -59,6 +59,9 @@ set history=1000
 set nobackup nowb noswapfile
 set clipboard=unnamedplus
 set lazyredraw                          " Don't redraw while executing macros (good performance config)
+set termguicolors
+set scrolloff=30
+
 
 " No annoying sound on errors
 set noerrorbells
@@ -68,6 +71,12 @@ set tm=500
 set encoding=utf8
 
 " Mappings
+" nnoremap <C-u> <C-u>zz
+" nnoremap <C-d> <C-d>zz
+" nnoremap <C-f> <C-f>zz
+" nnoremap <C-b> <C-b>zz
+
+
 nnoremap <SPACE> <Nop>
 nnoremap <Leader>/ :nohlsearch<CR>
 
@@ -89,6 +98,7 @@ map <leader>fs :w!<cr>
 
 map <leader>h  :nohl<cr>
 
+map <leader>;o :TagbarToggle<cr>
 
 map <leader>tN :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -170,12 +180,29 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'justinmk/vim-sneak'
+Plug 'majutsushi/tagbar'
+Plug 'baskerville/vim-sxhkdrc'
+Plug 'waycrate/swhkd'
 call plug#end()
 
 
 colorscheme dracula
 
+let g:sneak#label = 1
+
+hi Normal guibg=NONE ctermbg=NONE
+
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" reset the cursor on start (for older versions of vim, usually not required)
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END

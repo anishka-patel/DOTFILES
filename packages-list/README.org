@@ -1,7 +1,7 @@
 #+TITLE: Packages List Org File
 
 
-* List of packages
+* List of Explicit Yay packages
 |---------------------------------------+---------------------------+-----|
 | Name                                  | Description               | Imp |
 |---------------------------------------+---------------------------+-----|
@@ -52,7 +52,7 @@
 | calibre                               | Book Reader (.epub, .pdf) |     |
 | cmake                                 | Build Tool for C/C++      |     |
 | cmatrix                               | Terminal Fun              |     |
-| conky                                 |                           |     |
+| conky                                 | System Monitor            |     |
 | cryfs                                 | Vault Utils               |     |
 | ctags                                 |                           |     |
 | cups                                  | Print Utils               |     |
@@ -64,11 +64,11 @@
 | docker                                | Container Management Util |     |
 | dolphin                               | File Explorer             |     |
 | dolphin-plugins                       | File Explorer - extra     |     |
-| dotnet-host                           | C# Runtime                |     |
-| dotnet-runtime                        | C# Runtime                |     |
-| dotnet-sdk                            | C# Runtime                |     |
-| dotnet-sdk-6.0                        | C# Runtime                |     |
-| dotnet-targeting-pack                 | C# Runtime                |     |
+| dotnet-host                           | Language Runtime          |     |
+| dotnet-runtime                        | Language Runtime          |     |
+| dotnet-sdk                            | Language Runtime          |     |
+| dotnet-sdk-6.0                        | Language Runtime          |     |
+| dotnet-targeting-pack                 | Language Runtime          |     |
 | dracula-icons-git                     | Icon Theme                |     |
 | duf                                   | Disk Monitor Utility      |     |
 | efibootmgr                            | Boot Manager              |     |
@@ -261,22 +261,22 @@
 | tinygo                                | Language Compiler         |     |
 | tmux                                  | Terminal - Extra          |     |
 | traceroute                            | Network - Extra           |     |
-| trash-cli                             |                           |     |
+| trash-cli                             | Trash Bin                 |     |
 | tree                                  |                           |     |
-| ttf-cascadia-code-nerd                |                           |     |
-| ttf-dejavu-nerd                       |                           |     |
-| ttf-droid                             |                           |     |
-| ttf-fira-sans                         |                           |     |
-| ttf-firacode-nerd                     |                           |     |
-| ttf-hack-nerd                         |                           |     |
-| ttf-nerd-fonts-symbols                |                           |     |
-| ttf-nerd-fonts-symbols-mono           |                           |     |
-| ttf-opensans                          |                           |     |
-| ttf-roboto                            |                           |     |
-| ttf-roboto-mono-nerd                  |                           |     |
-| ttf-terminus-nerd                     |                           |     |
-| ttf-ubuntu-mono-nerd                  |                           |     |
-| ttf-ubuntu-nerd                       |                           |     |
+| ttf-cascadia-code-nerd                | Font                      |     |
+| ttf-dejavu-nerd                       | Font                      |     |
+| ttf-droid                             | Font                      |     |
+| ttf-fira-sans                         | Font                      |     |
+| ttf-firacode-nerd                     | Font                      |     |
+| ttf-hack-nerd                         | Font                      |     |
+| ttf-nerd-fonts-symbols                | Font                      |     |
+| ttf-nerd-fonts-symbols-mono           | Font                      |     |
+| ttf-opensans                          | Font                      |     |
+| ttf-roboto                            | Font                      |     |
+| ttf-roboto-mono-nerd                  | Font                      |     |
+| ttf-terminus-nerd                     | Font                      |     |
+| ttf-ubuntu-mono-nerd                  | Font                      |     |
+| ttf-ubuntu-nerd                       | Font                      |     |
 | vagrant                               | VM - Extra                |     |
 | variety                               | Wallpager Manager         |     |
 | vault                                 | Encryption                |     |
