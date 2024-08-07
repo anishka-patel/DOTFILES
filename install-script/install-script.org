@@ -43,7 +43,6 @@ curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | 
 #+end_src
 #+begin_src bash
 #+end_src
-
 ** Apx
 Requirements:
     1. Docker / Podman
@@ -88,6 +87,14 @@ sudo ln -s /var/lib/snapd/snap /snap
 :LOGBOOK:
 - State "TODO"       from              [2022-11-29 Tue 13:39]
 :END:
+* Application Specific Pacakage Managers
+** VimPlug (Vim)
+** Packer, Lazy (Neovim)
+* Runtime Specific Package Managers
+** Pip, Conda (Python)
+** Cargo (Rust)
+** Go (Golang)
+** Npm (Nodejs)
 * Package Manager GUI
 ** Pamac (ARCH)
 #+begin_src bash
@@ -115,12 +122,14 @@ sudo pacman -S discover --noconfirm --needed
 #+end_src
 * System Utilities
 #+begin_src bash
-sudo pacman -S htop glances powertop --noconfirm --needed
-# sudo pacman -S sysstat ifstat --noconfirm --needed
+  sudo pacman -S htop glances powertop --noconfirm --needed
+  pip install bpytop
+  # sudo pacman -S sysstat ifstat --noconfirm --needed
 #+end_src
 ** System info utilities
 #+begin_src bash
-sudo pacman -S neofetch --noconfirm --needed
+  sudo pacman -S neofetch --noconfirm --needed
+  yay -S ufetch --noconfirm --needed
 #+end_src
 ** Finding utilities
 #+begin_src bash
@@ -140,9 +149,11 @@ sduo pacman -S man-db mandoc --noconfirm --needed
 sudo -S git github-cli --noconfirm --needed
 #+end_src
 * Display Server
+** Xorg
 #+begin_src bash
 # pacman -S xorg
 #+end_src
+** Wayland
 * Desktop Manager
 #+begin_src bash
 sudo pacman -S sddm --noconfirm --needed
@@ -228,8 +239,8 @@ sudo pacman -S kate kwrite --noconfirm --needed
 * Intedgrated Development Environment
 #+begin_src bash
 sudo yay -S vscodium-bin
-sudo pacman -S geany kdevelop --noconfirm --needed
-sudo pacman -S processing --noconfirm --needed
+# sudo pacman -S geany kdevelop --noconfirm --needed
+# sudo pacman -S processing --noconfirm --needed
 sudo pacman -S jupyterlab --noconfirm --needed
 #+end_src
 * Web Browsers
@@ -295,7 +306,7 @@ sudo pacman -S blender freecad --noconfirm
 #+end_src
 ** Pixel Art
 #+begin_src bash
-yay -S aseprite pixelorama grafx2 --noconfirm
+yay -S aseprite grafx2 --noconfirm
 #+end_src
 ** Music Generation
 #+begin_src bash
@@ -314,7 +325,7 @@ sudo pacman -S gwenview gimp krita inkscape --noconfirm --needed
 ** Video viewer & editor
 #+begin_src bash
 # Video viewing/editing/encoding
-sudo pacman -S vlc kdenlive shotcut handbrake --noconfirm --needed
+sudo pacman -S vlc kdenlive handbrake --noconfirm --needed
 #+end_src
 ** Audio viewer & editor
 #+begin_src bash
@@ -374,6 +385,7 @@ flatpak install drawio
 ** Document Viewer
 #+begin_src bash
 sudo pacman -S okular calibre --noconfirm --needed
+sudo pacamn -S zathura-pdf-poppler --noconfirm --needed
 #+end_src
 ** Document Scan
 #+begin_src bash
@@ -401,6 +413,7 @@ sudo pacman -S kio-gdrive --noconfirm --needed
 ** Text Based internet browser
 #+begin_src bash
 sudo pacman -S elinks --noconfirm --needed
+# sudo pacman -S lynx --noconfirm --needed
 #+end_src
 ** Download Manager
 #+begin_src bash
